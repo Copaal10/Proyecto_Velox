@@ -126,3 +126,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.getElementById("form").addEventListener("submit", async function (e) {
+  e.preventDefault(); // Evita redirección
+
+  const form = e.target;
+
+  const respuesta = await fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: { "Accept": "application/json" }
+  });
+
+  if (respuesta.ok) {
+    document.getElementById("respuesta").textContent = "✔ Enviado correctamente";
+    form.reset();
+  } else {
+    document.getElementById("respuesta").textContent = "❌ Error al enviar";
+  }
+});
