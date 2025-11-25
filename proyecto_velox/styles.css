@@ -229,7 +229,7 @@ header h1 {
     max-width: 22rem;
   }
 }
-
+/* Validaciones formulario */
 .is-valid {
     border-color: #198754 !important;
 }
