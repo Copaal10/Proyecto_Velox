@@ -25,7 +25,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Index</a>
+      <a class="navbar-brand" href="#">Formulario</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
               data-bs-target="#navbarNav" aria-controls="navbarNav" 
               aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,60 @@
   
 
   <br>
-  <h1>contenido de pagina</h1>
+<form action="https://formspree.io/f/mvgnlprg" method="POST" class="mx-auto" style="max-width: 600px;">
+
+            <!-- Asunto (opcional) -->
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde la web">
+
+            <!-- Nombre -->
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre Completo</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    <input type="text" class="form-control" id="nombre" name="nombre"
+                        placeholder="Escribe tu nombre completo" required>
+                </div>
+            </div>
+
+            <!-- Correo -->
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                    <input type="email" class="form-control" id="correo" name="correo"
+                        placeholder="Escribe tu correo electrónico" required>
+                </div>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                    <input type="tel" class="form-control" id="telefono" name="telefono"
+                        placeholder="Escribe tu número de teléfono">
+                </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">¿Qué deseas de nosotros?</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-chat-dots"></i></span>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="2"
+                        placeholder="Cuéntanos tu solicitud" required></textarea>
+                </div>
+            </div>
+
+            <!-- Botón -->
+            <button type="submit" class="btn btn-primary btn-mi-verde">
+                <i class="bi bi-send"></i> Enviar
+            </button>
+
+        </form>
+
+
+
 <!-- Contenido de pagona -->
   <br>
 
