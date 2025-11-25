@@ -229,3 +229,15 @@ header h1 {
     max-width: 22rem;
   }
 }
+
+.is-valid {
+    border-color: #198754 !important;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.error-mensaje {
+    font-size: 0.875rem;
+}
