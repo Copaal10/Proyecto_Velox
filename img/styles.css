@@ -24,11 +24,11 @@ header h1 {
 }
 
 /* Navbar personalizada */
-.navbar {
+#nav {
   background-color: #65ABEA; /* Rudy Blue */
 }
 
-.navbar-brand, .nav-link {
+.nav nav-tabs, .nav-link {
   color: #212121 !important; /* Eerie Black */
   font-weight: bold;
 }
