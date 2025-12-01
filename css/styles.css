@@ -241,3 +241,27 @@ header h1 {
 .error-mensaje {
     font-size: 0.875rem;
 }
+
+/* estilo del formulario */
+/* Centrar el formulario de vehículos */
+#formVehiculo {
+  width: 900px;       /* ancho máximo para que no se extienda demasiado */
+  margin: 0 auto;         /* centra horizontalmente */
+  text-align: left;       /* mantiene alineación interna de labels e inputs */
+}
+
+/* Aplica solo al formulario de vehículos */
+#formVehiculo input.form-control,
+#formVehiculo textarea.form-control {
+  border: 2px solid #000;   /* negro */
+  /* Si prefieres azul, cambia por #0d6efd (azul Bootstrap) */
+  /* border: 2px solid #0d6efd; */
+  box-shadow: none;
+}
+
+/* Aplica solo al navbar */
+.nav .formulario {
+  color: white;
+  font-weight: bold;
+  text-align: center;       /* centra el texto dentro del enlace */
+}

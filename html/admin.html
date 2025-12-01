@@ -12,7 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   
   <!-- Archivo CSS personalizado -->
-  <link rel="stylesheet" href="../css/styles.css">
+
+<link rel="stylesheet" href="../css/styles.css">
+
+  
 </head>
 <body>
 
@@ -53,11 +56,62 @@
 
 
   <br>
-  <h1>contenido de pagina</h1>
-<!-- Contenido de pagona -->
   <br>
 
+<!-- Contenido de pagona -->
+<form id="formVehiculo" class="card p-4 shadow-sm" enctype="multipart/form-data">
+  <!-- Campo: Marca -->
+  <div class="mb-3">
+    <label for="marca" class="form-label">Marca</label>
+    <input type="text" class="form-control" id="marca" placeholder="Ej: BMW, Audi, Mercedes" required>
+  </div>
 
+  <!-- Campo: Modelo -->
+  <div class="mb-3">
+    <label for="modelo" class="form-label">Modelo</label>
+    <input type="text" class="form-control" id="modelo" placeholder="Ej: Serie 3, A4, Clase C" required>
+  </div>
+
+  <!-- Campo: Año -->
+  <div class="mb-3">
+    <label for="anio" class="form-label">Año</label>
+    <input type="number" class="form-control" id="anio" min="2000" max="2025" required>
+  </div>
+
+  <!-- Campo: Precio -->
+  <div class="mb-3">
+    <label for="precio" class="form-label">Precio (USD)</label>
+    <input type="number" class="form-control" id="precio" placeholder="Ej: 45000" required>
+  </div>
+
+  <!-- Campo: Imagen -->
+  <div class="mb-3">
+    <label for="imagen" class="form-label">Imagen del vehículo</label>
+    <input type="file" class="form-control" id="imagen" accept="image/*" required>
+    <div class="form-text">Selecciona una foto del vehículo (JPG, PNG).</div>
+  </div>
+
+  <!-- Campo: Descripción -->
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripción</label>
+    <textarea class="form-control" id="descripcion" rows="3" placeholder="Escribe detalles adicionales del vehículo..." required></textarea>
+  </div>
+
+  <!-- Botón de envío -->
+  <button type="submit" class="btn btn-primary w-100">Registrar Vehículo</button>
+</form>
+
+
+
+
+
+  <br>
+
+  <!-- llamado del resultado de agregarVehiculos.js -->
+
+<div id="resultado" class="mt-4"></div>
+
+  <!-- llamado del resultado de agregarVehiculos.js -->
 
 <!-- Footer -->
 <footer class="footer">
@@ -98,5 +152,8 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script/agregarVehiculo.js"></script>
+
+  
 </body>
 </html>
