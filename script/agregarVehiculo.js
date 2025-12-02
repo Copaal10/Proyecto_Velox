@@ -46,7 +46,7 @@ form.addEventListener('submit', function (e) {
 
       // Mostramos alerta
       alert("Su vehículo ha sido guardado");
-      window.location.href = "listar.html";
+      window.location.href = "listAdmin.html";
 
     };
     reader.readAsDataURL(imagenInput.files[0]);
