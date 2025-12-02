@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const correo = document.getElementById("correo");
   const telefono = document.getElementById("telefono");
   const mensaje = document.getElementById("mensaje");
-
+  //
   // Función para mostrar errores
   function mostrarError(campo, mensaje) {
     // Remover error anterior si existe
@@ -145,3 +145,4 @@ document.getElementById("form").addEventListener("submit", async function (e) {
     document.getElementById("respuesta").textContent = "❌ Error al enviar";
   }
 });
+//

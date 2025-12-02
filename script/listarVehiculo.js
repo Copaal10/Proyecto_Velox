@@ -1,5 +1,5 @@
 // archivo: listarVehiculos.js
-
+//
 const lista = document.getElementById("listaVehiculos");
 let vehiculos = JSON.parse(localStorage.getItem("vehiculos")) || [];
 

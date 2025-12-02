@@ -9,7 +9,7 @@ let vehiculos = JSON.parse(localStorage.getItem('vehiculos')) || [];
 
 // Función para renderizar todos los vehículos guardados
 
-
+//
 
 // Evento submit del formulario
 form.addEventListener('submit', function (e) {
