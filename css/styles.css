@@ -265,3 +265,129 @@ header h1 {
   font-weight: bold;
   text-align: center;       /* centra el texto dentro del enlace */
 }
+
+
+/* Contenedor principal de las tarjetas */
+.contenedor-vehiculos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* siempre 3 columnas */
+  gap: 10px;              /* 🔽 reduce el espacio entre tarjetas */
+  padding: 5px;           /* 🔽 menos espacio interno del contenedor */
+  background: #f4f4f4;
+  border-radius: 8px;
+  justify-items: center;  /* centra cada tarjeta dentro de su celda */
+}
+
+/* Cada tarjeta */
+.vehiculo-card {
+  width: 230px;           /* 🔽 ligeramente más angosta */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;           /* 🔽 menos espacio interno */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+/* Efecto hover */
+.vehiculo-card:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen dentro de cada tarjeta */
+.vehiculo-card img {
+  width: 100%;
+  height: 140px;          /* 🔽 menos altura para compactar */
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 6px;     /* 🔽 menos separación con el texto */
+}
+
+/* Contenedor externo que limita el ancho */
+#resultado {
+  max-width: 800px;       /* 🔽 ajusta el ancho total del área de tarjetas */
+  margin: 0 auto;         /* 🔽 centra horizontalmente */
+  padding: 10px 0;        /* 🔽 espacio vertical */
+}
+
+
+
+/* ====== CONTENEDOR LATERAL (form + cards) ====== */
+.contenedor_lateral {
+  display: flex;              /* activa flexbox */
+  gap: 20px;                  /* espacio entre formulario y cards */
+  align-items: flex-start;    /* alinea arriba */
+  margin-top: 20px;
+}
+
+/* Formulario ocupa menos ancho */
+.contenedor_lateral .container {
+  flex: 1;                    /* ocupa 1 parte */
+  max-width: 400px;           /* ancho fijo o limitado */
+}
+
+/* Cards ocupan más espacio */
+.contenedor_lateral #resultado {
+  flex: 2;                    /* ocupa 2 partes */
+}
+
+/* ====== CONTENEDOR DE CARDS ====== */
+.contenedor-vehiculos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* siempre 3 columnas */
+  gap: 10px;              /* espacio entre tarjetas */
+  padding: 5px;           /* menos espacio interno */
+  background: #f4f4f4;
+  border-radius: 8px;
+  justify-items: center;  /* centra cada tarjeta dentro de su celda */
+}
+
+/* ====== CADA CARD ====== */
+.vehiculo-card {
+  width: 230px;           /* tamaño fijo */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;           /* espacio interno */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.vehiculo-card:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen dentro de cada tarjeta */
+.vehiculo-card img {
+  width: 100%;
+  height: 140px;          /* altura fija */
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+  /* En tablets: 2 columnas de cards */
+  .contenedor-vehiculos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Form y cards se apilan */
+  .contenedor_lateral {
+    flex-direction: column;
+  }
+
+  /* Cards ocupan todo el ancho */
+  .contenedor-vehiculos {
+    grid-template-columns: 1fr;
+  }
+
+  .vehiculo-card {
+    width: 100%; /* que ocupen todo el ancho disponible */
+  }
+}
