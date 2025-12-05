@@ -2,8 +2,66 @@
 const form = document.getElementById('formVehiculo');
 const resultado = document.getElementById('resultado');
 
-// Recuperar vehículos guardados
-let vehiculos = JSON.parse(localStorage.getItem('vehiculos')) || [];
+// vehiculos precargados
+const vehiculosBase = [
+  {
+    marca: "Toyota", modelo: "Supra", anio: "1998",
+    precio: "85000", descripcion: "Deportivo japonés turbo icónico.",
+    imagen: "../img/car1.jpg"
+  },
+  {
+    marca: "Nissan", modelo: "GT-R", anio: "2020",
+    precio: "120000", descripcion: "Superdeportivo AWD de alto rendimiento.",
+    imagen: "../img/car2.jpg"
+  },
+  {
+    marca: "Mazda", modelo: "RX-7", anio: "1995",
+    precio: "60000", descripcion: "Motor rotativo Wankel, ultra ligero.",
+    imagen: "../img/car3.jpg"
+  },
+  {
+    marca: "Ford", modelo: "Mustang", anio: "2022",
+    precio: "55000", descripcion: "Clásico americano con motor V8.",
+    imagen: "../img/car4.webp"
+  },
+  {
+    marca: "Chevrolet", modelo: "Camaro", anio: "2022",
+    precio: "52000", descripcion: "Deportivo moderno americano.",
+    imagen: "../img/car5.webp"
+  },
+  {
+    marca: "Porsche", modelo: "911", anio: "2021",
+    precio: "150000", descripcion: "Deportivo alemán por excelencia.",
+    imagen: "../img/car6.webp"
+  },
+  {
+    marca: "BMW", modelo: "M4", anio: "2020",
+    precio: "98000", descripcion: "Cupé de alto rendimiento.",
+    imagen: "../img/car7.jpg"
+  },
+  {
+    marca: "Audi", modelo: "R8", anio: "2019",
+    precio: "180000", descripcion: "Supercar con motor V10.",
+    imagen: "../img/car8.webp"
+  },
+  {
+    marca: "Lamborghini", modelo: "Huracán", anio: "2018",
+    precio: "250000", descripcion: "Máquina extrema de velocidad.",
+    imagen: "../img/car9.webp"
+  },
+  {
+    marca: "Ferrari", modelo: "488", anio: "2019",
+    precio: "280000", descripcion: "Superdeportivo italiano de lujo.",
+    imagen: "../img/car10.jpg"
+  }
+];
+
+// Vehículos agregados por el administrador
+const vehiculosGuardados = JSON.parse(localStorage.getItem('vehiculos')) || [];
+
+// Lista final = base + agregados
+let vehiculos = [...vehiculosBase, ...vehiculosGuardados];
+
 
 // Guardar en localStorage
 function guardarVehiculos() {
