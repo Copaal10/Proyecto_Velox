@@ -70,9 +70,9 @@ function guardarVehiculos() {
 
 // Renderizar cards
 function renderVehiculos() {
-  resultado.innerHTML = ""; // limpiar antes de pintar
+resultado.innerHTML = ""; // limpiar antes de pintar
 
-  vehiculos.forEach((v, index) => {
+vehiculos.forEach((v, index) => {
     const card = document.createElement("div");
     card.classList.add("vehiculo-card");
 
