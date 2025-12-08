@@ -296,3 +296,16 @@ header h1 {
         width: 100%;
     }
 }
+
+/* Boton de agregar al carrito*/
+#btn-agregar-carrito {
+    background-color: #65ABEA;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+#btn-agregar-carrito:hover {
+    background-color: black;
+}

@@ -7,6 +7,18 @@ function getLS(key) {
 function setLS(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
+const vehiculosBase = [
+  { marca: "Toyota", modelo: "Supra", anio: "1998", precio: "85000", descripcion: "Deportivo japonés turbo icónico.", imagen: "../img/car1.jpg" },
+  { marca: "Nissan", modelo: "GT-R", anio: "2020", precio: "120000", descripcion: "Superdeportivo AWD de alto rendimiento.", imagen: "../img/car2.jpg" },
+  { marca: "Mazda", modelo: "RX-7", anio: "1995", precio: "60000", descripcion: "Motor rotativo Wankel, ultra ligero.", imagen: "../img/car3.jpg" },
+  { marca: "Ford", modelo: "Mustang", anio: "2022", precio: "55000", descripcion: "Clásico americano con motor V8.", imagen: "../img/car4.webp" },
+  { marca: "Chevrolet", modelo: "Camaro", anio: "2022", precio: "52000", descripcion: "Deportivo moderno americano.", imagen: "../img/car5.webp" },
+  { marca: "Porsche", modelo: "911", anio: "2021", precio: "150000", descripcion: "Deportivo alemán por excelencia.", imagen: "../img/car6.webp" },
+  { marca: "BMW", modelo: "M4", anio: "2020", precio: "98000", descripcion: "Cupé de alto rendimiento.", imagen: "../img/car7.jpg" },
+  { marca: "Audi", modelo: "R8", anio: "2019", precio: "180000", descripcion: "Supercar con motor V10.", imagen: "../img/car8.webp" },
+  { marca: "Lamborghini", modelo: "Huracán", anio: "2018", precio: "250000", descripcion: "Máquina extrema de velocidad.", imagen: "../img/car9.webp" },
+  { marca: "Ferrari", modelo: "488", anio: "2019", precio: "280000", descripcion: "Superdeportivo italiano de lujo.", imagen: "../img/car10.jpg" }
+];
 
 // -----------------------------
 // Renderizar catálogo con botón
@@ -15,7 +27,7 @@ function mostrarCatalogo() {
   const cont = document.getElementById("resultado");
   cont.innerHTML = "";
 
-  const inventario = getLS("vehiculos"); // lee lo que guarda el admin
+  const inventario = [...vehiculosBase, ...getLS("vehiculos")];
 
   inventario.forEach((v) => {
     const card = document.createElement("div");
@@ -28,7 +40,7 @@ function mostrarCatalogo() {
         <h5 class="card-title">${v.marca} ${v.modelo}</h5>
         <p class="card-text">Año: ${v.anio} · Precio: $${v.precio}</p>
         <p class="card-text">${v.descripcion || ""}</p>
-        <button class="btn btn-success btn-sm">Agregar al carrito</button>
+        <button id="btn-agregar-carrito" class="btn btn-success btn-sm">Agregar al carrito</button>
       </div>
     `;
 
