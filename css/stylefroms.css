@@ -1,0 +1,361 @@
+/* Tipografía Orbitron aplicada */
+/* */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #F8F8F8;
+  /* Sea Salt */
+  color: #212121;
+  /* Eerie Black */
+}
+
+/* Tamaños de títulos */
+h1 {
+  font-size: 96px;
+}
+
+h2 {
+  font-size: 64px;
+}
+
+h3 {
+  font-size: 48px;
+}
+
+h4 {
+  font-size: 36px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+/* Header */
+header {
+  background-color: #999999;
+  /* Battleship Gray */
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  color: #212121;
+  /* Eerie Black */
+}
+
+/* Navbar personalizada */
+#nav {
+  background-color: #65ABEA;
+  /* Rudy Blue */
+}
+
+.nav nav-tabs,
+.nav-link {
+  color: #212121 !important;
+  /* Eerie Black */
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #C3E0FA !important;
+  /* Columbia Blue */
+}
+
+
+/* Footer */
+.footer {
+  background-color: #212121;
+  /* Eerie Black */
+  color: #F8F8F8;
+  /* Sea Salt */
+  padding: 2rem 0;
+}
+
+.footer h3 {
+  font-size: 48px;
+  /* H3 Orbitron */
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 1rem;
+  color: #65ABEA;
+  /* Rudy Blue */
+}
+
+.footer p {
+  font-size: 15px;
+  /* H5 Orbitron */
+  color: #C3E0FA;
+  /* Columbia Blue */
+  margin-bottom: 1rem;
+}
+
+/* Links */
+.footer-links a {
+  color: #F8F8F8;
+  /* Sea Salt */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+  color: #65ABEA;
+  /* Rudy Blue */
+}
+
+/* Redes sociales */
+.social-icons {
+  margin: 1rem 0;
+}
+
+.social-link {
+  color: #F8F8F8;
+  /* Sea Salt */
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #65ABEA;
+  /* Rudy Blue */
+}
+
+
+#about {
+  background-color: #F8F8F8;
+  /* Sea Salt */
+  color: #212121;
+  /* Eerie Black */
+  padding: 3rem 0;
+}
+
+#about h2 {
+  font-size: 64px;
+  /* H2 Orbitron */
+  font-family: 'Orbitron', sans-serif;
+  color: #65ABEA;
+  /* Rudy Blue */
+}
+
+#about p.lead {
+  font-size: 18px;
+  color: #999999;
+  /* Battleship Gray */
+  margin-bottom: 1rem;
+}
+
+#about p {
+  font-size: 15px;
+  /* H5 Orbitron */
+  font-family: 'Orbitron', sans-serif;
+  color: #212121;
+  /* Eerie Black */
+}
+
+#about img {
+  border: 4px solid #C3E0FA;
+  /* Columbia Blue */
+}
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Validaciones formulario */
+.is-valid {
+  border-color: #198754 !important;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.error-mensaje {
+  font-size: 0.875rem;
+}
+
+/* estilo del formulario */
+/* Centrar el formulario de vehículos */
+#formVehiculo {
+  width: 900px;
+  /* ancho máximo para que no se extienda demasiado */
+  margin: 0 auto;
+  /* centra horizontalmente */
+  text-align: left;
+  /* mantiene alineación interna de labels e inputs */
+}
+
+/* Aplica solo al formulario de vehículos */
+#formVehiculo input.form-control,
+#formVehiculo textarea.form-control {
+  border: 2px solid #000;
+  /* negro */
+  /* Si prefieres azul, cambia por #0d6efd (azul Bootstrap) */
+  /* border: 2px solid #0d6efd; */
+  box-shadow: none;
+}
+
+/* Aplica solo al navbar */
+.nav .formulario {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  /* centra el texto dentro del enlace */
+}
+
+
+/* Contenedor principal de las tarjetas */
+.contenedor-vehiculos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* siempre 3 columnas */
+  gap: 10px;
+  /* 🔽 reduce el espacio entre tarjetas */
+  padding: 5px;
+  /* 🔽 menos espacio interno del contenedor */
+  background: #f4f4f4;
+  border-radius: 8px;
+  justify-items: center;
+  /* centra cada tarjeta dentro de su celda */
+}
+
+/* Cada tarjeta */
+.vehiculo-card {
+  width: 230px;
+  /* 🔽 ligeramente más angosta */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  /* 🔽 menos espacio interno */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+/* Efecto hover */
+.vehiculo-card:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen dentro de cada tarjeta */
+.vehiculo-card img {
+  width: 100%;
+  height: 140px;
+  /* 🔽 menos altura para compactar */
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 6px;
+  /* 🔽 menos separación con el texto */
+}
+
+/* Contenedor externo que limita el ancho */
+#resultado {
+  max-width: 800px;
+  /* 🔽 ajusta el ancho total del área de tarjetas */
+  margin: 0 auto;
+  /* 🔽 centra horizontalmente */
+  padding: 10px 0;
+  /* 🔽 espacio vertical */
+}
+
+
+
+/* ====== CONTENEDOR LATERAL (form + cards) ====== */
+.contenedor_lateral {
+  display: flex;
+  /* activa flexbox */
+  gap: 20px;
+  /* espacio entre formulario y cards */
+  align-items: flex-start;
+  /* alinea arriba */
+  margin-top: 20px;
+}
+
+/* Formulario ocupa menos ancho */
+.contenedor_lateral .container {
+  flex: 1;
+  /* ocupa 1 parte */
+  max-width: 400px;
+  /* ancho fijo o limitado */
+}
+
+/* Cards ocupan más espacio */
+.contenedor_lateral #resultado {
+  flex: 2;
+  /* ocupa 2 partes */
+}
+
+/* ====== CONTENEDOR DE CARDS ====== */
+.contenedor-vehiculos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* siempre 3 columnas */
+  gap: 10px;
+  /* espacio entre tarjetas */
+  padding: 5px;
+  /* menos espacio interno */
+  background: #f4f4f4;
+  border-radius: 8px;
+  justify-items: center;
+  /* centra cada tarjeta dentro de su celda */
+}
+
+/* ====== CADA CARD ====== */
+.vehiculo-card {
+  width: 230px;
+  /* tamaño fijo */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  /* espacio interno */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.vehiculo-card:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen dentro de cada tarjeta */
+.vehiculo-card img {
+  width: 100%;
+  height: 140px;
+  /* altura fija */
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+
+  /* En tablets: 2 columnas de cards */
+  .contenedor-vehiculos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Form y cards se apilan */
+  .contenedor_lateral {
+    flex-direction: column;
+  }
+
+  /* Cards ocupan todo el ancho */
+  .contenedor-vehiculos {
+    grid-template-columns: 1fr;
+  }
+
+  .vehiculo-card {
+    width: 100%;
+    /* que ocupen todo el ancho disponible */
+  }
+}
