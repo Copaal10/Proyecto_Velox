@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Archivo CSS personalizado -->
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/stylefroms.css">
 </head>
 
 <body>
@@ -71,12 +71,65 @@
 
 
   <br>
+    <!-- Preguntas frecuentes -->
+  <div class="mt-5 my-5 container">
+    <h2 class="text-center mb-3">Preguntas Frecuentes</h2>
+
+    <div class="accordion" id="faqAccordion">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+            data-bs-target="#respuesta1">
+            ¿En cuánto tiempo responden los mensajes?
+          </button>
+        </h2>
+        <div id="respuesta1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Normalmente respondemos en menos de 24 horas.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#respuesta2">
+            ¿Qué tipo de servicios ofrecen?
+          </button>
+        </h2>
+        <div id="respuesta2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Ofrecemos vehículos de lujo y alta gama.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#respuesta3">
+            ¿Cómo puedo hacer seguimiento a mi solicitud?
+          </button>
+        </h2>
+        <div id="respuesta3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Te enviaremos un correo con el estado y actualizaciones de tu solicitud.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Formulario de contacto -->
   <form action="https://formspree.io/f/mvgnlprg" method="POST" class="mx-auto" style="max-width: 600px;" id="form">
 
     <!-- Asunto (opcional) -->
     <input type="hidden" name="_subject" value="Nuevo mensaje desde la web">
 
     <!-- Nombre -->
+     <h2 class="text-center mb-3">Contacta a nuestro equipo</h2>
+     <div class="card p-3 shadow-lg mb-3">
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre Completo</label>
       <div class="input-group">
@@ -123,8 +176,10 @@
       </button>
     </div>
     <div id="respuesta"></div>
+    </div>
 
   </form>
+  
 
 
 
