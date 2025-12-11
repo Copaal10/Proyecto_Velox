@@ -35,18 +35,18 @@
             <li class="nav-item"><a class="nav-link contactenos" href="catalog.html">Catalogo</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Acerca de Nosotros</a></li>
             <li class="nav-item"><a class="nav-link" href="forms.html">Contáctenos</a></li>
-            <li class="nav-item">
+                <li class="nav-item">
                 <a class="nav-link formulario" href="#" data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas">
                     <button type="button" class="btn btn-primary position-relative">
-                        <i class="bi bi-cart-plus"></i>
-                        <span id="contador-carrito"
+                    <i class="bi bi-cart-plus"></i>
+                    <span id="contador-carrito"
                             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                             style="display: none;">
-                            0
-                        </span>
+                        0
+                    </span>
                     </button>
                 </a>
-            </li>
+                </li>
             <li class="nav-item"><a class="nav-link" href="admin.html"><i class="bi bi-person-circle"></i></a></li>
         </ul>
     </div>
@@ -84,18 +84,18 @@
         </div>
 
 
-        <!-- Offcanvas Carrito  despelgable del carrito-->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoOffcanvas" aria-labelledby="carritoLabel">
-            <div class="offcanvas-header">
-                <h5 id="carritoLabel">Tu carrito</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div id="lista-carrito" class="mb-3"></div>
-                <div id="total-carrito" class="fw-bold"></div>
-                <button id="vaciar-carrito" class="btn btn-outline-danger mt-3">Vaciar carrito</button>
-            </div>
-        </div>
+<!-- Offcanvas Carrito  despelgable del carrito-->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="carritoOffcanvas" aria-labelledby="carritoLabel">
+  <div class="offcanvas-header">
+    <h5 id="carritoLabel">Tu carrito</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="lista-carrito" class="mb-3"></div>
+    <div id="total-carrito" class="fw-bold"></div>
+    <button id="vaciar-carrito" class="btn btn-outline-danger mt-3">Vaciar carrito</button>
+  </div>
+</div>
 
 
 
@@ -112,8 +112,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- JavaScript externo -->
-    <!---script src="../script/agregarVehiculo.js"></script-->
-    <!--script src="../script/catalog.Carrito.js"></script-->
+    <script src="../script/listarVehiculo.js"></script>
+    <script src="../script/agregarVehiculo.js"></script>
+    <script src="../script/catalogCarrito.js"></script>
     <script src="../script/carritoAvanzado.js"></script>
 
 
