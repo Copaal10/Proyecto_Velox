@@ -384,7 +384,6 @@ header h1 {
 .contenedor_lateral .container {
   flex: 1;
   /* ocupa 1 parte */
-  max-width: 400px;
   /* ancho fijo o limitado */
 }
 
