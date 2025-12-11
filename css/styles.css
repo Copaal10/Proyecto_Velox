@@ -463,3 +463,159 @@ header h1 {
     /* que ocupen todo el ancho disponible */
   }
 }
+
+/* Botón activo--login */
+.btn-group .btn.active {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* ============================
+   ESTILOS EXCLUSIVOS LOGIN PAGE
+   ============================ */
+.login-page .btn-group .btn {
+  font-family: 'Orbitron', sans-serif;
+  border: 2px solid #65ABEA;
+  color: #212121;
+  background-color: #F8F8F8;
+  transition: all 0.3s ease;
+}
+
+/* Botón activo */
+.login-page .btn-group .btn.active {
+  background-color: #65ABEA;
+  color: #FFF;
+}
+
+/* Hover en botones */
+.login-page .btn-group .btn:hover {
+  background-color: #C3E0FA;
+  border-color: #65ABEA;
+  color: #212121;
+}
+
+/* Botones principales: Login / Registrar */
+.login-page .btn-primary,
+.login-page .btn-success {
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.login-page .btn-primary {
+  background-color: #65ABEA;
+  border-color: #65ABEA;
+  color: #212121;
+}
+
+.login-page .btn-primary:hover {
+  background-color: #C3E0FA;
+  border-color: #65ABEA;
+  color: #212121;
+}
+
+.login-page .btn-success {
+  background-color: #198754;
+  border-color: #198754;
+  color: #FFF;
+}
+
+.login-page .btn-success:hover {
+  background-color: #157347;
+  border-color: #157347;
+}
+
+/* Botones redondos */
+/* ===============================
+   ESTILOS SOLO DEL FORMULARIO LOGIN/REGISTRO
+   =============================== */
+.login-form-page .btn {
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 8px;
+  padding: 10px;
+  transition: all .25s ease-in-out;
+}
+
+/* ----- Botón primario (Login / Ingresar / Admin) ----- */
+.login-form-page .btn-primary {
+  background-color: #65ABEA !important;
+  border: 2px solid #65ABEA !important;
+  color: #212121 !important;
+}
+
+.login-form-page .btn-primary:hover {
+  background-color: #C3E0FA !important;
+  border-color: #65ABEA !important;
+  color: #212121 !important;
+}
+
+/* ----- Botón verde (Registrar) ----- */
+.login-form-page .btn-success {
+  background-color: #198754 !important;
+  border-color: #198754 !important;
+  color: white !important;
+}
+
+.login-form-page .btn-success:hover {
+  background-color: #157347 !important;
+  border-color: #157347 !important;
+}
+
+/* ----- Botones circulares ----- */
+.login-form-page .btn-circle {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- Botones del selector Login / Registro ----- */
+.login-form-page .btn-group .btn {
+  border: 2px solid #65ABEA !important;
+  background-color: #F8F8F8 !important;
+  color: #212121 !important;
+}
+
+.login-form-page .btn-group .btn.active {
+  background-color: #65ABEA !important;
+  color: white !important;
+}
+
+.login-form-page .btn-group .btn:hover {
+  background-color: #C3E0FA !important;
+  color: #212121 !important;
+}
+
+/* ===== Inputs: NO SALTAR, NO MOVERSE ===== */
+.login-form-page input.form-control {
+  border: 2px solid #212121 !important;
+  box-shadow: none !important;
+}
+
+.login-form-page input.form-control:focus {
+  border-color: #65ABEA !important;
+}
+
+#registrarse {
+  background-color: #65ABEA !important;
+  border-color: #65ABEA !important;
+  color: #000 !important;
+  transition: 0.2s ease;
+}
+
+#registrarse:hover {
+  background-color: #000 !important;
+  border-color: #000 !important;
+  color: #fff !important;
+}
+
+.login-form-page .card,
+.login-form-page .card * {
+  transition: none !important;
+  -webkit-transition: none !important;
+  animation: none !important;
+  -webkit-animation: none !important;
+}
