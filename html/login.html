@@ -70,31 +70,60 @@
       </div>
     </div>
 
-    <!-- contenedor registro -->
+
+<!-- Registro -->
+
 <div class="card shadow flex-fill">
   <div class="card-body">
     <h3 class="text-center mb-3">Registro</h3>
     <form id="formRegistro">
+      <!-- Nombre -->
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre completo</label>
         <input type="text" class="form-control" id="nombre" required>
       </div>
+
+      <!-- Correo -->
       <div class="mb-3">
         <label for="correoRegistro" class="form-label">Correo electrónico</label>
         <input type="email" class="form-control" id="correoRegistro" required>
+        <div id="emailBox" class="form-text text-danger" style="display:none;">
+          Correo inválido
+        </div>
       </div>
+
+      <!-- Teléfono -->
       <div class="mb-3">
         <label for="telefono" class="form-label">Número telefónico</label>
         <input type="tel" class="form-control" id="telefono" required>
       </div>
-      <div class="mb-3">
+
+      <!-- Contraseña -->
+      <div class="mb-3 position-relative">
         <label for="passwordRegistro" class="form-label">Contraseña</label>
         <input type="password" class="form-control" id="passwordRegistro" required>
+        <div id="passwordBox" class="form-text" style="display:none;">
+          <small>La contraseña debe cumplir:</small>
+          <ul class="mb-0" style="list-style:none; padding-left:0;">
+            <li id="rule-length" class="text-danger">• Mínimo 8 caracteres (ej: <code>MiClave123!</code>)</li>
+            <li id="rule-upper" class="text-danger">• Al menos 1 mayúscula (ej: <code>A</code>, <code>B</code>, <code>Z</code>)</li>
+            <li id="rule-lower" class="text-danger">• Al menos 1 minúscula (ej: <code>a</code>, <code>b</code>, <code>z</code>)</li>
+            <li id="rule-number" class="text-danger">• Al menos 1 número (ej: <code>0</code>, <code>5</code>, <code>9</code>)</li>
+            <li id="rule-special" class="text-danger">• Al menos 1 símbolo (ej: <code>!</code>, <code>@</code>, <code>#</code>, <code>$</code>)</li>
+          </ul>
+        </div>
       </div>
-      <div class="mb-3">
+
+      <!-- Confirmar contraseña -->
+      <div class="mb-3 position-relative">
         <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
         <input type="password" class="form-control" id="confirmPassword" required>
+        <div id="confirmBox" class="form-text text-danger" style="display:none;">
+          La confirmación debe coincidir con la contraseña
+        </div>
       </div>
+
+      <!-- Botón -->
       <button type="submit" class="btn btn-success w-100">Registrarse</button>
     </form>
   </div>
@@ -122,5 +151,6 @@
 
 <!-- Enlazar script -->
 <script src="../script/script.js"></script> <!-- asegúrate de la ruta -->
+<script src="../script/registro.js"></script>
 </body>
 </html>
