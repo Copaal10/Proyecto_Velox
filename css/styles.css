@@ -463,3 +463,168 @@ header h1 {
     /* que ocupen todo el ancho disponible */
   }
 }
+
+
+/* ====== CALCULADORA FINANCIERA ====== */
+.velox-fin-card {
+  border: 2px solid #65ABEA;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.velox-fin-input-side {
+  padding: 2rem;
+  background: #F8F8F8;
+}
+
+.velox-fin-result-side {
+  padding: 2rem;
+  background: #212121;
+  color: #F8F8F8;
+  border-left: 4px solid #65ABEA;
+}
+
+.velox-fin-res-label {
+  font-weight: bold;
+  color: #65ABEA;
+}
+
+
+/* ================== BOTONES CALCULADORA (ESTILO UNIFICADO) ================== */
+
+/* Aplicamos el mismo estilo a ambas clases */
+.btn-calc-velox, 
+.btn-reset-velox {
+    /* Apariencia Base */
+    background-color: #212121;      /* Fondo Negro */
+    color: white;                    /* Texto Blanco */
+    font-weight: bold;               /* Negrita */
+    text-transform: uppercase;       /* Mayúsculas */
+    border: none;                    /* Sin borde */
+    padding: 12px 0;                 /* Altura del botón */
+    border-radius: 50px;              /* Bordes redondos */
+    transition: all 0.3s ease;       /* Animación suave */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra suave */
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse (Hover) - Igual para ambos */
+.btn-calc-velox:hover, 
+.btn-reset-velox:hover {
+    background-color: white;         /* Fondo cambia a blanco */
+    color: #65ABEA;                   /* Texto cambia a Azul Velox */
+    transform: translateY(-2px);      /* Se levanta un poco */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Efecto al hacer click (Active) - Opcional para dar sensación táctil */
+.btn-calc-velox:active, 
+.btn-reset-velox:active {
+    transform: translateY(0);
+}
+
+
+
+
+/* Scroll suave y animaciones */
+html { scroll-behavior: smooth; }
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* ====== AGREGADOS PARA LIMPIEZA (Reemplazan estilos en línea) ====== */
+
+/* Colores Utilitarios */
+.text-velox-blue {
+  color: #65ABEA !important;
+}
+
+.text-velox-dark {
+  color: #212121 !important;
+}
+
+.bg-velox-dark {
+  background-color: #212121 !important;
+}
+
+/* Tipografía específica */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif !important;
+}
+
+/* Hero Section */
+.hero-img {
+  max-height: 700px;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Sombras de texto */
+.text-shadow-strong {
+  text-shadow: 2px 2px 4px #000;
+}
+
+.text-shadow-soft {
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Decoradores */
+.velox-divider {
+  width: 50px;
+  height: 4px;
+  background-color: #65ABEA;
+  margin: 0 auto;
+}
+
+/* Estilos específicos para resultados de calculadora (Faltaban en original) */
+.velox-fin-res-cuota-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.velox-fin-res-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.velox-fin-res-divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.velox-fin-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #212121;
+  margin-bottom: 0;
+}
+
+.velox-fin-divider {
+  width: 60px;
+  height: 4px;
+  background-color: #65ABEA;
+  margin: 10px auto 0;
+}
+
+/* Efecto hover para tarjetas de características */
+.hover-shadow {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  cursor: default;
+}

@@ -1,239 +1,395 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- -->
+
 <head>
   <meta charset="UTF-8">
+  <!-- Viewport: Hace que la página se adapte al ancho del celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyecto Velox</title>
-  
-  <!-- Bootstrap CSS -->
+  <title>Proyecto Velox - Acerca de</title>
+
+  <!-- ================== LIBRERÍAS CSS (HEAD) ================== -->
+  <!-- Bootstrap CSS: Framework para estilos rápidos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   
-  <!-- Google Fonts: Orbitron -->
+  <!-- Google Fonts: Fuente estilo futurista para títulos -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   
-  <!-- Archivo CSS personalizado -->
+  <!-- Tu archivo CSS personalizado -->
   <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- Bootstrap Icons: Librería de iconos para carrito, redes, etc. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Proyecto Velox - Acerca de Nosotros</h1>
-    <h4>Innovación y velocidad en cada detalle</h4>
-  </header>
 
-  <!-- Navbar -->
-  <div class="d-flex align-items-center border-bottom none"
-     style="background-color: #65ABEA;">
 
-  <a href="../index.html" class="text-light fw-bold text-decoration-none">
-  Inicio
-  </a>
+  <!-- ESTILOS EXCLUSIVOS PARA CONTACT.HTML (Fondo de Imagen) -->
+  <style>
+    body {
+      /* IMPORTANTE: Cambia 'tu_imagen.jpg' por el nombre de tu archivo */
+      /* El ../img/ sirve para buscar en la carpeta de imágenes */
+      background-image: url('../img/fondo2.jpg');
+      
+      /* Hace que la imagen no se repita y ocupe toda la pantalla */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed; /* Esto da el efecto Parallax (imagen quieta) */
+      background-size: cover;
+    }
 
-  <ul class="nav nav-tabs ms-auto">
+    /* Hacemos que las tarjetas de los chicos sean blancas pero un poco transparentes */
+    /* Esto ayuda a leer el texto sobre la imagen de fondo */
+    .card {
+      background-color: rgba(255, 255, 255, 0.95) !important; 
+    }
+
+    /* Opcional: Si la imagen de fondo es muy oscura, esto ayuda al texto principal */
+    #about {
+      background-color: rgba(255, 255, 255, 0.85) !important;
+      border-radius: 10px;
+      padding: 20px !important;
+    }
+  </style>
+
+
+
+
+
+
+
+<!-- NAVBAR PARA CONTACT.HTML (Estilo Index sin Carrito) -->
+<nav class="navbar navbar-expand-lg sticky-top border-bottom" id="nav">
+  <div class="container-fluid">
     
-    <li class="nav-item">
-      <a class="nav-link contactenos" href="catalog.html">Catalogo</a>
-    </li>
+    <!-- ENLACE AL INICIO (Icono + Texto) -->
+    <!-- Nota: Usamos ../index.html para salir de la carpeta /html/ -->
+    <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="../index.html">
+      HOME <i class="bi bi-house-door-fill"></i> | VELOX
+    </a>
 
-    <li class="nav-item">
-      <a class="nav-link contactenos" href="contact.html">Acerca de Nosotros</a>
-    </li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <li class="nav-item">
-      <a class="nav-link formulario" href="forms.html">Contáctenos</a>
-    </li>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-dark fw-bold" href="catalog.html">Catálogo</a></li>
+        
+        <!-- AGREGADA CLASE 'ACTIVE' PARA RESALTAR EL MENÚ ACTUAL -->
+        <li class="nav-item"><a class="nav-link text-dark fw-bold active" href="contact.html">Acerca de Nosotros</a></li>
+        
+        <li class="nav-item"><a class="nav-link text-dark fw-bold" href="forms.html">Contacto</a></li>
+        
+        <!-- LOGIN -->
+        <li class="nav-item"><a class="nav-link text-dark fw-bold" href="login.html">
+          <i class="bi bi-person-circle"></i> Login
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-    <li class="nav-item">
-      <a class="nav-link formulario" href="#" data-bs-toggle="modal" data-bs-target="#carritoModal">
-        <button type="button" class="btn btn-primary position-relative">
-          <i class="bi bi-cart-plus"></i>
-          <span id="contador-carrito" 
-                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                style="display: none;">
-            0
-          </span>
-        </button>
-      </a>
-    </li>
+  <!-- ================== MAIN (CONTENIDO PRINCIPAL) ================== -->
+  <main>
 
-    <!-- Login -->
-    <li class="nav-item">
-      <a class="nav-link formulario" href="admin.html"><i class="bi bi-person-circle"></i></a>
-    </li>
-  </ul>
-
-</div>
-
-  
-
-  <br>
-<section id="about" class="py-5">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- Imagen a la izquierda -->
-      <div class="col-md-6">
-        <img src="../img/img_contact.png" alt="Automóvil Velox" class="img-fluid rounded shadow">
+    <!-- ================== SECCIÓN: HÉROE (Sobre Nosotros) ================== -->
+    <!-- section: Semántica para dividir el contenido por temas -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <!-- row: Fila de Bootstrap para dividir en columnas -->
+        <div class="row align-items-center">
+          
+          <!-- Columna Imagen (6/12 en PC, 12/12 en móvil) -->
+          <div class="col-md-6">
+            <img src="../img/img_contact.png" alt="Automóvil Velox" class="img-fluid rounded shadow">
+          </div>
+          
+          <!-- Columna Texto -->
+          <div class="col-md-6">
+            <h2 class="mb-4">En VELOX</h2>
+            <p class="lead">
+              Reinventamos la forma de comprar vehículos en Colombia, ofreciendo una plataforma digital moderna 
+              que conecta a los usuarios con información verificada y confiable.
+            </p>
+            <p>
+              Te acompañamos en cada paso del proceso para que encuentres tu próximo automóvil 
+              de manera clara, segura y digital.
+            </p>
+          </div>
+        </div>
       </div>
-      
-      <!-- Texto a la derecha -->
-      <div class="col-md-6">
-        <h2 class="mb-4">En VELOX</h2>
-        <p class="lead">
-          Reinventamos la forma de comprar vehículos en Colombia, ofreciendo una plataforma digital moderna 
-          que conecta a los usuarios con información verificada y confiable.
-        </p>
-        <p>
-          Te acompañamos en cada paso del proceso para que encuentres tu próximo automóvil 
-          de manera clara, segura y digital.
-        </p>
+    </section>
+
+  <!-- ================== SECCIÓN: MISIÓN Y VISIÓN (MEJORADA) ================== -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row text-center">
+        
+        <!-- TARJETA MISIÓN (Fondo Azul Velox) -->
+        <div class="col-md-6 mb-4">
+          <!-- style="background-color: #65ABEA;" pone el fondo azul -->
+          <!-- text-white pone todo el texto en blanco para contraste -->
+          <div class="p-4 border rounded-3 shadow h-100" style="background-color: #65ABEA; color: white;">
+            <!-- Icono blanco -->
+            <i class="bi bi-rocket-takeoff display-4 text-white"></i>
+            <h3 class="mt-3 text-white">Nuestra Misión</h3>
+            <!-- Color de texto suave gris-claro para que sea cómodo de leer sobre azul -->
+            <p style="color: #e6e6e6;">
+              Liderar la transformación digital del mercado automotriz en Colombia, garantizando seguridad, 
+              transparencia y calidad en cada transacción.
+            </p>
+          </div>
+        </div>
+
+        <!-- TARJETA VISIÓN (Fondo Azul Velox) -->
+        <div class="col-md-6 mb-4">
+          <div class="p-4 border rounded-3 shadow h-100" style="background-color: #65ABEA; color: white;">
+            <!-- Icono blanco -->
+            <i class="bi bi-eye-fill display-4 text-white"></i>
+            <h3 class="mt-3 text-white">Nuestra Visión</h3>
+            <p style="color: #e6e6e6;">
+              Convertirnos en la plataforma número 1 en Latinoamérica para la compra y venta de vehículos 
+              de gama alta exclusiva y personalizados para el año 2030.
+            </p>
+          </div>
+        </div>
+
       </div>
 
-
+      <!-- Estadísticas (Contadores) -->
+      <div class="row mt-4 text-center">
+        <div class="col-4">
+          <h2 class="fw-bold display-5" style="color: #65ABEA;">500+</h2>
+          <p>Vehículos</p>
+        </div>
+        <div class="col-4">
+          <h2 class="fw-bold display-5" style="color: #65ABEA;">5 Años</h2>
+          <p>Trayectoria</p>
+        </div>
+        <div class="col-4">
+          <h2 class="fw-bold display-5" style="color: #65ABEA;">100%</h2>
+          <p>Seguridad</p>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- ================== SECCIÓN: EQUIPO (GRID 3 x 3) ================== -->
+    <section class="container mt-5">
       
+      <h2 class="text-center mb-5" style="color:#65ABEA;">Nuestro Equipo de Desarrollo</h2>
 
-
-      <div class="cards-container mt-5" >
-        <!-- Tarjeta 1 -->
-        <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm">
+      <!-- ROW: Fila para las tarjetas -->
+      <div class="row g-4">
+        
+        <!-- TARJETA 1: Santiago Ramírez -->
+        <div class="col-12 col-md-6 col-lg">
+          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
             <img src="../img/Foto_Ramirez.png" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title fw-semibold fs-2">Santiago Ramírez <i class="bi bi-patch-check-fill text-primary"></i></h5>
-                <p class="card-text p-2">Desarrollador FullStack</p>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-semibold fs-2">Santiago Ramírez <i class="bi bi-patch-check-fill text-primary"></i></h5>
+              <p class="card-text p-2">Desarrollador FullStack</p>
+              <div class="mt-auto mb-2">
                 <a href="https://github.com/Boxwel" target="_blank" class="btn btn-dark">GitHub <i class="bi bi-plus"></i></a>
-                <a href="https://www.linkedin.com/in/santiago-ramirez-desarrollador-frontend/" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-plus"></i></a>
+                <a href="https://www.linkedin.com/in/santiago-ramirez-desarrollador-frontend/" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
+              </div>
             </div>
+          </div>
         </div>
-        
-        <!-- Tarjeta 2 -->
-        <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm">
+
+        <!-- TARJETA 2: Alberto Cortes -->
+        <div class="col-12 col-md-6 col-lg">
+          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
             <img src="../img/Foto_Alberto.png" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title fw-semibold fs-2">Alberto Cortes Palacios <i class="bi bi-patch-check-fill text-primary"></i></h5>
-                <p class="card-text p-2">Desarrollador FullStack</p>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-semibold fs-2">Alberto Cortes Palacios <i class="bi bi-patch-check-fill text-primary"></i></h5>
+              <p class="card-text p-2">Desarrollador FullStack</p>
+              <div class="mt-auto mb-2">
                 <a href="https://github.com/Copaal10" target="_blank" class="btn btn-dark">GitHub <i class="bi bi-plus"></i></a>
-                <a href="https://www.linkedin.com/in/alberto-cortes-palacios-a4959b397/" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-plus"></i></a>
+                <a href="https://www.linkedin.com/in/alberto-cortes-palacios-a4959b397/" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
+              </div>
             </div>
+          </div>
         </div>
-        
-        <!-- Tarjeta 3 -->
-        <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm">
-            <img src= "../img/Foto_Rios.png" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title fw-semibold fs-2">Santiago Rios Cajamarca <i class="bi bi-patch-check-fill text-primary"></i></h5>
-                <p class="card-text p-2">Desarrollador FullStack</p>
+
+        <!-- TARJETA 3: Santiago Rios -->
+        <div class="col-12 col-md-6 col-lg">
+          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
+            <img src="../img/Foto_Rios.png" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-semibold fs-2">Santiago Rios Cajamarca <i class="bi bi-patch-check-fill text-primary"></i></h5>
+              <p class="card-text p-2">Desarrollador FullStack</p>
+              <div class="mt-auto mb-2">
                 <a href="https://github.com/santiago-r21" target="_blank" class="btn btn-dark">GitHub <i class="bi bi-plus"></i></a>
-                <a href="https://www.linkedin.com/in/santiago-full-stack-dev/" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-plus"></i></a>
+                <a href="https://www.linkedin.com/in/santiago-full-stack-dev/" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
+              </div>
             </div>
+          </div>
         </div>
-        
-        <!-- Tarjeta 4 -->
-        <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm">
+
+        <!-- TARJETA 4: Alvaro Hernández -->
+        <div class="col-12 col-md-6 col-lg">
+          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
             <img src="../img/Foto_Alvaro.png" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title fw-semibold fs-2">Alvaro Daniel Hernández <i class="bi bi-patch-check-fill text-primary"></i></h5>
-                <p class="card-text p-2">Desarrollador FullStack</p>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-semibold fs-2">Alvaro Daniel Hernández <i class="bi bi-patch-check-fill text-primary"></i></h5>
+              <p class="card-text p-2">Desarrollador FullStack</p>
+              <div class="mt-auto mb-2">
                 <a href="https://github.com/hernandezalvarodaniel" target="_blank" class="btn btn-dark">GitHub <i class="bi bi-plus"></i></a>
-                <a href="https://www.linkedin.com/in/hernandezalvarodaniel" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-plus"></i></a>
+                <a href="https://www.linkedin.com/in/hernandezalvarodaniel" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
+              </div>
             </div>
+          </div>
         </div>
-        
-        <!-- Tarjeta 5 -->
-        <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm">
+
+        <!-- TARJETA 5: Nicolas Munevar -->
+        <div class="col-12 col-md-6 col-lg">
+          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
             <img src="../img/Foto_Nicolas.png" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title fw-semibold fs-2">Nicolas Munevar <i class="bi bi-patch-check-fill text-primary"></i></h5>
-                <p class="card-text p-2">Desarrollador FullStack</p>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-semibold fs-2">Nicolas Munevar <i class="bi bi-patch-check-fill text-primary"></i></h5>
+              <p class="card-text p-2">Desarrollador FullStack</p>
+              <div class="mt-auto mb-2">
                 <a href="https://github.com/munevarnicolas" target="_blank" class="btn btn-dark">GitHub <i class="bi bi-plus"></i></a>
-                <a href="https://www.linkedin.com/in/munevarnicolas/" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-plus"></i></a>
+                <a href="https://www.linkedin.com/in/munevarnicolas/" target="_blank" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
+              </div>
             </div>
+          </div>
         </div>
+
+        <!-- ================== TARJETA 6: ANDRÉS VELÁZQUEZ (CREATIVA Y LLENA) ================== -->
+        <div class="col-12 col-md-6 col-lg">
+          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
+            <img src="../img/Logo.png" class="card-img-top">
+            
+            <div class="card-body d-flex flex-column">
+              
+              <p class="card-text p-2">Scrum Master</p>
+
+              <!-- --- SECCIÓN CREATIVA: HABILIDADES (Progress Bars) --- -->
+              <!-- mt-3: Margen top, w-100: Ancho 100% -->
+              <div class="mb-3 w-100">
+                <div class="d-flex justify-content-between small mb-1">
+                  <span class="text-start">Agile / Scrum</span>
+                  <span class="text-end">95%</span>
+                </div>
+                <div class="progress" style="height: 6px;">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 95%"></div>
+                </div>
+              </div>
+              
+              <div class="mb-3 w-100">
+                <div class="d-flex justify-content-between small mb-1">
+                  <span class="text-start">Gestión de Proyectos</span>
+                  <span class="text-end">90%</span>
+                </div>
+                <div class="progress" style="height: 6px;">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                </div>
+              </div>
+
+              <!-- SECCIÓN: TECNOLOGÍAS (Badges) -->
+              <div class="mb-3 text-start w-100">
+                <p class="small fw-bold text-muted"><i class="bi bi-tools"></i> Herramientas:</p>
+                <!-- d-flex flex-wrap: Permite bajar de línea si no caben -->
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-dark">Jira</span>
+                  <span class="badge bg-info">Trello</span>
+                  <span class="badge bg-warning">Confluence</span>
+                  <span class="badge bg-secondary">Git</span>
+                </div>
+              </div>
+
+              <!-- --- SECCIÓN: BOTONES EN GRID (2x2) --- -->
+              <!-- d-grid gap-2: Crea una cuadrícula automática -->
+              <!-- mt-auto: Empuja los botones al fondo de la tarjeta -->
+              <div class="d-grid gap-2 mt-auto">
+                
+                <!-- Botón GitHub (Arriba Izquierda) -->
+                <a href="https://github.com/andres-veloz-dev" target="_blank" class="btn btn-dark btn-sm">
+                  <i class="bi bi-github"></i> Repositorio
+                </a>
+                
+                <!-- Botón Trello (Arriba Derecha) -->
+                <a href="https://trello.com/" target="_blank" class="btn btn-primary btn-sm">
+                  <i class="bi bi-trello"></i> Trello
+                </a>
+                
+                <!-- Botón LinkedIn (Abajo Izquierda) -->
+                <a href="https://www.linkedin.com/in/andres-veloz-scrum/" target="_blank" class="btn btn-dark btn-sm">
+                  <i class="bi bi-linkedin"></i> LinkedIn
+                </a>
+                
+                <!-- Botón Admin (Abajo Derecha) -->
+                <!-- btn-outline-danger: Solo borde rojo, fondo transparente (Estilo de botón llave) -->
+                <a href="admin.html" class="btn btn-outline-danger btn-sm">
+                  <i class="bi bi-shield-lock"></i> Admin Acceso
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- Cierra Row del Equipo -->
+    </section> <!-- Cierra Sección Equipo -->
+
+  </main> <!-- Cierra Main -->
+
+  <!-- ================== FOOTER (PIE DE PÁGINA) ================== -->
+  <footer class="footer">
+    <div class="container text-center">
+      <h3>Proyecto Velox</h3>
+      <p>&copy; 2025 Proyecto Velox. Todos los derechos reservados.</p>
+
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="social-link">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-link">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-link">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-link">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="mailto:contacto@velox.com" class="social-link">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+
+      <ul class="footer-links list-inline mt-3">
+        <li class="list-inline-item"><a href="../index.html">Inicio</a></li>
+        <li class="list-inline-item"><a href="contact.html">Acerca de Nosotros</a></li>
+        <li class="list-inline-item"><a href="forms.html">Contacto</a></li>
+      </ul>
+
     </div>
+  </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
+  <!-- ================== MODAL CARRITO ================== -->
+  <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="carritoModalLabel">Tu carrito</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="lista-carrito" class="mb-3"></div>
+          <div id="total-carrito" class="fw-bold"></div>
+          <button id="vaciar-carrito" class="btn btn-outline-danger mt-3">Vaciar carrito</button>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-
-
-
-
-
-  <!-- Contenido de pagona -->
-  <br>
-
-
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container text-center">
-    <h3>Proyecto Velox</h3>
-    <p>&copy; 2025 Proyecto Velox. Todos los derechos reservados.</p>
-
-    <!-- Redes sociales -->
-    <div class="social-icons">
-      <a href="https://facebook.com" target="_blank" class="social-link">
-        <i class="bi bi-facebook"></i>
-      </a>
-      <a href="https://twitter.com" target="_blank" class="social-link">
-        <i class="bi bi-twitter"></i>
-      </a>
-      <a href="https://instagram.com" target="_blank" class="social-link">
-        <i class="bi bi-instagram"></i>
-      </a>
-      <a href="https://linkedin.com" target="_blank" class="social-link">
-        <i class="bi bi-linkedin"></i>
-      </a>
-      <a href="mailto:contacto@velox.com" class="social-link">
-        <i class="bi bi-envelope-fill"></i>
-      </a>
-    </div>
-
-    <!-- Links adicionales -->
-    <ul class="footer-links list-inline mt-3">
-      <li class="list-inline-item"><a href="/Proyecto_Velox/index.html">Inicio</a></li>
-      <li class="list-inline-item"><a href="contact.html">Acerca de Nosotros</a></li>
-      <li class="list-inline-item"><a href="forms.html">Contacto</a></li>
-    </ul>
-
-  </div>
-</footer>
-
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-
-
-
-
-
-
-
-
-  <!-- Bootstrap JS -->
+  <!-- ================== SCRIPTS (JAVASCRIPT) ================== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script/carritoAvanzado.js"></script>
 </body>
 </html>

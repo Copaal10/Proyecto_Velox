@@ -1,165 +1,82 @@
-// -------------------------------------------------------------
-// Referencias al formulario y al contenedor de resultados
-// -------------------------------------------------------------
-const form = document.getElementById('formVehiculo');
-const resultado = document.getElementById('resultado');
+// script/agregarVehiculo.js
+// Responsable: Capturar formulario y guardar en LocalStorage
 
-// -------------------------------------------------------------
-// Vehículos precargados (NO se guardan en localStorage)
-// -------------------------------------------------------------
-const vehiculosBase = [
-  { marca: "Toyota", modelo: "Supra", anio: "1998", precio: "85000", descripcion: "Deportivo japonés turbo icónico.", imagen: "../img/car1.jpg" },
-  { marca: "Nissan", modelo: "GT-R", anio: "2020", precio: "120000", descripcion: "Superdeportivo AWD de alto rendimiento.", imagen: "../img/car2.jpg" },
-  { marca: "Mazda", modelo: "RX-7", anio: "1995", precio: "60000", descripcion: "Motor rotativo Wankel, ultra ligero.", imagen: "../img/car3.jpg" },
-  { marca: "Ford", modelo: "Mustang", anio: "2022", precio: "55000", descripcion: "Clásico americano con motor V8.", imagen: "../img/car4.webp" },
-  { marca: "Chevrolet", modelo: "Camaro", anio: "2022", precio: "52000", descripcion: "Deportivo moderno americano.", imagen: "../img/car5.webp" },
-  { marca: "Porsche", modelo: "911", anio: "2021", precio: "150000", descripcion: "Deportivo alemán por excelencia.", imagen: "../img/car6.webp" },
-  { marca: "BMW", modelo: "M4", anio: "2020", precio: "98000", descripcion: "Cupé de alto rendimiento.", imagen: "../img/car7.jpg" },
-  { marca: "Audi", modelo: "R8", anio: "2019", precio: "180000", descripcion: "Supercar con motor V10.", imagen: "../img/car8.webp" },
-  { marca: "Lamborghini", modelo: "Huracán", anio: "2018", precio: "250000", descripcion: "Máquina extrema de velocidad.", imagen: "../img/car9.webp" },
-  { marca: "Ferrari", modelo: "488", anio: "2019", precio: "280000", descripcion: "Superdeportivo italiano de lujo.", imagen: "../img/car10.jpg" }
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const formVehiculo = document.getElementById('formVehiculo');
 
-// -------------------------------------------------------------
-// Vehículos guardados por el administrador (SÍ van en localStorage)
-// -------------------------------------------------------------
-let vehiculosGuardados = JSON.parse(localStorage.getItem('vehiculos')) || [];
+    formVehiculo.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Evitar recarga
 
-// -------------------------------------------------------------
-// Obtener lista final para mostrar (base + guardados)
-// -------------------------------------------------------------
-function obtenerListaVehiculos() {
-  return [...vehiculosBase, ...vehiculosGuardados];
-}
+        // Obtener y LIMPIAR datos (.trim() es vital)
+        const marca = document.getElementById('marca').value.trim();
+        const modelo = document.getElementById('modelo').value.trim();
+        const anio = document.getElementById('anio').value.trim();
+        const precio = document.getElementById('precio').value.trim();
+        const archivoImagen = document.getElementById('imagen').files[0];
+        const descripcion = document.getElementById('descripcion').value.trim();
 
-// -------------------------------------------------------------
-// Guardar SOLO los vehículos agregados (NO los base)
-// -------------------------------------------------------------
-function guardarVehiculos() {
-  localStorage.setItem('vehiculos', JSON.stringify(vehiculosGuardados));
-}
+        try {
+            // 1. Procesar imagen (Async)
+            const imagenBase64 = await comprimirImagen(archivoImagen);
 
-// -------------------------------------------------------------
-// Renderizar cards
-// -------------------------------------------------------------
-function renderVehiculos() {
-  resultado.innerHTML = ""; // limpiar antes de pintar
+            // 2. Crear objeto Vehículo
+            const nuevoVehiculo = {
+                id: Date.now(), // ID único
+                marca: marca,
+                modelo: modelo,
+                anio: anio,
+                precio: precio,
+                imagen: imagenBase64,
+                descripcion: descripcion
+            };
 
-  obtenerListaVehiculos().forEach((v, index) => {
-    const card = document.createElement("div");
-    card.classList.add("vehiculo-card");
+            // 3. Guardar
+            const datosGuardados = JSON.parse(localStorage.getItem('vehiculos')) || [];
+            datosGuardados.push(nuevoVehiculo);
+            localStorage.setItem('vehiculos', JSON.stringify(datosGuardados));
+            console.log("Vehículo guardado en LocalStorage:", nuevoVehiculo); // DEBUG
 
-    card.innerHTML = `
-      ${v.imagen ? `<img src="${v.imagen}" alt="Imagen del vehículo"/>` : ""}
-      <h3>${v.marca} ${v.modelo} (${v.anio})</h3>
-      <p><strong>Precio:</strong> $${v.precio}</p>
-      <p>${v.descripcion}</p>
+            // 4. Limpiar formulario
+            formVehiculo.reset();
+            document.getElementById('imagen').value = ""; 
 
-      ${form ? `
-      <div class="d-flex justify-content-end mt-2">
-        <button class="btn btn-danger btn-sm eliminar">Eliminar</button>
-      </div>` : ""}
-    `;
+            // 5. Notificar al otro script para que redibuje
+            document.dispatchEvent(new Event('vehiculoAgregado')); 
+            
+            alert('Vehículo registrado correctamente');
 
-    // Función eliminar SOLO si estás en la página admin
-    if (form) {
-      card.querySelector(".eliminar").addEventListener("click", () => {
-
-        // Evitar que eliminen vehículos base
-        if (index < vehiculosBase.length) {
-          alert("❌ No puedes eliminar un vehículo base.");
-          return;
+        } catch (error) {
+            console.error("Error al registrar:", error);
+            alert('Error al procesar la imagen. Intenta con una más pequeña.');
         }
+    });
 
-        // Índice real dentro de vehiculosGuardados
-        const realIndex = index - vehiculosBase.length;
-
-        vehiculosGuardados.splice(realIndex, 1);
-        guardarVehiculos();
-        mostrarMensaje("❌ Vehículo eliminado");
-        renderVehiculos();
-      });
+    // Función de compresión
+    function comprimirImagen(archivo) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(archivo);
+            reader.onload = (event) => {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    const MAX_WIDTH = 800;
+                    let width = img.width;
+                    let height = img.height;
+                    if (width > MAX_WIDTH) {
+                        height *= MAX_WIDTH / width;
+                        width = MAX_WIDTH;
+                    }
+                    canvas.width = width;
+                    canvas.height = height;
+                    ctx.drawImage(img, 0, 0, width, height);
+                    resolve(canvas.toDataURL('image/jpeg', 0.7));
+                };
+                img.onerror = (err) => reject(err);
+            };
+            reader.onerror = (err) => reject(err);
+        });
     }
-
-    resultado.appendChild(card);
-  });
-}
-
-// -------------------------------------------------------------
-// Submit del formulario (solo admin)
-// -------------------------------------------------------------
-if (form) {
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const marca = document.getElementById('marca').value.trim();
-    const modelo = document.getElementById('modelo').value.trim();
-    const anio = document.getElementById('anio').value;
-    const precio = document.getElementById('precio').value;
-    const descripcion = document.getElementById('descripcion').value.trim();
-    const imagenInput = document.getElementById('imagen');
-
-    const registrar = (img = "") => {
-      const vehiculo = { marca, modelo, anio, precio, descripcion, imagen: img };
-
-      vehiculosGuardados.push(vehiculo);
-      guardarVehiculos();
-
-      form.reset();
-      imagenInput.value = "";
-      mostrarMensaje("✅ Vehículo agregado correctamente");
-
-      renderVehiculos();
-
-      if (document.getElementById("previewVehiculo")) {
-        mostrarEnOtroLado(vehiculo);
-      }
-    };
-
-    if (imagenInput.files && imagenInput.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (ev) => registrar(ev.target.result);
-      reader.readAsDataURL(imagenInput.files[0]);
-    } else {
-      registrar("");
-    }
-  });
-}
-
-// -------------------------------------------------------------
-// Mostrar mensaje (solo admin)
-// -------------------------------------------------------------
-function mostrarMensaje(texto) {
-  const mensaje = document.createElement("div");
-  mensaje.textContent = texto;
-  mensaje.className = "alert alert-info mt-3";
-  resultado.prepend(mensaje);
-  setTimeout(() => mensaje.remove(), 3000);
-}
-
-// -------------------------------------------------------------
-// Mostrar último vehículo en otro lado (preview)
-// -------------------------------------------------------------
-function mostrarEnOtroLado(vehiculo) {
-  const preview = document.getElementById("previewVehiculo");
-  if (!preview) return;
-
-  preview.innerHTML = "";
-
-  const card = document.createElement("div");
-  card.classList.add("vehiculo-card");
-
-  card.innerHTML = `
-    ${vehiculo.imagen ? `<img src="${vehiculo.imagen}" alt="Imagen del vehículo"/>` : ""}
-    <h3>${vehiculo.marca} ${vehiculo.modelo} (${vehiculo.anio})</h3>
-    <p><strong>Precio:</strong> $${vehiculo.precio}</p>
-    <p>${vehiculo.descripcion}</p>
-  `;
-
-  preview.appendChild(card);
-}
-
-// -------------------------------------------------------------
-// Inicializar renderizado
-// -------------------------------------------------------------
-renderVehiculos();
+});
