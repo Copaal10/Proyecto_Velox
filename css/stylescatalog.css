@@ -213,11 +213,10 @@ header h1 {
 .contenedor-vehiculos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* SIEMPRE 3 COLUMNAS EN DESKTOP */
-    gap: 25px;
-    max-width: 1300px;
+    gap: 50px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
 }
 
 
@@ -357,4 +356,15 @@ header h1 {
 .btn-filter:hover, .btn-filter.active {
   background-color: #65ABEA;
   color: white;
+}
+
+.btn-success.agregar-carrito 
+{
+    background-color: #212121;
+    border-color: #212121;
+}
+
+.btn-success.agregar-carrito:hover {
+    background-color: #2C2C2C;
+    border-color: #2C2C2C;
 }

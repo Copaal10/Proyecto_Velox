@@ -139,3 +139,31 @@ document.addEventListener('DOMContentLoaded', () => {
     setIndicator(ruleSpecial, true);
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const btnLogin = document.getElementById("btnLoginView");
+  const btnRegistro = document.getElementById("btnRegistroView");
+
+  const cardLogin = document.getElementById("loginCard");
+  const cardRegistro = document.getElementById("registroCard");
+
+  // EVENTOS DE CAMBIO
+  btnLogin.addEventListener("click", () => {
+    cardLogin.style.display = "block";
+    cardRegistro.style.display = "none";
+
+    btnLogin.classList.add("active");
+    btnRegistro.classList.remove("active");
+  });
+
+  btnRegistro.addEventListener("click", () => {
+    cardLogin.style.display = "none";
+    cardRegistro.style.display = "block";
+
+    btnRegistro.classList.add("active");
+    btnLogin.classList.remove("active");
+  });
+
+});

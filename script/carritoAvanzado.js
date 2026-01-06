@@ -15,37 +15,19 @@ function setLS(key, value) {
 // -----------------------------
 // DATOS FIJOS
 const vehiculosBase = [
-  { id: 1, marca: "Koenigsegg", modelo: "Jesko Absolut Velox", anio: "2025", precio: "4800000", descripcion: "Una bestia aerodinámica.", imagen: "/img/Koenigsegg/Koenigsegg1.png" },
-  { id: 2, marca: "Bugatti", modelo: "Chiron SS Mansory Centuria", anio: "2024", precio: "5200000", descripcion: "Transformación agresiva.", imagen: "/img/Chiron/Chiron1.png" },
-  { id: 3, marca: "Pagani", modelo: "Huayra Roadster BC Titanium", anio: "2024", precio: "4500000", descripcion: "Escape en titanio puro.", imagen: "/img/pagani.jpg" },
-  { id: 4, marca: "Lamborghini", modelo: "Revuelto Liberty Walk", anio: "2025", precio: "3200000", descripcion: "Estilo de tuning agresivo.", imagen: "/img/lamborghini.jpg" },
-  { id: 5, marca: "Ferrari", modelo: "SF90 XX Stradale", anio: "2024", precio: "1200000", descripcion: "Versión extremista híbrida.", imagen: "/img/ferrari.jpg" },
-  { id: 6, marca: "Rolls-Royce", modelo: "Boat Tail Sapphire", anio: "2024", precio: "28000000", descripcion: "La cumbre del lujo.", imagen: "/img/rollsroyce.jpg" },
-  { id: 7, marca: "Porsche", modelo: "911 GT2 RS Brabus 900", anio: "2025", precio: "1800000", descripcion: "Modificado por Brabus.", imagen: "/img/porsche.jpg" },
-  { id: 8, marca: "McLaren", modelo: "P1 LM Restomod", anio: "2025", precio: "3500000", descripcion: "Tecnología actualizada.", imagen: "/img/mclaren.jpg" },
-  { id: 9, marca: "Mercedes-Benz", modelo: "G 63 6x6 Brabus 800", anio: "2025", precio: "2200000", descripcion: "Monstruo todoterreno.", imagen: "/img/mercedes.jpg" },
-  { id: 10, marca: "Rimac", modelo: "Nevera Time Attack", anio: "2025", precio: "2400000", descripcion: "Eléctrico más rápido.", imagen: "/img/rimac.jpg" }
+  { id: 1, marca: "Koenigsegg", modelo: "Jesko Absolut Velox", anio: "2025", precio: "4800000", descripcion: "Una bestia aerodinámica.", imagen: "../img/Koenigsegg/Koenigsegg1.png" },
+  { id: 2, marca: "Bugatti", modelo: "Chiron SS Mansory Centuria", anio: "2024", precio: "5200000", descripcion: "Transformación agresiva.", imagen: "../img/Chiron/Chiron1.png" },
+  { id: 3, marca: "Pagani", modelo: "Huayra Roadster BC Titanium", anio: "2024", precio: "4500000", descripcion: "Escape en titanio puro.", imagen: "../img/Pagani/Pagani1.png" },
+  { id: 4, marca: "Lamborghini", modelo: "Revuelto Liberty Walk", anio: "2025", precio: "3200000", descripcion: "Estilo de tuning agresivo.", imagen: "../img/Lamborghini/Lamborghini1.png" },
+  { id: 5, marca: "Ferrari", modelo: "SF90 XX Stradale", anio: "2024", precio: "1200000", descripcion: "Versión extremista híbrida.", imagen: "../img/Ferrari/Ferrari1.png" },
+  { id: 6, marca: "Rolls-Royce", modelo: "Boat Tail Sapphire", anio: "2024", precio: "28000000", descripcion: "La cumbre del lujo.", imagen: "../img/Roll/Roll1.png" },
+  { id: 7, marca: "Porsche", modelo: "911 GT2 RS Brabus 900", anio: "2025", precio: "1800000", descripcion: "Modificado por Brabus.", imagen: "../img/Porche/Porche1.png" },
+  { id: 8, marca: "McLaren", modelo: "P1 LM Restomod", anio: "2025", precio: "3500000", descripcion: "Tecnología actualizada.", imagen: "../img/McLaren/McLaren1.png" },
+  { id: 9, marca: "Mercedes-Benz", modelo: "G 63 6x6 Brabus 800", anio: "2025", precio: "2200000", descripcion: "Monstruo todoterreno.", imagen: "../img/Mercedes/Mercedes1.jpg" },
+  { id: 10, marca: "Rimac", modelo: "Nevera Time Attack", anio: "2025", precio: "2400000", descripcion: "Eléctrico más rápido.", imagen: "../img/Rimac/Rimac1.jpg" }
 ];
 
-// Renderizado dinámico
-const resultado = document.getElementById("resultado");
 
-vehiculosBase.forEach(auto => {
-  const card = document.createElement("div");
-  card.classList.add("card", "m-3", "p-3", "shadow");
-  card.style.width = "18rem";
-
-  card.innerHTML = `
-    <img src="${auto.imagen}" class="card-img-top" alt="${auto.modelo}">
-    <div class="card-body">
-      <h5 class="card-title">${auto.marca} ${auto.modelo}</h5>
-      <p class="card-text">${auto.descripcion}</p>
-      <p><strong>Año:</strong> ${auto.anio}</p>
-      <p><strong>Precio:</strong> $${auto.precio}</p>
-    </div>
-  `;
-  resultado.appendChild(card);
-});
 // MOSTRAR CATÁLOGO
 // -----------------------------
 function mostrarCatalogo() {
@@ -117,7 +99,7 @@ function mostrarCatalogo() {
 function crearTarjetaVehiculo(v, esBorrable) {
   const card = document.createElement("div");
   card.className = "card m-2";
-  card.style.width = "18rem";
+  card.style.width = "26rem";
 
   let htmlBoton = "";
   if (esBorrable) {
@@ -125,7 +107,7 @@ function crearTarjetaVehiculo(v, esBorrable) {
   }
 
   card.innerHTML = `
-    ${v.imagen ? `<img src="${v.imagen}" class="card-img-top" style="height:150px; object-fit:cover;">` : ""}
+    ${v.imagen ? `<img src="${v.imagen}" class="card-img-top" style="height:250px; object-fit:cover;">` : ""}
     <div class="card-body">
       <h5 class="card-title text-truncate">${v.marca} ${v.modelo}</h5>
       <p class="card-text">Año: ${v.anio} · $${Number(v.precio).toLocaleString()}</p>

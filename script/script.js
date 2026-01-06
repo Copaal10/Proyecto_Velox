@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const formulario = document.querySelector("form");
+  
+  // Verificar que existe el formulario antes de continuar
+  if (!formulario) return;
+  
   const nombre = document.getElementById("nombre");
   const correo = document.getElementById("correo");
   const telefono = document.getElementById("telefono");
@@ -84,8 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Prevenir envío del formulario si hay errores
-  formulario.addEventListener("submit", function (e) {
+  // Prevenir envío del formulario si hay errores Y manejar el envío con fetch
+  formulario.addEventListener("submit", async function (e) {
+    e.preventDefault(); // Evita redirección
+    
     let formularioValido = true;
 
     // Validar nombre
@@ -113,8 +119,33 @@ document.addEventListener("DOMContentLoaded", function () {
       formularioValido = false;
     }
 
+    // Si hay errores, detener aquí
     if (!formularioValido) {
-      e.preventDefault();
+      return;
+    }
+
+    // Si todo es válido, enviar con fetch
+    try {
+      const respuesta = await fetch(formulario.action, {
+        method: "POST",
+        body: new FormData(formulario),
+        headers: { "Accept": "application/json" }
+      });
+
+      if (respuesta.ok) {
+        document.getElementById("respuesta").textContent = "✔ Enviado correctamente";
+        formulario.reset();
+        
+        // Limpiar clases de validación
+        const inputs = [nombre, correo, telefono, mensaje];
+        inputs.forEach((input) => {
+          input.classList.remove("is-invalid", "is-valid");
+        });
+      } else {
+        document.getElementById("respuesta").textContent = "❌ Error al enviar";
+      }
+    } catch (error) {
+      document.getElementById("respuesta").textContent = "❌ Error al enviar";
     }
   });
 
@@ -126,23 +157,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-document.getElementById("form").addEventListener("submit", async function (e) {
-  e.preventDefault(); // Evita redirección
-
-  const form = e.target;
-
-  const respuesta = await fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    headers: { "Accept": "application/json" }
-  });
-
-  if (respuesta.ok) {
-    document.getElementById("respuesta").textContent = "✔ Enviado correctamente";
-    form.reset();
-  } else {
-    document.getElementById("respuesta").textContent = "❌ Error al enviar";
-  }
-});
-//
