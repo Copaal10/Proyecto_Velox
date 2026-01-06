@@ -1,8 +1,8 @@
 /* Tipografía Orbitron aplicada */
 /* */
 body {
-  font-family: 'Orbitron', sans-serif;
-  background-color: #F8F8F8;
+  font-family: "Orbitron", sans-serif;
+  background-color: #f8f8f8;
   /* Sea Salt */
   color: #212121;
   /* Eerie Black */
@@ -44,7 +44,7 @@ header h1 {
 
 /* Navbar personalizada */
 #nav {
-  background-color: #65ABEA;
+  background-color: #65abea;
   /* Rudy Blue */
 }
 
@@ -56,16 +56,15 @@ header h1 {
 }
 
 .nav-link:hover {
-  color: #C3E0FA !important;
+  color: #c3e0fa !important;
   /* Columbia Blue */
 }
-
 
 /* Footer */
 .footer {
   background-color: #212121;
   /* Eerie Black */
-  color: #F8F8F8;
+  color: #f8f8f8;
   /* Sea Salt */
   padding: 2rem 0;
 }
@@ -73,23 +72,23 @@ header h1 {
 .footer h3 {
   font-size: 48px;
   /* H3 Orbitron */
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   margin-bottom: 1rem;
-  color: #65ABEA;
+  color: #65abea;
   /* Rudy Blue */
 }
 
 .footer p {
   font-size: 15px;
   /* H5 Orbitron */
-  color: #C3E0FA;
+  color: #c3e0fa;
   /* Columbia Blue */
   margin-bottom: 1rem;
 }
 
 /* Links */
 .footer-links a {
-  color: #F8F8F8;
+  color: #f8f8f8;
   /* Sea Salt */
   text-decoration: none;
   font-weight: bold;
@@ -97,7 +96,7 @@ header h1 {
 }
 
 .footer-links a:hover {
-  color: #65ABEA;
+  color: #65abea;
   /* Rudy Blue */
 }
 
@@ -107,7 +106,7 @@ header h1 {
 }
 
 .social-link {
-  color: #F8F8F8;
+  color: #f8f8f8;
   /* Sea Salt */
   font-size: 1.5rem;
   margin: 0 0.5rem;
@@ -115,13 +114,12 @@ header h1 {
 }
 
 .social-link:hover {
-  color: #65ABEA;
+  color: #65abea;
   /* Rudy Blue */
 }
 
-
 #about {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   /* Sea Salt */
   color: #212121;
   /* Eerie Black */
@@ -131,8 +129,8 @@ header h1 {
 #about h2 {
   font-size: 64px;
   /* H2 Orbitron */
-  font-family: 'Orbitron', sans-serif;
-  color: #65ABEA;
+  font-family: "Orbitron", sans-serif;
+  color: #65abea;
   /* Rudy Blue */
 }
 
@@ -146,13 +144,13 @@ header h1 {
 #about p {
   font-size: 15px;
   /* H5 Orbitron */
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   color: #212121;
   /* Eerie Black */
 }
 
 #about img {
-  border: 4px solid #C3E0FA;
+  border: 4px solid #c3e0fa;
   /* Columbia Blue */
 }
 .btn {
@@ -162,7 +160,6 @@ header h1 {
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-
 }
 
 /* Validaciones formulario */
@@ -206,7 +203,6 @@ header h1 {
   text-align: center;
   /* centra el texto dentro del enlace */
 }
-
 
 /* Contenedor principal de las tarjetas */
 .contenedor-vehiculos {
@@ -262,8 +258,6 @@ header h1 {
   padding: 10px 0;
   /* 🔽 espacio vertical */
 }
-
-
 
 /* ====== CONTENEDOR LATERAL (form + cards) ====== */
 .contenedor_lateral {
@@ -335,7 +329,6 @@ header h1 {
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 992px) {
-
   /* En tablets: 2 columnas de cards */
   .contenedor-vehiculos {
     grid-template-columns: repeat(2, 1fr);
@@ -343,7 +336,6 @@ header h1 {
 }
 
 @media (max-width: 768px) {
-
   /* Form y cards se apilan */
   .contenedor_lateral {
     flex-direction: column;
