@@ -4,10 +4,9 @@
 
 body {
     font-family: 'Orbitron', sans-serif;
-    background-color: #F8F8F8;
-    /* Sea Salt */
+    background: url('../img/fondo4.jpg') no-repeat center center fixed;
     color: #212121;
-    /* Eerie Black */
+    background-size: cover;
 }
 
 h1 {
@@ -214,11 +213,10 @@ header h1 {
 .contenedor-vehiculos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* SIEMPRE 3 COLUMNAS EN DESKTOP */
-    gap: 25px;
-    max-width: 1300px;
+    gap: 50px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
 }
 
 
@@ -308,4 +306,65 @@ header h1 {
 
 #btn-agregar-carrito:hover {
     background-color: black;
+}
+
+/* ================== HERO SECTION (Imagen de Fondo) ================== */
+.hero-section {
+  /* Una imagen oscura de fondo para que se vea elegante */
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503376766979-739b4742a643?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Alto del banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Títulos dentro del Hero */
+.hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.6);
+}
+
+/* ================== CARD HOVER (Efecto al pasar mouse) ================== */
+.card-product {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-product:hover {
+  transform: translateY(-10px); /* La tarjeta sube 10px */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Sombra suave */
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* ================== FILTROS (Botones) ================== */
+.btn-filter {
+  border: 2px solid #65ABEA;
+  color: #65ABEA;
+  background-color: transparent;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-filter:hover, .btn-filter.active {
+  background-color: #65ABEA;
+  color: white;
+}
+
+.btn-success.agregar-carrito 
+{
+    background-color: #212121;
+    border-color: #212121;
+}
+
+.btn-success.agregar-carrito:hover {
+    background-color: #2C2C2C;
+    border-color: #2C2C2C;
 }

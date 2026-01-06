@@ -384,6 +384,7 @@ header h1 {
 .contenedor_lateral .container {
   flex: 1;
   /* ocupa 1 parte */
+  max-width: 400px;
   /* ancho fijo o limitado */
 }
 
@@ -463,158 +464,175 @@ header h1 {
   }
 }
 
-/* Botón activo--login */
-.btn-group .btn.active {
-  background-color: #0d6efd;
-  color: white;
-}
 
-/* ============================
-   ESTILOS EXCLUSIVOS LOGIN PAGE
-   ============================ */
-.login-page .btn-group .btn {
-  font-family: 'Orbitron', sans-serif;
+/* ====== CALCULADORA FINANCIERA ====== */
+.velox-fin-card {
   border: 2px solid #65ABEA;
-  color: #212121;
-  background-color: #F8F8F8;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  background: #fff;
 }
 
-/* Botón activo */
-.login-page .btn-group .btn.active {
-  background-color: #65ABEA;
-  color: #FFF;
+.velox-fin-input-side {
+  padding: 2rem;
+  background: #F8F8F8;
 }
 
-/* Hover en botones */
-.login-page .btn-group .btn:hover {
-  background-color: #C3E0FA;
-  border-color: #65ABEA;
-  color: #212121;
+.velox-fin-result-side {
+  padding: 2rem;
+  background: #212121;
+  color: #F8F8F8;
+  border-left: 4px solid #65ABEA;
 }
 
-/* Botones principales: Login / Registrar */
-.login-page .btn-primary,
-.login-page .btn-success {
-  font-family: 'Orbitron', sans-serif;
-  border-radius: 8px;
-  padding: 10px;
+.velox-fin-res-label {
+  font-weight: bold;
+  color: #65ABEA;
 }
 
-.login-page .btn-primary {
-  background-color: #65ABEA;
-  border-color: #65ABEA;
-  color: #212121;
+
+/* ================== BOTONES CALCULADORA (ESTILO UNIFICADO) ================== */
+
+/* Aplicamos el mismo estilo a ambas clases */
+.btn-calc-velox, 
+.btn-reset-velox {
+    /* Apariencia Base */
+    background-color: #212121;      /* Fondo Negro */
+    color: white;                    /* Texto Blanco */
+    font-weight: bold;               /* Negrita */
+    text-transform: uppercase;       /* Mayúsculas */
+    border: none;                    /* Sin borde */
+    padding: 12px 0;                 /* Altura del botón */
+    border-radius: 50px;              /* Bordes redondos */
+    transition: all 0.3s ease;       /* Animación suave */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra suave */
+    cursor: pointer;
 }
 
-.login-page .btn-primary:hover {
-  background-color: #C3E0FA;
-  border-color: #65ABEA;
-  color: #212121;
+/* Efecto al pasar el mouse (Hover) - Igual para ambos */
+.btn-calc-velox:hover, 
+.btn-reset-velox:hover {
+    background-color: white;         /* Fondo cambia a blanco */
+    color: #65ABEA;                   /* Texto cambia a Azul Velox */
+    transform: translateY(-2px);      /* Se levanta un poco */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
-.login-page .btn-success {
-  background-color: #198754;
-  border-color: #198754;
-  color: #FFF;
+/* Efecto al hacer click (Active) - Opcional para dar sensación táctil */
+.btn-calc-velox:active, 
+.btn-reset-velox:active {
+    transform: translateY(0);
 }
 
-.login-page .btn-success:hover {
-  background-color: #157347;
-  border-color: #157347;
+
+
+
+/* Scroll suave y animaciones */
+html { scroll-behavior: smooth; }
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
 }
 
-/* Botones redondos */
-/* ===============================
-   ESTILOS SOLO DEL FORMULARIO LOGIN/REGISTRO
-   =============================== */
-.login-form-page .btn {
-  font-family: 'Orbitron', sans-serif;
-  border-radius: 8px;
-  padding: 10px;
-  transition: all .25s ease-in-out;
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
-/* ----- Botón primario (Login / Ingresar / Admin) ----- */
-.login-form-page .btn-primary {
-  background-color: #65ABEA !important;
-  border: 2px solid #65ABEA !important;
+
+/* ====== AGREGADOS PARA LIMPIEZA (Reemplazan estilos en línea) ====== */
+
+/* Colores Utilitarios */
+.text-velox-blue {
+  color: #65ABEA !important;
+}
+
+.text-velox-dark {
   color: #212121 !important;
 }
 
-.login-form-page .btn-primary:hover {
-  background-color: #C3E0FA !important;
-  border-color: #65ABEA !important;
-  color: #212121 !important;
+.bg-velox-dark {
+  background-color: #212121 !important;
 }
 
-/* ----- Botón verde (Registrar) ----- */
-.login-form-page .btn-success {
-  background-color: #198754 !important;
-  border-color: #198754 !important;
-  color: white !important;
+/* Tipografía específica */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif !important;
 }
 
-.login-form-page .btn-success:hover {
-  background-color: #157347 !important;
-  border-color: #157347 !important;
+/* Hero Section */
+.hero-img {
+  max-height: 700px;
+  object-fit: cover;
 }
 
-/* ----- Botones circulares ----- */
-.login-form-page .btn-circle {
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Sombras de texto */
+.text-shadow-strong {
+  text-shadow: 2px 2px 4px #000;
+}
+
+.text-shadow-soft {
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Decoradores */
+.velox-divider {
   width: 50px;
-  height: 50px;
-  padding: 0;
-  border-radius: 50%;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+  height: 4px;
+  background-color: #65ABEA;
+  margin: 0 auto;
 }
 
-/* ----- Botones del selector Login / Registro ----- */
-.login-form-page .btn-group .btn {
-  border: 2px solid #65ABEA !important;
-  background-color: #F8F8F8 !important;
-  color: #212121 !important;
+/* Estilos específicos para resultados de calculadora (Faltaban en original) */
+.velox-fin-res-cuota-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
-.login-form-page .btn-group .btn.active {
-  background-color: #65ABEA !important;
-  color: white !important;
+.velox-fin-res-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
 }
 
-.login-form-page .btn-group .btn:hover {
-  background-color: #C3E0FA !important;
-  color: #212121 !important;
+.velox-fin-res-divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* ===== Inputs: NO SALTAR, NO MOVERSE ===== */
-.login-form-page input.form-control {
-  border: 2px solid #212121 !important;
-  box-shadow: none !important;
+.velox-fin-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #212121;
+  margin-bottom: 0;
 }
 
-.login-form-page input.form-control:focus {
-  border-color: #65ABEA !important;
+.velox-fin-divider {
+  width: 60px;
+  height: 4px;
+  background-color: #65ABEA;
+  margin: 10px auto 0;
 }
 
-#registrarse {
-  background-color: #65ABEA !important;
-  border-color: #65ABEA !important;
-  color: #000 !important;
-  transition: 0.2s ease;
+/* Efecto hover para tarjetas de características */
+.hover-shadow {
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-#registrarse:hover {
-  background-color: #000 !important;
-  border-color: #000 !important;
-  color: #fff !important;
+.hover-shadow:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  cursor: default;
 }
 
-.login-form-page .card,
-.login-form-page .card * {
-  transition: none !important;
-  -webkit-transition: none !important;
-  animation: none !important;
-  -webkit-animation: none !important;
+@media (min-width: 992px) {
+  .col-lg-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
 }
+
