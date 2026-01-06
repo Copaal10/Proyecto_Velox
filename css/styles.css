@@ -628,11 +628,3 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
   cursor: default;
 }
-
-@media (min-width: 992px) {
-  .col-lg-2-4 {
-    flex: 0 0 20%;
-    max-width: 20%;
-  }
-}
-
