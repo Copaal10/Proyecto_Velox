@@ -1,195 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- -->
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyecto Velox</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyecto Velox — Dashboard</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google Fonts: Orbitron -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Archivo CSS personalizado -->
-  <link rel="stylesheet" href="../css/styles.css">
-
-  <!-- Archivo CSS de administración -->
-  <link rel="stylesheet" href="../css/styleadmin.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+  <!-- CSS Dashboard -->
+  <link rel="stylesheet" href="../css/dashboard.css"/>
 </head>
-
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Proyecto Velox - Index</h1>
-    <h4>Innovación y velocidad en cada detalle</h4>
-  </header>
-
-  <!-- Navbar -->
-  <div class="d-flex align-items-center border-bottom none" style="background-color: #ea656c;">
-
-    <a href="../index.html" class="text-light fw-bold text-decoration-none">
-      Inicio
-    </a>
-
-    <ul class="nav nav-tabs ms-auto">
-
-      <li class="nav-item">
-        <a class="nav-link contactenos" href="catalog.html">Catalogo</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link contactenos" href="contact.html">Acerca de Nosotros</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link formulario" href="forms.html">Contáctenos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link formulario" href="#" data-bs-toggle="modal" data-bs-target="#carritoModal">
-          <button type="button" class="btn btn-primary position-relative">
-            <i class="bi bi-cart-plus"></i>
-            <span id="contador-carrito"
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              style="display: none;">
-              0
-            </span>
-          </button>
-        </a>
-      </li>
-      <!-- Login -->
-      <li class="nav-item">
-        <a class="nav-link formulario" href="admin.html"><i class="bi bi-person-circle"></i></a>
-      </li>
-    </ul>
-
-  </div>
-
-
-
-
-  <br>
-  <br>
-  <div class="contenedor_lateral">
-    <div class="container mt-4">
-
-      <!-- Contenido de pagina -->
-      <form id="formVehiculo" class="card p-4 shadow-sm" enctype="multipart/form-data"
-        style="transform: none !important; transition: none !important;">
-
-        <!-- Campo: Marca -->
-        <div class="mb-3">
-          <label for="marca" class="form-label">Marca</label>
-          <input type="text" class="form-control" id="marca" placeholder="Ej: BMW, Audi, Mercedes" required>
-        </div>
-
-        <!-- Campo: Modelo -->
-        <div class="mb-3">
-          <label for="modelo" class="form-label">Modelo</label>
-          <input type="text" class="form-control" id="modelo" placeholder="Ej: Serie 3, A4, Clase C" required>
-        </div>
-
-        <!-- Campo: Año -->
-        <div class="mb-3">
-          <label for="anio" class="form-label">Año</label>
-          <input type="number" class="form-control" id="anio" min="2000" max="2025" required>
-        </div>
-
-        <!-- Campo: Precio -->
-        <div class="mb-3">
-          <label for="precio" class="form-label">Precio (USD)</label>
-          <input type="number" class="form-control" id="precio" placeholder="Ej: 45000" required>
-        </div>
-
-        <!-- Campo: Imagen -->
-        <div class="mb-3">
-          <label for="imagen" class="form-label">Imagen del vehículo</label>
-          <input type="file" class="form-control" id="imagen" accept="image/*" required>
-          <div class="form-text">Selecciona una foto del vehículo (JPG, PNG).</div>
-        </div>
-
-        <!-- Campo: Descripción -->
-        <div class="mb-3">
-          <label for="descripcion" class="form-label">Descripción</label>
-          <textarea class="form-control" id="descripcion" rows="3"
-            placeholder="Escribe detalles adicionales del vehículo..." required></textarea>
-        </div>
-
-        <!-- Botón de envío -->
-        <button type="submit" class="btn btn-primary w-100">Registrar Vehículo</button>
-      </form>
-      <!-- Lista de productos -->
-
-    </div>
-
-    <!-- AGREGADO: Separador visual -->
-    <br>
-    <hr>
-
-    <div id="resultado" class="contenedor-vehiculos"></div>
-  </div>
-
-
-
-
-
-
-  <br>
-
-  <!-- llamado del resultado de agregarVehiculos.js -->
-
-
-
-  <!-- llamado del resultado de agregarVehiculos.js -->
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container text-center">
-      <h3>Proyecto Velox</h3>
-      <p>&copy; 2025 Proyecto Velox. Todos los derechos reservados.</p>
-
-      <!-- Redes sociales -->
-      <div class="social-icons">
-        <a href="https://facebook.com" target="_blank" class="social-link">
-          <i class="bi bi-facebook"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" class="social-link">
-          <i class="bi bi-twitter"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" class="social-link">
-          <i class="bi bi-instagram"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-link">
-          <i class="bi bi-linkedin"></i>
-        </a>
-        <a href="mailto:contacto@velox.com" class="social-link">
-          <i class="bi bi-envelope-fill"></i>
-        </a>
+  <div class="dashboard-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo-container p-3 text-center">
+        <img src="../img/logo.png" alt="Logo Velox" class="img-fluid" style="max-width: 150px;">
+      </div>
+      <div class="brand">
+        <h2>Velox</h2>
+        <span class="subtitle">Administrador</span>
+      </div>
+      <nav class="menu">
+        <a href="#" class="menu-item active" data-section="inicio"><i class="bi bi-journal-text"></i> Inicio / Notas</a>
+        <a href="#" class="menu-item" data-section="vehiculos"><i class="bi bi-car-front"></i> Vehículos</a>
+        <a href="#" class="menu-item" data-section="galeria"><i class="bi bi-images"></i> Galería</a>
+        <a href="#" class="menu-item" data-section="sonidos"><i class="bi bi-soundwave"></i> Sonidos</a>
+      </nav>
+      <div class="mt-4 p-3">
+        <button id="cerrar-sesion" class="btn btn-outline-danger w-100">
+          <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+        </button>
       </div>
 
-      <!-- Links adicionales -->
-      <ul class="footer-links list-inline mt-3">
-        <li class="list-inline-item"><a href="index.html">Inicio</a></li>
-        <li class="list-inline-item"><a href="html/contact.html">Acerca de Nosotros</a></li>
-        <li class="list-inline-item"><a href="html/forms.html">Contacto</a></li>
-      </ul>
-    </div>
-  </footer>
 
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<!-- BLOQUE DE NAVEGACIÓN RÁPIDA -->
+<h5>Navegacion rapida</h5>
+<div class="d-grid gap-2 mt-3">
+  
+  <!-- 1. IR AL INDEX -->
+  <a href="../index.html" class="btn btn-outline-primary w-100">
+    <i class="bi bi-house-door-fill"></i> Ir al Inicio/ index.html
+  </a>
 
+  <!-- 2. IR AL LOGIN / ADMIN -->
+  <a href="login.html" class="btn btn-outline-primary w-100">
+    <i class="bi bi-person-circle"></i> Ir al Login/ login.html
+  </a>
+
+  <!-- 3. IR A FORMULARIOS -->
+  <a href="forms.html" class="btn btn-outline-primary w-100">
+    <i class="bi bi-envelope-fill"></i> Ir a Formularios/ forms.html
+  </a>
+
+  <!-- 4. IR A CONTACTO -->
+  <a href="contact.html" class="btn btn-outline-primary w-100">
+    <i class="bi bi-people-fill"></i> Ir a Contacto/ contact.html
+  </a>
+
+  <!-- 5. IR A CATALOGO -->
+  <a href="catalog.html" class="btn btn-outline-primary w-100">
+    <i class="bi bi-people-fill"></i> Ir a Catalogo/ catalog.html
+  </a>
+
+
+
+</div>
+
+
+
+
+
+
+
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="content">
+      <header class="content-header">
+        <h1>Proyecto Velox — Dashboard</h1>
+      </header>
+
+      <!-- SECCIÓN INICIO -->
+      <section id="inicio" class="section visible">
+        <div class="card p-4">
+          <h3>Notas rápidas</h3>
+          <textarea id="notas" class="form-control" rows="6" placeholder="Escribe tus notas aquí..."></textarea>
+          <div class="mt-3 d-flex gap-2">
+            <button id="guardar-notas" class="btn btn-primary"><i class="bi bi-save2"></i> Guardar</button>
+            <button id="limpiar-notas" class="btn btn-outline-danger"><i class="bi bi-trash3"></i> Limpiar</button>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- SECCIÓN VEHÍCULOS -->
+      <section id="vehiculos" class="section">
+        <div class="row g-4">
+          <!-- Formulario (Izquierda) -->
+          <div class="col-12 col-lg-5">
+            <form id="formVehiculo" class="card p-4 shadow-sm" enctype="multipart/form-data">
+              <h3 class="mb-3">Registrar vehículo</h3>
+              <div class="mb-3"><label for="marca" class="form-label">Marca</label><input type="text" class="form-control" id="marca" required></div>
+              <div class="mb-3"><label for="modelo" class="form-label">Modelo</label><input type="text" class="form-control" id="modelo" required></div>
+              <div class="mb-3"><label for="anio" class="form-label">Año</label><input type="number" class="form-control" id="anio" min="2000" max="2025" required></div>
+              <div class="mb-3"><label for="precio" class="form-label">Precio (USD)</label><input type="number" class="form-control" id="precio" required></div>
+              <div class="mb-3"><label for="imagen" class="form-label">Imagen</label><input type="file" class="form-control" id="imagen" accept="image/*" required></div>
+              <div class="mb-3"><label for="descripcion" class="form-label">Descripción</label><textarea class="form-control" id="descripcion" rows="3" required></textarea></div>
+              <button type="submit" class="btn btn-primary w-100">Registrar</button>
+            </form>
+
+
+
+            
+
+
+
+
+          </div>
+
+          <!-- Columna Derecha: Dos Contenedores Separados -->
+          <div class="col-12 col-lg-7">
+            
+            <!-- CONTENEDOR 1: LOS 10 FIJOS -->
+            <div class="card p-4 mb-4">
+              <h3>Catálogo Base (No Borrables)</h3>
+              <div id="contenedor-fijos" class="vehiculos-grid"></div>
+            </div>
+
+            <!-- CONTENEDOR 2: LOS NUEVOS AGREGADOS -->
+            <div class="card p-4 bg-light">
+              <h3 class="text-primary">Vehículos Agregados (Borrables)</h3>
+              <div id="contenedor-nuevos" class="vehiculos-grid"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN GALERÍA -->
+      <section id="galeria" class="section">
+        <div class="row g-4">
+          <div class="col-12 col-lg-5">
+            <form id="formGaleria" class="card p-4 shadow-sm" enctype="multipart/form-data">
+              <h3 class="mb-3">Registrar imagen en galería</h3>
+              <div class="mb-3">
+                <label for="imagenGaleria" class="form-label">Imagen</label>
+                <input type="file" class="form-control" id="imagenGaleria" accept="image/*" required>
+              </div>
+              <div class="mb-3">
+                <label for="galeriaSelect" class="form-label">Selecciona galería</label>
+                <select id="galeriaSelect" class="form-select" required>
+                  <option value="galeria1">Galería 1</option>
+                  <option value="galeria2">Galería 2</option>
+                  <option value="galeria3">Galería 3</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Agregar imagen</button>
+            </form>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="row">
+              <div class="col-12 mb-3">
+                <div class="card p-3"><h4>Galería 1</h4><div id="galeria1" class="row"></div></div>
+              </div>
+              <div class="col-12 mb-3">
+                <div class="card p-3"><h4>Galería 2</h4><div id="galeria2" class="row"></div></div>
+              </div>
+              <div class="col-12 mb-3">
+                <div class="card p-3"><h4>Galería 3</h4><div id="galeria3" class="row"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECCIÓN SONIDOS -->
+      <section id="sonidos" class="section">
+        <div class="row g-4">
+          <div class="col-12 col-lg-5">
+            <form id="formSonido" class="card p-4 shadow-sm" enctype="multipart/form-data">
+              <h3 class="mb-3">Registrar sonido de vehículo</h3>
+              <div class="mb-3">
+                <label for="nombreSonido" class="form-label">Nombre del vehículo</label>
+                <input type="text" class="form-control" id="nombreSonido" required>
+              </div>
+              <div class="mb-3">
+                <label for="imagenSonido" class="form-label">Foto del vehículo</label>
+                <input type="file" class="form-control" id="imagenSonido" accept="image/*" required>
+              </div>
+              <div class="mb-3">
+                <label for="audioSonido" class="form-label">Sonido del motor</label>
+                <input type="file" class="form-control" id="audioSonido" accept="audio/*" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Agregar</button>
+            </form>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="card p-4">
+              <h3>Sonidos registrados</h3>
+              <div id="resultadoSonidos" class="row"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ================== SCRIPTS ================== -->
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script principal del dashboard (maneja navegación y notas) -->
+  <script src="../script/dashboard.js"></script>
+  
+  <!-- Script para manejar el registro de vehículos -->
   <script src="../script/agregarVehiculo.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <!-- Script del carrito y catálogo (UNIVERSAL: Funciona en Admin y Catálogo) -->
+  <script src="../script/carritoAvanzado.js"></script>
 
-
-
+  <!-- Otros módulos -->
+  <script src="../script/sonidos.js"></script>
+  <script src="../script/galeria.js"></script>
 </body>
-
 </html>
