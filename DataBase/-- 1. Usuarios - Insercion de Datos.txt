@@ -1,0 +1,8 @@
+-- 1. Usuarios
+INSERT INTO usuario (email, rol, nombre, apellido, clave, direccion) 
+VALUES 
+('admin@velox.com', 'admin', 'Administrador', 'Sistema', '123456', 'Oficina Principal'),
+('juan.onassis@email.com', 'cliente', 'Juan', 'Onassis', 'password123', 'Mansión N° 5'),
+('maria.carey@email.com', 'cliente', 'Maria', 'Carey', 'securepass', 'Penthouse Av. 9'),
+('carlos.slim@email.com', 'cliente', 'Carlos', 'Slim', 'carlos123', 'Residencia Privada'),
+('ana.wintour@email.com', 'cliente', 'Ana', 'Wintour', 'anita2024', 'Loft NY');
