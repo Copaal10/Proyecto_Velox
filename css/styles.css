@@ -628,3 +628,51 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
   cursor: default;
 }
+
+/*slide marcas*/
+.slider {
+    overflow: hidden; 
+    width: 100%;
+    position: relative; 
+}
+
+.slide-track {
+    display: flex;
+    width: calc(var(--slide-width) * var(--slide-count) * 2);
+    animation: scroll 50s linear infinite;
+}
+
+
+
+
+.slide {
+    width: var(--slide-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+:root {
+    --slide-width: 300px;
+    --slide-count: 7;
+    
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(
+            calc(-1 * var(--slide-width) * var(--slide-count))
+        );
+    }
+}
+
+
+.slide img {
+    height: 125px; 
+    transition: transform 0.3s, opacity 0.3s;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+}
