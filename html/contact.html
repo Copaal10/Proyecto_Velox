@@ -3,21 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- Viewport: Hace que la página se adapte al ancho del celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Velox - Acerca de</title>
 
   <!-- ================== LIBRERÍAS CSS (HEAD) ================== -->
-  <!-- Bootstrap CSS: Framework para estilos rápidos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts: Fuente estilo futurista para títulos -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Tu archivo CSS personalizado -->
   <link rel="stylesheet" href="../css/styles.css">
-
-  <!-- Bootstrap Icons: Librería de iconos para carrito, redes, etc. -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
@@ -26,37 +18,180 @@
 
   <!-- ESTILOS EXCLUSIVOS PARA CONTACT.HTML (Fondo de Imagen) -->
   <style>
+    /* ========== FIX SCROLL HORIZONTAL ========== */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       background-image: url('../img/fondo2.jpg');
       backdrop-filter: blur(5px);
-      
-      /* Hace que la imagen no se repita y ocupe toda la pantalla */
       background-repeat: no-repeat;
       background-position: center center;
-      background-attachment: fixed; /* Esto da el efecto Parallax (imagen quieta) */
+      background-attachment: fixed;
       background-size: cover;
     }
 
-    /* Hacemos que las tarjetas de los chicos sean blancas pero un poco transparentes */
-    /* Esto ayuda a leer el texto sobre la imagen de fondo */
     .card {
-      background-color: rgba(255, 255, 255, 0.95) !important; 
+      background-color: rgba(255, 255, 255, 0.95) !important;
     }
 
-    /* Opcional: Si la imagen de fondo es muy oscura, esto ayuda al texto principal */
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    }
+
     #about {
       background-color: rgba(255, 255, 255, 0.85) !important;
       border-radius: 10px;
       padding: 20px !important;
     }
+
+    main .row,
+    footer .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    main .container {
+      max-width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    /* ====== ESTILOS EXCLUSIVOS PARA TARJETAS DE EQUIPO ====== */
+    /* Contenedor específico del equipo - MÁS ANCHO */
+    #equipo-section {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* Row específico del equipo con más espacio entre tarjetas */
+    #equipo-section .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin: 0;
+    }
+
+    /* Columnas del equipo - sin padding para evitar sobreposición */
+    #equipo-section .row > [class*="col-"] {
+      padding: 0;
+      flex: 0 0 auto;
+    }
+
+    /* Tarjetas del equipo - mantiene diseño original pero con ancho fijo */
+    .team-member-card {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      overflow: hidden;
+      border: none;
+      position: relative;
+      height: 100%;
+      min-height: 480px;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* Efecto hover original mejorado */
+    .team-member-card:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* Gradiente sutil al hover */
+    .team-member-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .team-member-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Imágenes del equipo */
+    .team-member-card img {
+      transition: transform 0.5s ease;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .team-member-card:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Card body con z-index para estar sobre el gradiente */
+    .team-member-card .card-body {
+      position: relative;
+      z-index: 2;
+      background: white;
+    }
+
+    /* Títulos de las tarjetas del equipo */
+    .team-member-card .card-title {
+      font-size: 1.1rem;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    /* Botones del equipo */
+    .team-member-card .btn {
+      transition: all 0.3s ease;
+    }
+
+    .team-member-card .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive para pantallas más pequeñas */
+    @media (max-width: 1400px) {
+      #equipo-section .row {
+        gap: 20px;
+      }
+      
+      .team-member-card {
+        max-width: 260px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .team-member-card {
+        max-width: 240px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #equipo-section .row {
+        gap: 30px;
+      }
+      
+      .team-member-card {
+        max-width: 320px;
+      }
+    }
   </style>
 
-<!-- NAVBAR PARA CONTACT.HTML (Estilo Index sin Carrito) -->
+<!-- NAVBAR PARA CATALOG.HTML (Estilo Index + Funcionalidad Carrito) -->
 <nav class="navbar navbar-expand-lg sticky-top border-bottom shadow-sm" id="nav">
   <div class="container-fluid">
     
-    <!-- ENLACE AL INICIO (Icono + Texto) -->
-    <!-- Nota: Usamos ../index.html para salir de la carpeta /html/ -->
     <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="../index.html">
       HOME <i class="bi bi-house-door-fill"></i> | VELOX
     </a>
@@ -67,19 +202,23 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link text-dark fw-bold" href="catalog.html">Catálogo</a></li>
         
-        <!-- AGREGADA CLASE 'ACTIVE' PARA RESALTAR EL MENÚ ACTUAL -->
-        <li class="nav-item"><a class="nav-link text-dark fw-bold active" href="contact.html">Acerca de Nosotros</a></li>
-        
-        <li class="nav-item"><a class="nav-link text-dark fw-bold" href="forms.html">Contacto</a></li>
-        
-        <!-- LOGIN -->
-        <li class="nav-item"><a class="nav-link text-dark fw-bold" href="login.html">
-          <i class="bi bi-person-circle"></i>  Iniciar Sesión
-        </a></li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-bold active" href="catalog.html">Catálogo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-bold" href="contact.html">Acerca de Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-bold" href="forms.html">Contacto</a>
+        </li>
 
-         <!-- NUEVO: BOTÓN CARRITO -->
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-bold" href="login.html">
+            <i class="bi bi-person-circle"></i>  Iniciar Sesión
+          </a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas">
             <button type="button" class="btn btn-primary position-relative">
@@ -87,7 +226,6 @@
               <span id="contador-carrito"
                       class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                       style="display: none;">
-                0
               </span>
             </button>
           </a>
@@ -102,18 +240,14 @@
   <main>
 
     <!-- ================== SECCIÓN: HÉROE (Sobre Nosotros) ================== -->
-    <!-- section: Semántica para dividir el contenido por temas -->
     <section id="about" class="py-5">
       <div class="container">
-        <!-- row: Fila de Bootstrap para dividir en columnas -->
         <div class="row align-items-center">
           
-          <!-- Columna Imagen (6/12 en PC, 12/12 en móvil) -->
           <div class="col-md-6">
             <img src="../img/img_contact.png" alt="Automóvil Velox" class="img-fluid rounded shadow">
           </div>
           
-          <!-- Columna Texto -->
           <div class="col-md-6">
             <h2 class="mb-4">En VELOX</h2>
             <p class="lead">
@@ -129,20 +263,15 @@
       </div>
     </section>
 
-  <!-- ================== SECCIÓN: MISIÓN Y VISIÓN (MEJORADA) ================== -->
+  <!-- ================== SECCIÓN: MISIÓN Y VISIÓN ================== -->
   <section class="py-5 bg-light">
     <div class="container">
       <div class="row text-center">
         
-        <!-- TARJETA MISIÓN (Fondo Azul Velox) -->
         <div class="col-md-6 mb-4">
-          <!-- style="background-color: #65ABEA;" pone el fondo azul -->
-          <!-- text-white pone todo el texto en blanco para contraste -->
           <div class="p-4 border rounded-3 shadow h-100" style="background-color: #65ABEA; color: white;">
-            <!-- Icono blanco -->
             <i class="bi bi-rocket-takeoff display-4 text-white"></i>
             <h3 class="mt-3 text-white">Misión</h3>
-            <!-- Color de texto suave gris-claro para que sea cómodo de leer sobre azul -->
             <p style="color: #e6e6e6;">
               Liderar la transformación digital del mercado automotriz en Colombia, garantizando seguridad, 
               transparencia y calidad en cada transacción.
@@ -150,10 +279,8 @@
           </div>
         </div>
 
-        <!-- TARJETA VISIÓN (Fondo Azul Velox) -->
         <div class="col-md-6 mb-4">
           <div class="p-4 border rounded-3 shadow h-100" style="background-color: #65ABEA; color: white;">
-            <!-- Icono blanco -->
             <i class="bi bi-eye-fill display-4 text-white"></i>
             <h3 class="mt-3 text-white">Visión</h3>
             <p style="color: #e6e6e6;">
@@ -183,98 +310,120 @@
     </div>
   </section>
 
-    <!-- ================== SECCIÓN: EQUIPO (5 EN UNA FILA) ================== -->
-    <section class="container-fluid px-5 mt-5">
+    <!-- ================== SECCIÓN: EQUIPO (MEJORADO SIN SOBREPOSICIÓN) ================== -->
+    <section class="py-5" id="equipo-section">
+      <div class="container-fluid">
       
-      <h2 class="text-center mb-5" style="color:#f8f8f8;">Nuestro Equipo de Desarrollo</h2>
+        <h2 class="text-center mb-5" style="color:#f8f8f8;">Nuestro Equipo de Desarrollo</h2>
 
-      <!-- ROW: Fila para las tarjetas -->
-      <div class="row justify-content-center mb-5" style="gap: 100px;">
-        
-        <!-- TARJETA 1: Santiago Ramírez -->
-        <div class="col-auto" style="width: 240px;">
-          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
-            <img src="../img/Foto_Ramirez.png" class="card-img-top" alt="Santiago Ramírez">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-semibold fs-2">Santiago Ramírez <i class="bi bi-patch-check-fill text-primary"></i></h5>
-              <p class="card-text p-2">Desarrollador FullStack</p>
-              <div class="mt-auto mb-2">
-                <a href="https://github.com/Boxwel" target="_blank" rel="noopener" class="btn btn-dark">GitHub <i class="bi bi-github"></i></a>
-                <a href="https://www.linkedin.com/in/santiago-ramirez-desarrollador-frontend/" target="_blank" rel="noopener" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
+        <!-- ROW: Fila para las tarjetas - Con GAP en CSS para evitar sobreposición -->
+        <div class="row justify-content-center">
+          
+          <!-- TARJETA 1: Santiago Ramírez -->
+          <div class="col-auto">
+            <div class="card team-member-card rounded-5 bg-light-subtle text-black text-center shadow-sm">
+              <img src="../img/Foto_Ramirez.png" class="card-img-top" alt="Santiago Ramírez">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-semibold">Santiago Ramírez <i class="bi bi-patch-check-fill text-primary"></i></h5>
+                <p class="card-text p-2">Desarrollador FullStack</p>
+                <div class="mt-auto mb-2">
+                  <a href="https://github.com/Boxwel" target="_blank" rel="noopener" class="btn btn-dark btn-sm mb-2 w-100">
+                    <i class="bi bi-github"></i> GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/in/santiago-ramirez-desarrollador-frontend/" target="_blank" rel="noopener" class="btn btn-dark btn-sm w-100">
+                    <i class="bi bi-linkedin"></i> LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TARJETA 2: Alberto Cortes -->
+          <div class="col-auto">
+            <div class="card team-member-card rounded-5 bg-light-subtle text-black text-center shadow-sm">
+              <img src="../img/Foto_Alberto.png" class="card-img-top" alt="Alberto Cortes">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-semibold">Alberto Cortes Palacios <i class="bi bi-patch-check-fill text-primary"></i></h5>
+                <p class="card-text p-2">Desarrollador FullStack</p>
+                <div class="mt-auto mb-2">
+                  <a href="https://github.com/Copaal10" target="_blank" rel="noopener" class="btn btn-dark btn-sm mb-2 w-100">
+                    <i class="bi bi-github"></i> GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/in/alberto-cortes-palacios-a4959b397/" target="_blank" rel="noopener" class="btn btn-dark btn-sm w-100">
+                    <i class="bi bi-linkedin"></i> LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TARJETA 3: Santiago Rios -->
+          <div class="col-auto">
+            <div class="card team-member-card rounded-5 bg-light-subtle text-black text-center shadow-sm">
+              <img src="../img/Foto_Rios.png" class="card-img-top" alt="Santiago Rios">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-semibold">Santiago Rios Cajamarca <i class="bi bi-patch-check-fill text-primary"></i></h5>
+                <p class="card-text p-2">Desarrollador FullStack</p>
+                <div class="mt-auto mb-2">
+                  <a href="https://github.com/santiago-r21" target="_blank" rel="noopener" class="btn btn-dark btn-sm mb-2 w-100">
+                    <i class="bi bi-github"></i> GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/in/santiago-full-stack-dev/" target="_blank" rel="noopener" class="btn btn-dark btn-sm w-100">
+                    <i class="bi bi-linkedin"></i> LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TARJETA 4: Alvaro Hernández -->
+          <div class="col-auto">
+            <div class="card team-member-card rounded-5 bg-light-subtle text-black text-center shadow-sm">
+              <img src="../img/Foto_Alvaro.png" class="card-img-top" alt="Alvaro Hernández">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-semibold">Alvaro Daniel Hernández <i class="bi bi-patch-check-fill text-primary"></i></h5>
+                <p class="card-text p-2">Desarrollador FullStack</p>
+                <div class="mt-auto mb-2">
+                  <a href="https://github.com/hernandezalvarodaniel" target="_blank" rel="noopener" class="btn btn-dark btn-sm mb-2 w-100">
+                    <i class="bi bi-github"></i> GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/in/hernandezalvarodaniel" target="_blank" rel="noopener" class="btn btn-dark btn-sm w-100">
+                    <i class="bi bi-linkedin"></i> LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TARJETA 5: Nicolas Munevar -->
+          <div class="col-auto">
+            <div class="card team-member-card rounded-5 bg-light-subtle text-black text-center shadow-sm">
+              <img src="../img/Foto_Nicolas.png" class="card-img-top" alt="Nicolas Munevar">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-semibold">Nicolas Munevar <i class="bi bi-patch-check-fill text-primary"></i></h5>
+                <p class="card-text p-2">Desarrollador FullStack</p>
+                <div class="mt-auto mb-2">
+                  <a href="https://github.com/munevarnicolas" target="_blank" rel="noopener" class="btn btn-dark btn-sm mb-2 w-100">
+                    <i class="bi bi-github"></i> GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/in/munevarnicolas/" target="_blank" rel="noopener" class="btn btn-dark btn-sm w-100">
+                    <i class="bi bi-linkedin"></i> LinkedIn
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- TARJETA 2: Alberto Cortes -->
-        <div class="col-auto" style="width: 240px;">
-          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
-            <img src="../img/Foto_Alberto.png" class="card-img-top" alt="Alberto Cortes">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-semibold fs-2">Alberto Cortes Palacios <i class="bi bi-patch-check-fill text-primary"></i></h5>
-              <p class="card-text p-2">Desarrollador FullStack</p>
-              <div class="mt-auto mb-2">
-                <a href="https://github.com/Copaal10" target="_blank" rel="noopener" class="btn btn-dark">GitHub <i class="bi bi-github"></i></a>
-                <a href="https://www.linkedin.com/in/alberto-cortes-palacios-a4959b397/" target="_blank" rel="noopener" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TARJETA 3: Santiago Rios -->
-        <div class="col-auto" style="width: 240px;">
-          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
-            <img src="../img/Foto_Rios.png" class="card-img-top" alt="Santiago Rios">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-semibold fs-2">Santiago Rios Cajamarca <i class="bi bi-patch-check-fill text-primary"></i></h5>
-              <p class="card-text p-2">Desarrollador FullStack</p>
-              <div class="mt-auto mb-2">
-                <a href="https://github.com/santiago-r21" target="_blank" rel="noopener" class="btn btn-dark">GitHub <i class="bi bi-github"></i></a>
-                <a href="https://www.linkedin.com/in/santiago-full-stack-dev/" target="_blank" rel="noopener" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TARJETA 4: Alvaro Hernández -->
-        <div class="col-auto" style="width: 240px;">
-          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
-            <img src="../img/Foto_Alvaro.png" class="card-img-top" alt="Alvaro Hernández">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-semibold fs-2">Alvaro Daniel Hernández <i class="bi bi-patch-check-fill text-primary"></i></h5>
-              <p class="card-text p-2">Desarrollador FullStack</p>
-              <div class="mt-auto mb-2">
-                <a href="https://github.com/hernandezalvarodaniel" target="_blank" rel="noopener" class="btn btn-dark">GitHub <i class="bi bi-github"></i></a>
-                <a href="https://www.linkedin.com/in/hernandezalvarodaniel" target="_blank" rel="noopener" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TARJETA 5: Nicolas Munevar -->
-        <div class="col-auto" style="width: 240px;">
-          <div class="card overflow-hidden rounded-5 bg-light-subtle text-black text-center shadow-sm h-100">
-            <img src="../img/Foto_Nicolas.png" class="card-img-top" alt="Nicolas Munevar">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-semibold fs-2">Nicolas Munevar <i class="bi bi-patch-check-fill text-primary"></i></h5>
-              <p class="card-text p-2">Desarrollador FullStack</p>
-              <div class="mt-auto mb-2">
-                <a href="https://github.com/munevarnicolas" target="_blank" rel="noopener" class="btn btn-dark">GitHub <i class="bi bi-github"></i></a>
-                <a href="https://www.linkedin.com/in/munevarnicolas/" target="_blank" rel="noopener" class="btn btn-dark">Linkedin <i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- Cierra Row del Equipo -->
-    </section> <!-- Cierra Sección Equipo -->
-
-  </main> <!-- Cierra Main -->
+  </main>
 
   <!-- ================== FOOTER (PIE DE PÁGINA) ================== -->
   <footer class="footer">
     <div class="container text-center">
       <h3>Proyecto Velox</h3>
-      <p>&copy; 2025 Proyecto Velox. Todos los derechos reservados.</p>
+      <p>&copy; 2026 Proyecto Velox. Todos los derechos reservados.</p>
 
       <div class="social-icons">
         <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
@@ -294,20 +443,19 @@
 
   <!-- ================== SCRIPTS (JAVASCRIPT) ================== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- JavaScript externo -->
   <script src="../script/carritoAvanzado.js"></script>
 
-  <!-- Offcanvas Carrito  despelgable del carrito-->
+  <!-- Offcanvas Carrito -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoOffcanvas" aria-labelledby="carritoLabel">
-  <div class="offcanvas-header">
-    <h5 id="carritoLabel">Tu carrito</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div id="lista-carrito" class="mb-3"></div>
-    <div id="total-carrito" class="fw-bold"></div>
-    <button id="vaciar-carrito" class="btn btn-outline-danger mt-3">Vaciar carrito</button>
-  </div>
+    <div class="offcanvas-header">
+      <h5 id="carritoLabel">Tu carrito</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="lista-carrito" class="mb-3"></div>
+      <div id="total-carrito" class="fw-bold"></div>
+      <button id="vaciar-carrito" class="btn btn-outline-danger mt-3">Vaciar carrito</button>
+    </div>
   </div>
 </body>
 </html>

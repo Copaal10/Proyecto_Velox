@@ -3,230 +3,281 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Proyecto Velox — Dashboard</title>
+  <title>Dashboard - Velox Motors</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+  
   <!-- CSS Dashboard -->
   <link rel="stylesheet" href="../css/dashboard.css"/>
 </head>
 <body>
 
-  <div class="dashboard-layout">
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="logo-container p-3 text-center">
-        <img src="../img/logo.png" alt="Logo Velox" class="img-fluid" style="max-width: 150px;">
-      </div>
-      <div class="brand">
-        <h2>Velox</h2>
-        <span class="subtitle">Administrador</span>
-      </div>
-      <nav class="menu">
-        <a href="#" class="menu-item active" data-section="inicio"><i class="bi bi-journal-text"></i> Inicio / Notas</a>
-        <a href="#" class="menu-item" data-section="vehiculos"><i class="bi bi-car-front"></i> Vehículos</a>
-        <a href="#" class="menu-item" data-section="galeria"><i class="bi bi-images"></i> Galería</a>
-        <a href="#" class="menu-item" data-section="sonidos"><i class="bi bi-soundwave"></i> Sonidos</a>
-      </nav>
-      <div class="mt-4 p-3">
-        <button id="cerrar-sesion" class="btn btn-outline-danger w-100">
-          <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+  <!-- NAVBAR SUPERIOR -->
+  <nav class="navbar navbar-expand-lg top-navbar sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="../img/logo.png" alt="Logo Velox" class="navbar-logo">
+        <span>VELOX ADMIN</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-section="dashboard">
+              <i class="bi bi-grid-fill"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="vehiculos">
+              <i class="bi bi-car-front-fill"></i> Vehículos
+            </a>
+          </li>
+        </ul>
+        
+        <button class="btn btn-cerrar" id="btnCerrarSesion">
+          <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
         </button>
       </div>
+    </div>
+  </nav>
 
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-container">
 
-<!-- BLOQUE DE NAVEGACIÓN RÁPIDA -->
-<h5>Navegacion rapida</h5>
-<div class="d-grid gap-2 mt-3">
-  
-  <!-- 1. IR AL INDEX -->
-  <a href="../index.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-house-door-fill"></i> Ir al Inicio/ index.html
-  </a>
-
-  <!-- 2. IR AL LOGIN / ADMIN -->
-  <a href="login.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-person-circle"></i> Ir al Login/ login.html
-  </a>
-
-  <!-- 3. IR A FORMULARIOS -->
-  <a href="forms.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-envelope-fill"></i> Ir a Formularios/ forms.html
-  </a>
-
-  <!-- 4. IR A CONTACTO -->
-  <a href="contact.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-people-fill"></i> Ir a Contacto/ contact.html
-  </a>
-
-  <!-- 5. IR A CATALOGO -->
-  <a href="catalog.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-people-fill"></i> Ir a Catalogo/ catalog.html
-  </a>
-
-
-
-</div>
-
-
-
-
-
-
-
-    </aside>
-
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="content">
-      <header class="content-header">
-        <h1>Proyecto Velox — Dashboard</h1>
-      </header>
-
-      <!-- SECCIÓN INICIO -->
-      <section id="inicio" class="section visible">
-        <div class="card p-4">
-          <h3>Notas rápidas</h3>
-          <textarea id="notas" class="form-control" rows="6" placeholder="Escribe tus notas aquí..."></textarea>
-          <div class="mt-3 d-flex gap-2">
-            <button id="guardar-notas" class="btn btn-primary"><i class="bi bi-save2"></i> Guardar</button>
-            <button id="limpiar-notas" class="btn btn-outline-danger"><i class="bi bi-trash3"></i> Limpiar</button>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- SECCIÓN VEHÍCULOS -->
-      <section id="vehiculos" class="section">
-        <div class="row g-4">
-          <!-- Formulario (Izquierda) -->
-          <div class="col-12 col-lg-5">
-            <form id="formVehiculo" class="card p-4 shadow-sm" enctype="multipart/form-data">
-              <h3 class="mb-3">Registrar vehículo</h3>
-              <div class="mb-3"><label for="marca" class="form-label">Marca</label><input type="text" class="form-control" id="marca" required></div>
-              <div class="mb-3"><label for="modelo" class="form-label">Modelo</label><input type="text" class="form-control" id="modelo" required></div>
-              <div class="mb-3"><label for="anio" class="form-label">Año</label><input type="number" class="form-control" id="anio" min="2000" max="2025" required></div>
-              <div class="mb-3"><label for="precio" class="form-label">Precio (USD)</label><input type="number" class="form-control" id="precio" required></div>
-              <div class="mb-3"><label for="imagen" class="form-label">Imagen</label><input type="file" class="form-control" id="imagen" accept="image/*" required></div>
-              <div class="mb-3"><label for="descripcion" class="form-label">Descripción</label><textarea class="form-control" id="descripcion" rows="3" required></textarea></div>
-              <button type="submit" class="btn btn-primary w-100">Registrar</button>
-            </form>
-
-
-
-            
-
-
-
-
-          </div>
-
-          <!-- Columna Derecha: Dos Contenedores Separados -->
-          <div class="col-12 col-lg-7">
-            
-            <!-- CONTENEDOR 1: LOS 10 FIJOS -->
-            <div class="card p-4 mb-4">
-              <h3>Catálogo Base (No Borrables)</h3>
-              <div id="contenedor-fijos" class="vehiculos-grid"></div>
-            </div>
-
-            <!-- CONTENEDOR 2: LOS NUEVOS AGREGADOS -->
-            <div class="card p-4 bg-light">
-              <h3 class="text-primary">Vehículos Agregados (Borrables)</h3>
-              <div id="contenedor-nuevos" class="vehiculos-grid"></div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- SECCIÓN GALERÍA -->
-      <section id="galeria" class="section">
-        <div class="row g-4">
-          <div class="col-12 col-lg-5">
-            <form id="formGaleria" class="card p-4 shadow-sm" enctype="multipart/form-data">
-              <h3 class="mb-3">Registrar imagen en galería</h3>
-              <div class="mb-3">
-                <label for="imagenGaleria" class="form-label">Imagen</label>
-                <input type="file" class="form-control" id="imagenGaleria" accept="image/*" required>
-              </div>
-              <div class="mb-3">
-                <label for="galeriaSelect" class="form-label">Selecciona galería</label>
-                <select id="galeriaSelect" class="form-select" required>
-                  <option value="galeria1">Galería 1</option>
-                  <option value="galeria2">Galería 2</option>
-                  <option value="galeria3">Galería 3</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Agregar imagen</button>
-            </form>
-          </div>
-          <div class="col-12 col-lg-7">
-            <div class="row">
-              <div class="col-12 mb-3">
-                <div class="card p-3"><h4>Galería 1</h4><div id="galeria1" class="row"></div></div>
-              </div>
-              <div class="col-12 mb-3">
-                <div class="card p-3"><h4>Galería 2</h4><div id="galeria2" class="row"></div></div>
-              </div>
-              <div class="col-12 mb-3">
-                <div class="card p-3"><h4>Galería 3</h4><div id="galeria3" class="row"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <!-- SECCIÓN DASHBOARD -->
+    <section id="dashboard" class="section active">
       
-      <!-- SECCIÓN SONIDOS -->
-      <section id="sonidos" class="section">
-        <div class="row g-4">
-          <div class="col-12 col-lg-5">
-            <form id="formSonido" class="card p-4 shadow-sm" enctype="multipart/form-data">
-              <h3 class="mb-3">Registrar sonido de vehículo</h3>
-              <div class="mb-3">
-                <label for="nombreSonido" class="form-label">Nombre del vehículo</label>
-                <input type="text" class="form-control" id="nombreSonido" required>
-              </div>
-              <div class="mb-3">
-                <label for="imagenSonido" class="form-label">Foto del vehículo</label>
-                <input type="file" class="form-control" id="imagenSonido" accept="image/*" required>
-              </div>
-              <div class="mb-3">
-                <label for="audioSonido" class="form-label">Sonido del motor</label>
-                <input type="file" class="form-control" id="audioSonido" accept="audio/*" required>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Agregar</button>
-            </form>
+      <!-- ESTADÍSTICAS -->
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <div class="card stat-card stat-primary">
+            <i class="bi bi-car-front-fill"></i>
+            <h3>Total Vehículos</h3>
+            <div class="number" id="totalVehiculos">0</div>
           </div>
-          <div class="col-12 col-lg-7">
-            <div class="card p-4">
-              <h3>Sonidos registrados</h3>
-              <div id="resultadoSonidos" class="row"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="card stat-card stat-success">
+            <i class="bi bi-shield-check"></i>
+            <h3>Catálogo Base</h3>
+            <div class="number">10</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card stat-card stat-warning">
+            <i class="bi bi-star-fill"></i>
+            <h3>Agregados</h3>
+            <div class="number" id="totalAgregados">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- NOTAS -->
+        <div class="col-lg-8">
+          <div class="card content-card">
+            <div class="card-header">
+              <i class="bi bi-journal-text"></i> Notas Rápidas
+            </div>
+            <div class="card-body">
+              <textarea id="notasTexto" class="form-control" rows="8" placeholder="Escribe tus notas administrativas aquí..."></textarea>
+              <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-velox" id="btnGuardarNotas">
+                  <i class="bi bi-save"></i> Guardar Notas
+                </button>
+                <button class="btn btn-outline-danger" id="btnLimpiarNotas">
+                  <i class="bi bi-trash"></i> Limpiar
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+
+        <!-- NAVEGACIÓN RÁPIDA -->
+        <div class="col-lg-4">
+          <div class="quick-nav">
+            <h6><i class="bi bi-lightning-charge"></i> Acceso Rápido</h6>
+            <div class="d-grid gap-2">
+              <a href="../index.html" class="btn btn-outline-primary">
+                <i class="bi bi-house-door"></i> Página Principal
+              </a>
+              <a href="catalog.html" class="btn btn-outline-primary">
+                <i class="bi bi-grid-3x3"></i> Catálogo
+              </a>
+              <a href="contact.html" class="btn btn-outline-primary">
+                <i class="bi bi-people"></i> Acerca de Nosotros
+              </a>
+              <a href="forms.html" class="btn btn-outline-primary">
+                <i class="bi bi-envelope"></i> Contacto
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN VEHÍCULOS -->
+    <section id="vehiculos" class="section">
+      <div class="row g-4">
+        
+        <!-- FORMULARIO REGISTRO -->
+        <div class="col-lg-4">
+          <div class="card content-card">
+            <div class="card-header">
+              <i class="bi bi-plus-circle"></i> Registrar Vehículo
+            </div>
+            <div class="card-body">
+              <form id="formVehiculo" enctype="multipart/form-data">
+                
+                <div class="mb-3">
+                  <label for="marca" class="form-label">Marca</label>
+                  <input type="text" class="form-control" id="marca" placeholder="Ferrari, Lamborghini..." required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="modelo" class="form-label">Modelo</label>
+                  <input type="text" class="form-control" id="modelo" placeholder="488 GTB, Huracán..." required>
+                </div>
+
+                <div class="row">
+                  <div class="col-6 mb-3">
+                    <label for="anio" class="form-label">Año</label>
+                    <input type="number" class="form-control" id="anio" min="2000" max="2025" placeholder="2024" required>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="precio" class="form-label">Precio (USD)</label>
+                    <input type="number" class="form-control" id="precio" placeholder="250000" required>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="imagen" class="form-label">Imagen</label>
+                  <input type="file" class="form-control" id="imagen" accept="image/*" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="descripcion" class="form-label">Descripción</label>
+                  <textarea class="form-control" id="descripcion" rows="3" placeholder="Características destacadas..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-velox w-100">
+                  <i class="bi bi-check-circle"></i> Registrar Vehículo
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- LISTA DE VEHÍCULOS -->
+        <div class="col-lg-8">
+          
+          <!-- CATÁLOGO BASE -->
+          <div class="card content-card">
+            <div class="card-header">
+              <i class="bi bi-shield-check"></i> Catálogo Base (Protegidos)
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">Vehículos permanentes del catálogo Velox</p>
+              <div id="contenedor-fijos" class="vehiculos-container"></div>
+            </div>
+          </div>
+
+          <!-- VEHÍCULOS AGREGADOS -->
+          <div class="card content-card mt-4">
+            <div class="card-header" style="background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);">
+              <i class="bi bi-star-fill"></i> Vehículos Agregados (Editables)
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">Vehículos registrados por ti - Puedes eliminarlos</p>
+              <div id="contenedor-nuevos" class="vehiculos-container">
+                <div class="empty-state">
+                  <i class="bi bi-inbox"></i>
+                  <p>No hay vehículos agregados aún</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </div>
 
-  <!-- ================== SCRIPTS ================== -->
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script principal del dashboard (maneja navegación y notas) -->
-  <script src="../script/dashboard.js"></script>
-  
-  <!-- Script para manejar el registro de vehículos -->
-  <script src="../script/agregarVehiculo.js"></script>
-  
-  <!-- Script del carrito y catálogo (UNIVERSAL: Funciona en Admin y Catálogo) -->
-  <script src="../script/carritoAvanzado.js"></script>
+  <script>
+    // NAVEGACIÓN ENTRE SECCIONES
+    document.querySelectorAll('[data-section]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Actualizar links activos
+        document.querySelectorAll('[data-section]').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        
+        // Mostrar sección
+        const sectionId = link.getAttribute('data-section');
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+      });
+    });
 
-  <!-- Otros módulos -->
-  <script src="../script/sonidos.js"></script>
-  <script src="../script/galeria.js"></script>
+    // CERRAR SESIÓN
+    document.getElementById('btnCerrarSesion').addEventListener('click', () => {
+      if (confirm('¿Deseas cerrar sesión?')) {
+        window.location.href = 'login.html';
+      }
+    });
+
+    // NOTAS
+    const notasTexto = document.getElementById('notasTexto');
+    
+    // Cargar notas guardadas
+    window.addEventListener('load', () => {
+      const notasGuardadas = localStorage.getItem('velox-notas-admin');
+      if (notasGuardadas) {
+        notasTexto.value = notasGuardadas;
+      }
+    });
+
+    // Guardar notas
+    document.getElementById('btnGuardarNotas').addEventListener('click', () => {
+      localStorage.setItem('velox-notas-admin', notasTexto.value);
+      
+      // Feedback visual
+      const btn = document.getElementById('btnGuardarNotas');
+      const textoOriginal = btn.innerHTML;
+      btn.innerHTML = '<i class="bi bi-check-circle"></i> ¡Guardado!';
+      btn.classList.add('btn-success');
+      btn.classList.remove('btn-velox');
+      
+      setTimeout(() => {
+        btn.innerHTML = textoOriginal;
+        btn.classList.remove('btn-success');
+        btn.classList.add('btn-velox');
+      }, 2000);
+    });
+
+    // Limpiar notas
+    document.getElementById('btnLimpiarNotas').addEventListener('click', () => {
+      if (confirm('¿Deseas limpiar todas las notas?')) {
+        notasTexto.value = '';
+        localStorage.removeItem('velox-notas-admin');
+      }
+    });
+  </script>
+
+  <!-- Scripts externos -->
+  <script src="../script/dashboard.js"></script>
+  <script src="../script/carritoAvanzado.js"></script>
 </body>
 </html>

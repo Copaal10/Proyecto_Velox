@@ -368,3 +368,14 @@ header h1 {
     background-color: #2C2C2C;
     border-color: #2C2C2C;
 }
+
+
+.navbar .btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
