@@ -1,0 +1,678 @@
+/* Tipografía Orbitron aplicada */
+/* */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #F8F8F8;
+  /* Sea Salt */
+  color: #212121;
+  /* Eerie Black */
+}
+
+/* Tamaños de títulos */
+h1 {
+  font-size: 96px;
+}
+
+h2 {
+  font-size: 64px;
+}
+
+h3 {
+  font-size: 48px;
+}
+
+h4 {
+  font-size: 36px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+/* Header */
+header {
+  background-color: #999999;
+  /* Battleship Gray */
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  color: #212121;
+  /* Eerie Black */
+}
+
+/* Navbar personalizada */
+#nav {
+  background-color: #F8F8F8;
+  /* Rudy Blue */
+}
+
+.nav nav-tabs,
+.nav-link {
+  color: #212121 !important;
+  /* Eerie Black */
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #C3E0FA !important;
+  /* Columbia Blue */
+}
+
+
+/* Footer */
+.footer {
+  background-color: #212121;
+  /* Eerie Black */
+  color: #F8F8F8;
+  /* Sea Salt */
+  padding: 2rem 0;
+}
+
+.footer h3 {
+  font-size: 48px;
+  /* H3 Orbitron */
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 1rem;
+  color: #65ABEA;
+  /* Rudy Blue */
+}
+
+.footer p {
+  font-size: 15px;
+  /* H5 Orbitron */
+  color: #C3E0FA;
+  /* Columbia Blue */
+  margin-bottom: 1rem;
+}
+
+/* Links */
+.footer-links a {
+  color: #F8F8F8;
+  /* Sea Salt */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+  color: #65ABEA;
+  /* Rudy Blue */
+}
+
+/* Redes sociales */
+.social-icons {
+  margin: 1rem 0;
+}
+
+.social-link {
+  color: #F8F8F8;
+  /* Sea Salt */
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #65ABEA;
+  /* Rudy Blue */
+}
+
+
+#about {
+  background-color: #F8F8F8;
+  /* Sea Salt */
+  color: #212121;
+  /* Eerie Black */
+  padding: 3rem 0;
+}
+
+#about h2 {
+  font-size: 64px;
+  /* H2 Orbitron */
+  font-family: 'Orbitron', sans-serif;
+  color: #65ABEA;
+  /* Rudy Blue */
+}
+
+#about p.lead {
+  font-size: 18px;
+  color: #999999;
+  /* Battleship Gray */
+  margin-bottom: 1rem;
+}
+
+#about p {
+  font-size: 15px;
+  /* H5 Orbitron */
+  font-family: 'Orbitron', sans-serif;
+  color: #212121;
+  /* Eerie Black */
+}
+
+#about img {
+  border: 4px solid #C3E0FA;
+  /* Columbia Blue */
+}
+
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 20rem;
+  overflow: hidden;
+  border: none;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-img-top {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.card-body {
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  position: relative;
+  display: inline-block;
+}
+
+.card:hover .card-title::after {
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .cards-container {
+    gap: 1rem;
+  }
+
+  .card {
+    width: 18rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .cards-container {
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 22rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+    max-width: 22rem;
+  }
+}
+
+/* Validaciones formulario */
+.is-valid {
+  border-color: #198754 !important;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.error-mensaje {
+  font-size: 0.875rem;
+}
+
+/* estilo del formulario */
+/* Centrar el formulario de vehículos */
+#formVehiculo {
+  width: 900px;
+  /* ancho máximo para que no se extienda demasiado */
+  margin: 0 auto;
+  /* centra horizontalmente */
+  text-align: left;
+  /* mantiene alineación interna de labels e inputs */
+}
+
+/* Aplica solo al formulario de vehículos */
+#formVehiculo input.form-control,
+#formVehiculo textarea.form-control {
+  border: 2px solid #000;
+  /* negro */
+  /* Si prefieres azul, cambia por #0d6efd (azul Bootstrap) */
+  /* border: 2px solid #0d6efd; */
+  box-shadow: none;
+}
+
+/* Aplica solo al navbar */
+.nav .formulario {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  /* centra el texto dentro del enlace */
+}
+
+
+/* Contenedor principal de las tarjetas */
+.contenedor-vehiculos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* siempre 3 columnas */
+  gap: 10px;
+  /* 🔽 reduce el espacio entre tarjetas */
+  padding: 5px;
+  /* 🔽 menos espacio interno del contenedor */
+  background: #f4f4f4;
+  border-radius: 8px;
+  justify-items: center;
+  /* centra cada tarjeta dentro de su celda */
+}
+
+/* Cada tarjeta */
+.vehiculo-card {
+  width: 230px;
+  /* 🔽 ligeramente más angosta */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  /* 🔽 menos espacio interno */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+/* Efecto hover */
+.vehiculo-card:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen dentro de cada tarjeta */
+.vehiculo-card img {
+  width: 100%;
+  height: 140px;
+  /* 🔽 menos altura para compactar */
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 6px;
+  /* 🔽 menos separación con el texto */
+}
+
+/* Contenedor externo que limita el ancho */
+#resultado {
+  max-width: 800px;
+  /* 🔽 ajusta el ancho total del área de tarjetas */
+  margin: 0 auto;
+  /* 🔽 centra horizontalmente */
+  padding: 10px 0;
+  /* 🔽 espacio vertical */
+}
+
+
+
+/* ====== CONTENEDOR LATERAL (form + cards) ====== */
+.contenedor_lateral {
+  display: flex;
+  /* activa flexbox */
+  gap: 20px;
+  /* espacio entre formulario y cards */
+  align-items: flex-start;
+  /* alinea arriba */
+  margin-top: 20px;
+}
+
+/* Formulario ocupa menos ancho */
+.contenedor_lateral .container {
+  flex: 1;
+  /* ocupa 1 parte */
+  max-width: 400px;
+  /* ancho fijo o limitado */
+}
+
+/* Cards ocupan más espacio */
+.contenedor_lateral #resultado {
+  flex: 2;
+  /* ocupa 2 partes */
+}
+
+/* ====== CONTENEDOR DE CARDS ====== */
+.contenedor-vehiculos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* siempre 3 columnas */
+  gap: 10px;
+  /* espacio entre tarjetas */
+  padding: 5px;
+  /* menos espacio interno */
+  background: #f4f4f4;
+  border-radius: 8px;
+  justify-items: center;
+  /* centra cada tarjeta dentro de su celda */
+}
+
+/* ====== CADA CARD ====== */
+.vehiculo-card {
+  width: 230px;
+  /* tamaño fijo */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  /* espacio interno */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.vehiculo-card:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen dentro de cada tarjeta */
+.vehiculo-card img {
+  width: 100%;
+  height: 140px;
+  /* altura fija */
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+
+  /* En tablets: 2 columnas de cards */
+  .contenedor-vehiculos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Form y cards se apilan */
+  .contenedor_lateral {
+    flex-direction: column;
+  }
+
+  /* Cards ocupan todo el ancho */
+  .contenedor-vehiculos {
+    grid-template-columns: 1fr;
+  }
+
+  .vehiculo-card {
+    width: 100%;
+    /* que ocupen todo el ancho disponible */
+  }
+}
+
+
+/* ====== CALCULADORA FINANCIERA ====== */
+.velox-fin-card {
+  border: 2px solid #65ABEA;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.velox-fin-input-side {
+  padding: 2rem;
+  background: #F8F8F8;
+}
+
+.velox-fin-result-side {
+  padding: 2rem;
+  background: #212121;
+  color: #F8F8F8;
+  border-left: 4px solid #65ABEA;
+}
+
+.velox-fin-res-label {
+  font-weight: bold;
+  color: #65ABEA;
+}
+
+
+/* ================== BOTONES CALCULADORA (ESTILO UNIFICADO) ================== */
+
+/* Aplicamos el mismo estilo a ambas clases */
+.btn-calc-velox, 
+.btn-reset-velox {
+    /* Apariencia Base */
+    background-color: #212121;      /* Fondo Negro */
+    color: white;                    /* Texto Blanco */
+    font-weight: bold;               /* Negrita */
+    text-transform: uppercase;       /* Mayúsculas */
+    border: none;                    /* Sin borde */
+    padding: 12px 0;                 /* Altura del botón */
+    border-radius: 50px;              /* Bordes redondos */
+    transition: all 0.3s ease;       /* Animación suave */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra suave */
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse (Hover) - Igual para ambos */
+.btn-calc-velox:hover, 
+.btn-reset-velox:hover {
+    background-color: white;         /* Fondo cambia a blanco */
+    color: #65ABEA;                   /* Texto cambia a Azul Velox */
+    transform: translateY(-2px);      /* Se levanta un poco */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Efecto al hacer click (Active) - Opcional para dar sensación táctil */
+.btn-calc-velox:active, 
+.btn-reset-velox:active {
+    transform: translateY(0);
+}
+
+
+
+
+/* Scroll suave y animaciones */
+html { scroll-behavior: smooth; }
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* ====== AGREGADOS PARA LIMPIEZA (Reemplazan estilos en línea) ====== */
+
+/* Colores Utilitarios */
+.text-velox-blue {
+  color: #65ABEA !important;
+}
+
+.text-velox-dark {
+  color: #212121 !important;
+}
+
+.bg-velox-dark {
+  background-color: #212121 !important;
+}
+
+/* Tipografía específica */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif !important;
+}
+
+/* Hero Section */
+.hero-img {
+  max-height: 700px;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Sombras de texto */
+.text-shadow-strong {
+  text-shadow: 2px 2px 4px #000;
+}
+
+.text-shadow-soft {
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Decoradores */
+.velox-divider {
+  width: 50px;
+  height: 4px;
+  background-color: #65ABEA;
+  margin: 0 auto;
+}
+
+/* Estilos específicos para resultados de calculadora (Faltaban en original) */
+.velox-fin-res-cuota-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.velox-fin-res-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.velox-fin-res-divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.velox-fin-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #212121;
+  margin-bottom: 0;
+}
+
+.velox-fin-divider {
+  width: 60px;
+  height: 4px;
+  background-color: #65ABEA;
+  margin: 10px auto 0;
+}
+
+/* Efecto hover para tarjetas de características */
+.hover-shadow {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  cursor: default;
+}
+
+/*slide marcas*/
+.slider {
+    overflow: hidden; 
+    width: 100%;
+    position: relative; 
+}
+
+.slide-track {
+    display: flex;
+    width: calc(var(--slide-width) * var(--slide-count) * 2);
+    animation: scroll 50s linear infinite;
+}
+
+
+
+
+.slide {
+    width: var(--slide-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+:root {
+    --slide-width: 300px;
+    --slide-count: 7;
+    
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(
+            calc(-1 * var(--slide-width) * var(--slide-count))
+        );
+    }
+}
+
+
+.slide img {
+    height: 125px; 
+    transition: transform 0.3s, opacity 0.3s;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+}

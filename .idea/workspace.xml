@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3964d21-a1fa-4fd5-ae37-69e5abc60ef8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/proyecto-backend/src/main/java/com/velox/proyecto/backend/controller/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proyecto-backend/src/main/java/com/velox/proyecto/backend/model/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proyecto-backend/src/main/java/com/velox/proyecto/backend/repository/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/Estructura Genral BD.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/Script Creacion DB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styleadmin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/stylefroms.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/stylescatalog.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/catalog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/forms.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/listAdmin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Chiron/Chiron1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Chiron/Chiron2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Chiron/Chiron3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Ferrari/Ferrari1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Ferrari/Ferrari2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Ferrari/Ferrari3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Ferrari/Ferrari4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Foto_Alberto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Foto_Alvaro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Foto_Nicolas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Foto_Ramirez.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Foto_Rios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Koenigsegg/Koenigsegg1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Koenigsegg/Koenigsegg2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Koenigsegg/Koenigsegg3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Koenigsegg/Koenigsegg5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Koenigsegg/Koenigsegg6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Lamborghini/Lamborghini1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Lamborghini/Lamborghini2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Lamborghini/Lamborghini3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Lamborghini/Lamborghini4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Lamborghini/Lamborghini5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Lamborghini/Lamborghini6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Lamborghini/Lamborghini7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/McLaren/McLaren1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/McLaren/McLaren2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/McLaren/McLaren3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/McLaren/McLaren4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/McLaren/McLaren6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Mercedes/mercedes1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Pagani/Pagani1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Pagani/Pagani2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Pagani/Pagani3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Pagani/Pagani4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Pagani/Pagani5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Pagani/Pagani6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Pagani/Pagani7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Pagani/Pagani8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Porche/Porche1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Porche/Porche2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Porche/Porche3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Porche/Porche4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Rimac/Rimac1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Roll/Roll1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Roll/Roll2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Roll/Roll3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Roll/Roll4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Roll/Roll5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car5.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car6.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car8.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/car9.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/fondo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/fondo2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/fondo3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/fondo4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/img_contact.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/agregarVehiculo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/calculadora.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/carritoAvanzado.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/catalogCarrito.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/galeria.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/listarVehiculo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/registro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound10.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound11.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound3.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound4.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound5.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound6.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound7.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound8.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonidos/sound9.mp3" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Copaal10"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Copaal10/Proyecto_Velox.git",
+    "accountId": "bf58a73e-5710-416d-beee-213f35ee77a1"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="38IkScpXaaJ7BAfWjVoow0OWc88" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Explyt Spring.ProyectoBackendApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "NotificationExplytEndpoints": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Merging main",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ProyectoBackendApplication" type="Spring Boot" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.velox.proyecto.backend.ProyectoBackendApplication" />
+      <module name="proyecto-backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3964d21-a1fa-4fd5-ae37-69e5abc60ef8" name="Changes" comment="" />
+      <created>1768494475525</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768494475525</updated>
+    </task>
+    <servers />
+  </component>
+</project>
