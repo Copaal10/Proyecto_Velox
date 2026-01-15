@@ -1,4 +1,3 @@
-
 console.log("📊 dashboard.js cargado");
 
 // ==================== NAVEGACIÓN ENTRE SECCIONES ====================
@@ -7,12 +6,16 @@ document.querySelectorAll('[data-section]').forEach(link => {
     e.preventDefault();
     
     // Actualizar links activos
-    document.querySelectorAll('[data-section]').forEach(l => l.classList.remove('active'));
+    document.querySelectorAll('[data-section]').forEach(l =>
+      l.classList.remove('active')
+    );
     link.classList.add('active');
     
     // Mostrar sección correspondiente
     const target = link.getAttribute('data-section');
-    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(sec =>
+      sec.classList.remove('active')
+    );
     document.getElementById(target).classList.add('active');
     
     console.log("📍 Sección activa:", target);
@@ -35,6 +38,7 @@ const btnGuardarNotas = document.getElementById('btnGuardarNotas');
 const btnLimpiarNotas = document.getElementById('btnLimpiarNotas');
 
 if (notasTexto && btnGuardarNotas && btnLimpiarNotas) {
+
   // Cargar notas al iniciar
   window.addEventListener('load', () => {
     const notasGuardadas = localStorage.getItem('velox-notas-admin');

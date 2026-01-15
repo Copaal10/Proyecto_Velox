@@ -12,6 +12,13 @@
   
   <!-- CSS Dashboard -->
   <link rel="stylesheet" href="../css/dashboard.css"/>
+  
+  <style>
+    /* Deshabilitar redimensión manual del textarea */
+    #notasTexto {
+      resize: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -241,7 +248,7 @@
     // NOTAS
     const notasTexto = document.getElementById('notasTexto');
     
-    // Cargar notas guardadas
+    // Cargar notas guardadas al iniciar
     window.addEventListener('load', () => {
       const notasGuardadas = localStorage.getItem('velox-notas-admin');
       if (notasGuardadas) {

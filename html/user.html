@@ -3,113 +3,106 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Proyecto Velox — Dashboard</title>
+  <title>Proyecto Velox – Dashboard</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+  
   <!-- CSS Dashboard -->
   <link rel="stylesheet" href="../css/dashboard.css"/>
 </head>
 <body>
 
-  <div class="dashboard-layout">
-    <!-- SIDEBAR -->
-    <aside class="sidebar" style="background-color: #00264d;">
-      <div class="logo-container p-3 text-center">
-        <img src="../img/logo.png" alt="Logo Velox" class="img-fluid" style="max-width: 150px;">
-      </div>
-      <div class="brand">
-        <h2>Velox</h2>
-        <span class="subtitle">Usuario</span>
-      </div>
-      <nav class="menu">
-        <a href="#" class="menu-item active" data-section="inicio"><i class="bi bi-journal-text"></i> Inicio / Notas</a>
-        <a href="#" class="menu-item" data-section="vehiculos"><i class="bi bi-car-front"></i> Vacio</a>
-        <a href="#" class="menu-item" data-section="galeria"><i class="bi bi-images"></i> Vacio</a>
-        <a href="#" class="menu-item" data-section="sonidos"><i class="bi bi-soundwave"></i> Vacio</a>
-      </nav>
-      <div class="mt-4 p-3">
-        <button id="cerrar-sesion" class="btn btn-outline-danger w-100">
-          <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+  <!-- NAVBAR SUPERIOR -->
+  <nav class="navbar navbar-expand-lg top-navbar sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="../img/logo.png" alt="Logo Velox" class="navbar-logo">
+        <span>VELOX USUARIO</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-section="inicio">
+              <i class="bi bi-journal-text"></i> Inicio
+            </a>
+          </li>
+        </ul>
+        
+        <button class="btn btn-cerrar" id="cerrar-sesion">
+          <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
         </button>
       </div>
+    </div>
+  </nav>
 
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-container">
 
-<!-- BLOQUE DE NAVEGACIÓN RÁPIDA -->
-<h5>Navegacion rapida</h5>
-<div class="d-grid gap-2 mt-3">
-  
-  <!-- 1. IR AL INDEX -->
-  <a href="../index.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-house-door-fill"></i> Ir al Inicio/ index.html
-  </a>
-
-  <!-- 2. IR AL LOGIN / ADMIN -->
-  <a href="login.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-person-circle"></i> Ir al Login/ login.html
-  </a>
-
-  <!-- 3. IR A FORMULARIOS -->
-  <a href="forms.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-envelope-fill"></i> Ir a Formularios/ forms.html
-  </a>
-
-  <!-- 4. IR A CONTACTO -->
-  <a href="contact.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-people-fill"></i> Ir a Contacto/ contact.html
-  </a>
-
-  <!-- 5. IR A CATALOGO -->
-  <a href="catalog.html" class="btn btn-outline-primary w-100">
-    <i class="bi bi-people-fill"></i> Ir a Catalogo/ catalog.html
-  </a>
-
-
-
-</div>
-
-
-
-
-
-
-
-    </aside>
-
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="content">
-      <header class="content-header">
-        <h1>Proyecto Velox — Dashboard</h1>
-      </header>
-
-      <!-- SECCIÓN INICIO -->
-      <section id="inicio" class="section visible">
-        <div class="card p-4">
-          <h3>Notas rápidas</h3>
-          <textarea id="notas" class="form-control" rows="6" placeholder="Escribe tus notas aquí..."></textarea>
-          <div class="mt-3 d-flex gap-2">
-            <button id="guardar-notas" class="btn btn-primary"><i class="bi bi-save2"></i> Guardar</button>
-            <button id="limpiar-notas" class="btn btn-outline-danger"><i class="bi bi-trash3"></i> Limpiar</button>
+    <!-- SECCIÓN INICIO -->
+    <section id="inicio" class="section active">
+      <div class="row g-4">
+        <!-- NAVEGACIÓN RÁPIDA -->
+        <div class="col-lg-6 mx-auto">
+          <div class="quick-nav">
+            <h6><i class="bi bi-lightning-charge"></i> Navegacion rapida</h6>
+            <div class="d-grid gap-2">
+              <a href="../index.html" class="btn btn-outline-primary">
+                <i class="bi bi-house-door-fill"></i> Ir al Inicio/ index.html
+              </a>
+              <a href="forms.html" class="btn btn-outline-primary">
+                <i class="bi bi-envelope-fill"></i> Ir a Contacto
+              </a>
+              <a href="contact.html" class="btn btn-outline-primary">
+                <i class="bi bi-people-fill"></i> Ir a Acerca de Nosotros
+              </a>
+              <a href="catalog.html" class="btn btn-outline-primary">
+                <i class="bi bi-grid-3x3-gap-fill"></i> Ir a Catalogo Exclusivo
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-
-
-
-
-    </main>
   </div>
 
-  <!-- ================== SCRIPTS ================== -->
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script principal del dashboard (maneja navegación y notas) -->
+  <script>
+    // NAVEGACIÓN ENTRE SECCIONES
+    document.querySelectorAll('[data-section]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Actualizar links activos
+        document.querySelectorAll('[data-section]').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        
+        // Mostrar sección
+        const sectionId = link.getAttribute('data-section');
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+      });
+    });
+
+    // CERRAR SESIÓN
+    document.getElementById('cerrar-sesion').addEventListener('click', () => {
+      if (confirm('¿Deseas cerrar sesión?')) {
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
+
+  <!-- Script principal del dashboard -->
   <script src="../script/dashboard.js"></script>
 
 </body>
