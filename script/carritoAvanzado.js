@@ -184,8 +184,21 @@ function eliminarVehiculo(id) {
   // Actualizar vistas
   mostrarVehiculosAdmin();
   mostrarCatalogoPublico();
-  
-  alert("Vehículo eliminado correctamente.");
+  const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  icon: "success",
+  title: "Vehículo eliminado correctamente."
+});
 }
 
 // =============================================
@@ -221,7 +234,21 @@ function agregarAlCarrito(vehiculo) {
   // Validación de seguridad
   if (!vehiculo || !vehiculo.marca || !vehiculo.modelo) {
     console.error("❌ Vehículo inválido:", vehiculo);
-    alert("Error: El vehículo no tiene datos válidos.");
+    const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  icon: "success",
+  title: "Error: El vehículo no tiene datos válidos."
+});
     return;
   }
   
@@ -248,8 +275,22 @@ function agregarAlCarrito(vehiculo) {
   // Actualizar interfaz
   actualizarContadorCarrito();
   mostrarCarrito();
+  const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  icon: "success",
+  title: "Producto agregado al carrito"
+});
   
-  alert(`✅ ${vehiculo.marca} ${vehiculo.modelo} agregado al carrito`);
 }
 
 function mostrarCarrito() {
@@ -348,7 +389,9 @@ function cambiarCantidad(indice, delta) {
 }
 
 function borrarItemCarrito(indice) {
-  if (!confirm("¿Eliminar este vehículo del carrito?")) return;
+  if (!confirm("¿Eliminar este vehículo del carrito?"
+    
+  )) return;
   
   let carrito = getLS("carrito");
   carrito.splice(indice, 1);
@@ -365,7 +408,21 @@ function vaciarCarrito() {
   mostrarCarrito();
   actualizarContadorCarrito();
   
-  alert("🗑️ Carrito vaciado");
+  const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  icon: "info",
+  title: "Carrito vaciado"
+});
 }
 
 function actualizarContadorCarrito() {
@@ -433,12 +490,41 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Validaciones
         if (!marca || !modelo || !anio || !precio || !descripcion) {
-          alert("⚠️ Por favor completa todos los campos");
+          const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  icon: "warning",
+  title: "Por favor completa todos los campos"
+});
+          
           return;
         }
         
         if (!imagenInput.files || !imagenInput.files[0]) {
-          alert("⚠️ Por favor selecciona una imagen");
+          const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  icon: "warning",
+  title: "Por favor selecciona una imagen"
+});
           return;
         }
         
@@ -456,7 +542,21 @@ document.addEventListener("DOMContentLoaded", function() {
           
           agregarVehiculoNuevo(vehiculoData);
           formVehiculo.reset();
-          alert("✅ Vehículo agregado correctamente");
+          const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  icon: "success",
+  title: "Vehículo agregado correctamente"
+});
         };
         
         reader.readAsDataURL(imagenInput.files[0]);

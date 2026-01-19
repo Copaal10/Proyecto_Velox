@@ -30,8 +30,8 @@ function mostrarCatalogo() {
       ${v.imagen ? `<img src="${v.imagen}" class="card-img-top" alt="${v.marca} ${v.modelo}">` : ""}
       <div class="card-body">
         <h5 class="card-title">${v.marca} ${v.modelo}</h5>
-        <p class="card-text">Año: ${v.anio} · Precio: $${v.precio}</p>
-        <p class="card-text">${v.descripcion || ""}</p>
+        <h2 class="card-text">Año: ${v.anio} · Precio: $${v.precio}</h2>
+        <h2 class="card-text">${v.descripcion || ""}</h2>
         <button class="btn btn-success btn-sm">Agregar al carrito</button>
       </div>
     `;
@@ -69,8 +69,8 @@ function mostrarCarrito() {
 
     item.innerHTML = `
       <div class="card-body">
-        <h6>${v.marca} ${v.modelo} (${v.anio})</h6>
-        <p>Precio: $${v.precio}</p>
+        <h2>${v.marca} ${v.modelo} (${v.anio})</h2>
+        <h2>Precio: $${v.precio}</h2>
         <button class="btn btn-outline-danger btn-sm">Eliminar</button>
       </div>
     `;

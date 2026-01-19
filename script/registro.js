@@ -102,7 +102,21 @@ document.addEventListener('DOMContentLoaded', () => {
     setInputValidity(telefono, phoneOk);
 
     if (!nombreOk || !emailOk || !passOk || !confirmOk || !phoneOk) {
-      alert("Por favor corrige los campos marcados antes de continuar.");
+      const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  icon: "warning",
+  title: "Por favor corrige los campos marcados antes de continuar."
+});
       return;
     }
 
@@ -114,7 +128,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     localStorage.setItem("usuario", JSON.stringify(usuario));
-    alert("Registro exitoso. Datos guardados localmente.");
+    const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  icon: "success",
+  title: "Registro exitoso. Datos guardados localmente."
+});
+    
     form.reset();
 
     // Mostrar todo como válido después del reset

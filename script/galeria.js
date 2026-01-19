@@ -12,7 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const archivo = inputImagen.files[0];
         const galeriaDestino = selectGaleria.value;
 
-        if (!archivo) return alert("Por favor selecciona una imagen");
+        if (!archivo) return
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "info",
+            title: "Por favor selecciona una imagen"
+        });
 
         try {
             // 1. COMPRIMIR LA IMAGEN
@@ -26,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Obtener datos existentes y agregar el nuevo
             const datosGuardados = JSON.parse(localStorage.getItem('galeria_db')) || [];
-            
+
             // Opcional: Comprobar límite de almacenamiento
             if (datosGuardados.length > 50) {
-                if(!confirm("Tienes muchas imágenes guardadas. Si agregas más, podrían borrarse las antiguas. ¿Continuar?")) return;
+                if (!confirm("Tienes muchas imágenes guardadas. Si agregas más, podrían borrarse las antiguas. ¿Continuar?")) return;
             }
 
             datosGuardados.push(nuevoItem);
@@ -40,11 +55,38 @@ document.addEventListener('DOMContentLoaded', () => {
             // Limpiar formulario y actualizar vista del Admin
             formGaleria.reset();
             renderizarGaleriasAdmin();
-            alert('Imagen comprimida y agregada correctamente. Ya debería aparecer en el Index.');
-
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: "Imagen comprimida y agregada correctamente. Ya debería aparecer en el Index."
+            });
         } catch (error) {
             console.error(error);
-            alert('Error al procesar la imagen.');
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "warning",
+                title: "Error al procesar la imagen."
+            });
         }
     });
 
@@ -55,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.readAsDataURL(file);
-            
+
             reader.onload = (event) => {
                 const img = new Image();
                 img.src = event.target.result;
@@ -65,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const ctx = canvas.getContext('2d');
 
                     // Reducimos el ancho máximo a 800px para ahorrar espacio
-                    const MAX_WIDTH = 800; 
+                    const MAX_WIDTH = 800;
                     let width = img.width;
                     let height = img.height;
 
@@ -94,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     function renderizarGaleriasAdmin() {
         const datos = JSON.parse(localStorage.getItem('galeria_db')) || [];
-        
+
         // Limpiar los contenedores internos del Admin
         document.getElementById('galeria1').innerHTML = '';
         document.getElementById('galeria2').innerHTML = '';
@@ -129,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function eliminarImagen(id) {
-        if(confirm('¿Borrar esta imagen?')) {
+        if (confirm('¿Borrar esta imagen?')) {
             let datos = JSON.parse(localStorage.getItem('galeria_db')) || [];
             datos = datos.filter(item => item.id !== id);
             localStorage.setItem('galeria_db', JSON.stringify(datos));
