@@ -21,6 +21,25 @@ header h4 {
   font-size: 24px;
 }
 
+/* Navbar personalizada */
+#nav {
+  background-color: #F8F8F8;
+  /* Rudy Blue */
+}
+
+.nav nav-tabs,
+.nav-link {
+  color: #212121 !important;
+  /* Eerie Black */
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #C3E0FA !important;
+  /* Columbia Blue */
+}
+
+
 /* Contenedor principal */
 main {
   padding: 1rem;

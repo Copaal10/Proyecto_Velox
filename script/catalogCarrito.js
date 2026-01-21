@@ -32,7 +32,7 @@ function mostrarCatalogo() {
         <h5 class="card-title">${v.marca} ${v.modelo}</h5>
         <h2 class="card-text">Año: ${v.anio} · Precio: $${v.precio}</h2>
         <h2 class="card-text">${v.descripcion || ""}</h2>
-        <button class="btn btn-success btn-sm">Agregar al carrito</button>
+        <button class="btn btn-success btn-sm" id="botonCarrito">Agregar al carrito</button>
       </div>
     `;
 

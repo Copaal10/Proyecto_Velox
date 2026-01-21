@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Orbitron', sans-serif;
-    background: url('../img/fondo4.jpg') no-repeat center center fixed;
+    background: url('../img/PruebaFondo.png') no-repeat center center fixed;
     color: #212121;
     background-size: cover;
 }
@@ -382,3 +382,18 @@ header h1 {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
+.btn-carrito-personalizado {
+    border: 2px solid #65ABEA !important;
+    color: #65ABEA !important; 
+    background-color: #0e365a !important;
+    text-transform: uppercase; /* Ejemplo de estilo extra */
+    font-weight: bold;
+}
+
+/* IMPORTANTE: También debes definir el estado Hover */
+/* Si no lo haces, al pasar el mouse volverá a ponerse verde por Bootstrap */
+.btn-carrito-personalizado:hover {
+    background-color: #0b0b0b !important; /* Un rojo un poco más oscuro */
+    color: #ffffff !important;
+    border-color: #65ABEA !important;
+}

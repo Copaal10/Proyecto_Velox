@@ -218,7 +218,7 @@ function mostrarCatalogoPublico() {
     
     // Agregar botón de compra (AZUL del carrito)
     const btnComprar = document.createElement("button");
-    btnComprar.className = "btn btn-primary btn-sm w-100 mt-2";
+    btnComprar.className = "btn btn-carrito-personalizado btn-sm w-100 mt-2";
     btnComprar.innerHTML = '<i class="bi bi-cart-plus"></i> Agregar al carrito';
     btnComprar.onclick = () => agregarAlCarrito(v);
     
@@ -332,7 +332,7 @@ function mostrarCarrito() {
             <p class="mb-0 text-primary"><strong>Subtotal:</strong> $${subtotal.toLocaleString()}</p>
           </div>
           <div class="d-flex flex-column gap-1">
-            <button class="btn btn-sm btn-outline-primary btn-mas" data-index="${indice}">
+            <button id="botonCarrito"class="btn btn-sm btn-carrito-personalizado btn-mas" data-index="${indice}">
               <i class="bi bi-plus"></i>
             </button>
             <button class="btn btn-sm btn-outline-secondary btn-menos" data-index="${indice}">
@@ -389,40 +389,82 @@ function cambiarCantidad(indice, delta) {
 }
 
 function borrarItemCarrito(indice) {
-  if (!confirm("¿Eliminar este vehículo del carrito?"
-    
-  )) return;
-  
-  let carrito = getLS("carrito");
-  carrito.splice(indice, 1);
-  setLS("carrito", carrito);
-  
-  mostrarCarrito();
-  actualizarContadorCarrito();
-}
+  Swal.fire({
+    title: "¿Eliminar vehículo?",
+    text: "Se quitará este auto del carrito de compras.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#ea6565", 
+    cancelButtonColor: "#65ABEA",  
+    confirmButtonText: "Sí, eliminar",
+    cancelButtonText: "No, mantenerlo",
+    reverseButtons: true
+  }).then((result) => {
+    // Si el usuario confirma la eliminación
+    if (result.isConfirmed) {
+      // Lógica para borrar el item
+      let carrito = getLS("carrito");
+      carrito.splice(indice, 1);
+      setLS("carrito", carrito);
+      
+      // Actualizar 
+      mostrarCarrito();
+      actualizarContadorCarrito();
 
+      // Notificación de éxito 
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Producto eliminado"
+      });
+    }
+  });
+}
 function vaciarCarrito() {
-  if (!confirm("¿Vaciar todo el carrito?")) return;
-  
-  setLS("carrito", []);
-  mostrarCarrito();
-  actualizarContadorCarrito();
-  
-  const Toast = Swal.mixin({
-  toast: true,
-  position: "top-end",
-  showConfirmButton: false,
-  timer: 3000,
-  timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.onmouseenter = Swal.stopTimer;
-    toast.onmouseleave = Swal.resumeTimer;
-  }
-});
-Toast.fire({
-  icon: "info",
-  title: "Carrito vaciado"
-});
+  Swal.fire({
+    title: "¿Vaciar todo el carrito?",
+    text: "Esta acción no se puede deshacer.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#ea6565", // Tu color rojo personalizado
+    cancelButtonColor: "#65ABEA",  // Tu color azul personalizado
+    confirmButtonText: "Sí, vaciar todo",
+    cancelButtonText: "Cancelar",
+    reverseButtons: true // Pone el botón de cancelar a la izquierda
+  }).then((result) => {
+    // Si el usuario hace clic en "Sí, vaciar todo"
+    if (result.isConfirmed) {
+      
+      // 1. Lógica de vaciado
+      setLS("carrito", []);
+      mostrarCarrito();
+      actualizarContadorCarrito();
+
+      // 2. Lanzar el Toast de éxito (el que ya tenías)
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+
+      Toast.fire({
+        icon: "success", // Cambiado a success porque la acción fue exitosa
+        title: "Carrito vaciado con éxito"
+      });
+    }
+  });
 }
 
 function actualizarContadorCarrito() {
