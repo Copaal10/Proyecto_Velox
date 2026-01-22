@@ -1,0 +1,63 @@
+-- 1. Crear la Base de Datos (Coincide con application.properties)
+CREATE DATABASE IF NOT EXISTS velox_db;
+
+-- 2. Seleccionar la Base de Datos para usarla
+USE velox_db;
+
+-- 3. Estructura de Tablas
+CREATE TABLE IF NOT EXISTS usuario (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    rol ENUM('admin', 'cliente') DEFAULT 'cliente',
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    clave VARCHAR(255),
+    direccion VARCHAR(100)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+CREATE TABLE IF NOT EXISTS producto (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    anio INT(4),
+    precio DECIMAL(10, 2) NOT NULL,
+    stock INT DEFAULT 0,
+    imagen VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+CREATE TABLE IF NOT EXISTS pedido (
+    id_pedido INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    estado ENUM('pendiente', 'pagado', 'enviado', 'cancelado') DEFAULT 'pendiente',
+    total DECIMAL(10, 2) DEFAULT 0.00,
+    id_usuario INT,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+        ON UPDATE CASCADE
+        ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+CREATE TABLE IF NOT EXISTS detalle_pedido (
+    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
+    id_pedido INT,
+    id_producto INT,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- 4. Inserción de Datos (Usuarios de prueba)
+-- NOTA: Las contraseñas están en texto plano por ahora.
+INSERT INTO usuario (email, rol, nombre, apellido, clave, direccion)
+VALUES
+('admin@velox.com', 'admin', 'Administrador', 'Sistema', '123456', 'Oficina Principal'),
+('juan.onassis@email.com', 'cliente', 'Juan', 'Onassis', 'password123', 'Mansión N° 5'),
+('maria.carey@email.com', 'cliente', 'Maria', 'Carey', 'securepass', 'Penthouse Av. 9'),
+('carlos.slim@email.com', 'cliente', 'Carlos', 'Slim', 'carlos123', 'Residencia Privada'),
+('ana.wintour@email.com', 'cliente', 'Ana', 'Wintour', 'anita2024', 'Loft NY');
