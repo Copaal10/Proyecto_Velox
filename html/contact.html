@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"  data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Velox - Acerca de</title>
 
@@ -35,6 +36,17 @@
       background-size: cover;
     }
 
+h1 {
+  font-size: 64px;
+  color: rgb(0, 0, 0) !important;
+  font-size: clamp(2rem, 5vw, 4rem);
+} 
+#texto1,#texto2 {
+  font-size: 64px;
+  color: #65ABEA !important;
+  font-size: clamp(2rem, 5vw, 4rem);
+} 
+
     .card {
       background-color: rgba(255, 255, 255, 0.95) !important;
     }
@@ -45,7 +57,7 @@
     }
 
     #about {
-      background-color: rgba(255, 255, 255, 0.85) !important;
+      background-color: rgba(255, 255, 255, 0.822) !important;
       border-radius: 10px;
       padding: 20px !important;
     }
@@ -186,13 +198,32 @@
         max-width: 320px;
       }
     }
+    .team-member-card {
+    background-color: var(--bg-card) !important; /* #121212 */
+    border: 1px solid var(--card-border) !important;
+}
+
+/* Forzar que el interior de las cards sea oscuro */
+.card-body {
+    background-color: transparent !important;
+}
+:root {
+    /* Tema Oscuro por defecto según tu solicitud */
+    --bg-main: #202020;        /* Fondo general */
+    --bg-card: #121212;        /* Fondo de las cards */
+    --text-main: #FFFFFF;      /* Texto general blanco */
+    --text-muted: #C3E0FA;     
+    --accent: #65ABEA;         /* Azul Velox */
+    --nav-bg: #202020;         /* Navbar igual al fondo */
+    --card-border: #333333;    /* Borde sutil para resaltar cards */
+}
   </style>
 
 <!-- NAVBAR PARA CATALOG.HTML (Estilo Index + Funcionalidad Carrito) -->
 <nav class="navbar navbar-expand-lg sticky-top border-bottom shadow-sm" id="nav">
   <div class="container-fluid">
     
-    <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="../index.html">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="../index.html">
       HOME <i class="bi bi-house-door-fill"></i> | VELOX
     </a>
 
@@ -249,12 +280,12 @@
           </div>
           
           <div class="col-md-6">
-            <h2 class="mb-4">En VELOX</h2>
-            <p class="lead">
+            <h1 class="mb-4">En VELOX</h1>
+            <p class="lead"id="texto1">
               Reinventamos la forma de comprar vehículos en Colombia, ofreciendo una plataforma digital moderna 
               que conecta a los usuarios con información verificada y confiable.
             </p>
-            <p>
+            <p id="texto2">
               Te acompañamos en cada paso del proceso para que encuentres tu próximo automóvil 
               de manera clara, segura y digital.
             </p>
@@ -263,53 +294,50 @@
       </div>
     </section>
 
-  <!-- ================== SECCIÓN: MISIÓN Y VISIÓN ================== -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row text-center">
-        
-        <div class="col-md-6 mb-4">
-          <div class="p-4 border rounded-3 shadow h-100" style="background-color: #65ABEA; color: white;">
-            <i class="bi bi-rocket-takeoff display-4 text-white"></i>
-            <h3 class="mt-3 text-white">Misión</h3>
-            <p style="color: #e6e6e6;">
-              Liderar la transformación digital del mercado automotriz en Colombia, garantizando seguridad, 
-              transparencia y calidad en cada transacción.
-            </p>
-          </div>
+  <section class="py-5" style="background-color: var(--bg-main) !important;">
+  <div class="container">
+    <div class="row text-center">
+      
+      <div class="col-md-6 mb-4">
+        <div class="p-4 border shadow h-100 hover-shadow" style="background-color: var(--bg-card) !important; border-color: var(--card-border) !important; border-radius: 12px;">
+          <i class="bi bi-rocket-takeoff display-4" style="color: var(--accent);"></i>
+          <h3 class="mt-3 font-orbitron" style="color: white !important;">Misión</h3>
+          <p class="mt-3" style="color: #cccccc !important; font-size: 1.1rem;">
+            Liderar la transformación digital del mercado automotriz en Colombia, garantizando seguridad, 
+            transparencia y calidad en cada transacción.
+          </p>
         </div>
-
-        <div class="col-md-6 mb-4">
-          <div class="p-4 border rounded-3 shadow h-100" style="background-color: #65ABEA; color: white;">
-            <i class="bi bi-eye-fill display-4 text-white"></i>
-            <h3 class="mt-3 text-white">Visión</h3>
-            <p style="color: #e6e6e6;">
-              Convertirnos en la plataforma número 1 en Latinoamérica para la compra y venta de vehículos 
-              de gama alta exclusiva y personalizados para el año 2030.
-            </p>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Estadísticas (Contadores) -->
-      <div class="row mt-4 text-center">
-        <div class="col-4">
-          <h2 class="fw-bold display-5" style="color: #65ABEA;">500+</h2>
-          <p>Vehículos</p>
+      <div class="col-md-6 mb-4">
+        <div class="p-4 border shadow h-100 hover-shadow" style="background-color: var(--bg-card) !important; border-color: var(--card-border) !important; border-radius: 12px;">
+          <i class="bi bi-eye-fill display-4" style="color: var(--accent);"></i>
+          <h3 class="mt-3 font-orbitron" style="color: white !important;">Visión</h3>
+          <p class="mt-3" style="color: #cccccc !important; font-size: 1.1rem;">
+            Convertirnos en la plataforma número 1 en Latinoamérica para la compra y venta de vehículos 
+            de gama alta exclusiva y personalizados para el año 2030.
+          </p>
         </div>
-        <div class="col-4">
-          <h2 class="fw-bold display-5" style="color: #65ABEA;">5 Años</h2>
-          <p>Trayectoria</p>
-        </div>
-        <div class="col-4">
-          <h2 class="fw-bold display-5" style="color: #65ABEA;">100%</h2>
-          <p>Seguridad</p>
-        </div>
+      </div>
+
+    </div>
+
+    <div class="row mt-5 text-center">
+      <div class="col-4">
+        <h2 class="fw-bold display-5 font-orbitron" style="color: var(--accent) !important;">500+</h2>
+        <p class="text-white">Vehículos</p>
+      </div>
+      <div class="col-4">
+        <h2 class="fw-bold display-5 font-orbitron" style="color: var(--accent) !important;">5 Años</h2>
+        <p class="text-white">Trayectoria</p>
+      </div>
+      <div class="col-4">
+        <h2 class="fw-bold display-5 font-orbitron" style="color: var(--accent) !important;">100%</h2>
+        <p class="text-white">Seguridad</p>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
     <!-- ================== SECCIÓN: EQUIPO (MEJORADO SIN SOBREPOSICIÓN) ================== -->
     <section class="py-5" id="equipo-section">
       <div class="container-fluid">
@@ -321,7 +349,7 @@
 
           <!-- TARJETA 2: Alberto Cortes -->
           <div class="col-auto">
-            <div class="card team-member-card rounded-5 bg-light-subtle text-black text-center shadow-sm">
+            <div class="card team-member-card rounded-5 bg-light-subtle  text-center shadow-sm">
               <img src="../img/Foto_Alberto.png" class="card-img-top" alt="Alberto Cortes">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title fw-semibold">Alberto Cortes Palacios <i class="bi bi-patch-check-fill text-primary"></i></h5>
@@ -340,7 +368,7 @@
 
           <!-- TARJETA 3: Santiago Rios -->
           <div class="col-auto">
-            <div class="card team-member-card rounded-5 bg-light-subtle text-black text-center shadow-sm">
+            <div class="card team-member-card rounded-5 bg-light-subtle text-center shadow-sm">
               <img src="../img/Foto_Rios.png" class="card-img-top" alt="Santiago Rios">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title fw-semibold">Santiago Rios Cajamarca <i class="bi bi-patch-check-fill text-primary"></i></h5>
@@ -359,7 +387,7 @@
 
           <!-- TARJETA 4: Alvaro Hernández -->
           <div class="col-auto">
-            <div class="card team-member-card rounded-5 bg-light-subtle text-black text-center shadow-sm">
+            <div class="card team-member-card rounded-5 bg-light-subtle  text-center shadow-sm">
               <img src="../img/Foto_Alvaro.png" class="card-img-top" alt="Alvaro Hernández">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title fw-semibold">Alvaro Daniel Hernández <i class="bi bi-patch-check-fill text-primary"></i></h5>
@@ -378,7 +406,7 @@
 
           <!-- TARJETA 5: Nicolas Munevar -->
           <div class="col-auto">
-            <div class="card team-member-card rounded-5 bg-light-subtle text-black text-center shadow-sm">
+            <div class="card team-member-card rounded-5 bg-light-subtle  text-center shadow-sm">
               <img src="../img/Foto_Nicolas.png" class="card-img-top" alt="Nicolas Munevar">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title fw-semibold">Nicolas Munevar <i class="bi bi-patch-check-fill text-primary"></i></h5>

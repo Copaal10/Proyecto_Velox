@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"data-bs-theme="dark">
 <!-- -->
 <head>
   <meta charset="UTF-8">
+  <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Velox</title>
 
@@ -26,7 +27,7 @@
     
     <!-- ENLACE AL INICIO (Icono + Texto) -->
     <!-- Nota: Usamos ../index.html para salir de la carpeta /html/ -->
-    <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="../index.html">
+    <a class="navbar-brand fw-bold  d-flex align-items-center gap-2" href="../index.html">
       HOME <i class="bi bi-house-door-fill"></i> | VELOX
     </a>
 
@@ -36,15 +37,15 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link text-dark fw-bold" href="catalog.html">Catálogo</a></li>
+        <li class="nav-item"><a class="nav-link  fw-bold" href="catalog.html">Catálogo</a></li>
         
-        <li class="nav-item"><a class="nav-link text-dark fw-bold" href="contact.html">Acerca de Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link  fw-bold" href="contact.html">Acerca de Nosotros</a></li>
         
         <!-- AGREGADA CLASE 'ACTIVE' PARA RESALTAR EL MENÚ ACTUAL -->
-        <li class="nav-item"><a class="nav-link text-dark fw-bold active" href="forms.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link  fw-bold active" href="forms.html">Contacto</a></li>
         
         <!-- LOGIN -->
-        <li class="nav-item"><a class="nav-link text-dark fw-bold" href="login.html">
+        <li class="nav-item"><a class="nav-link  fw-bold" href="login.html">
           <i class="bi bi-person-circle"></i>  Iniciar Sesión
         </a></li>
 
@@ -70,7 +71,7 @@
 <!-- HERO -->
 <section class="hero-contacto text-center">
   <div class="hero-blur"></div>
-  <div class="container position-relative">
+  <div class="container position-relative text-dark">
     <h1 class="text-uppercase">Contacto</h1>
     <p>Conecta con el equipo <strong>VELOX</strong> y acelera tu próxima experiencia.</p>
   </div>
@@ -84,7 +85,7 @@
 
       <!-- FAQ -->
       <div class="col-lg-6">
-        <div class="glass-card position-relative">
+        <div class="glass-card position-relative Preguntas">
           <h2 class="text-center mb-4">Preguntas Frecuentes</h2>
 
           <div class="accordion" id="faqAccordion">
@@ -162,7 +163,7 @@
             </div>
 
             <div class="text-center">
-              <button class="btn btn-primary px-5">
+              <button class="btn btn-primary px-5 Btn_enviar">
                 <i class="bi bi-send"></i> Enviar
               </button>
             </div>

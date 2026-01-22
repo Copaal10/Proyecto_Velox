@@ -9,27 +9,38 @@ body {
     background-size: cover;
 }
 
+/* Tamaños de títulos */
 h1 {
-    font-size: 96px;
+  font-size: 96px;
+  color: white !important;
+  font-size: clamp(2.5rem, 8vw, 6rem);
 }
 
 h2 {
-    font-size: 64px;
+  font-size: 70px;
+  color: white !important;
+  font-size: clamp(2rem, 5vw, 4rem);
 }
 
 h3 {
-    font-size: 48px;
+  font-size: 48px;
+  color: white !important;
+   font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 h4 {
-    font-size: 36px;
+  font-size: 36px;
+  color: white !important;
+  font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
 h5 {
-    font-size: 20px;
+  font-size: 21px;
+  color: white !important;
 }
 p{
-    font-size: 18px;
+    font-size: 20px;
+    color: white !important;
 }
 
 /* =========================================================
@@ -397,3 +408,38 @@ header h1 {
     color: #ffffff !important;
     border-color: #65ABEA !important;
 }
+:root {
+    --bg-main: #202020;    /* Fondo solicitado */
+    --bg-card: #121212;    /* Cards solicitadas */
+    --text-main: #FFFFFF;
+    --accent: #65ABEA;
+    --card-border: #333333;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--bg-main) !important; /* Prioridad al color sólido */
+    color: var(--text-main);
+    margin: 0;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Navbar ajustada (Mismo color que fondo) */
+#nav {
+    background-color: var(--bg-main) !important;
+    border-bottom: 1px solid var(--card-border);
+    padding: 1rem 0;
+}
+
+.nav-link {
+    color: var(--text-main) !important;
+    font-weight: bold;
+}
+/* Localiza estas clases en tu CSS y reemplázalas por esto */
+.card-body{
+    background-color: var(--bg-card) !important; /* Forza el #121212 */
+    border: 1px solid var(--card-border) !important;
+    color: var(--text-main) !important; /* Forza el texto blanco */
+    
+}
+

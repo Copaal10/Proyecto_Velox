@@ -6,27 +6,37 @@ body {
   /* Sea Salt */
   color: #212121;
   /* Eerie Black */
+  
 }
 
 /* Tamaños de títulos */
 h1 {
   font-size: 96px;
+  color: white !important;
+  font-size: clamp(2.5rem, 8vw, 6rem);
 }
 
 h2 {
   font-size: 64px;
+  color: white !important;
+  font-size: clamp(2rem, 5vw, 4rem);
 }
 
 h3 {
   font-size: 48px;
+  color: white !important;
+   font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 h4 {
   font-size: 36px;
+  color: white !important;
+  font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
 h5 {
-  font-size: 15px;
+  font-size: 30px;
+  color: white !important;
 }
 
 /* Header */
@@ -675,4 +685,83 @@ html { scroll-behavior: smooth; }
     height: 125px; 
     transition: transform 0.3s, opacity 0.3s;
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+}
+[data-theme="dark"] {
+    /* Tema Oscuro (Inspirado en imágenes VELOX) */
+    --bg-main: #121212;        /* Negro profundo */
+    --bg-card: #1a1a1a;        /* Gris muy oscuro para cards */
+    --text-main: #F8F8F8;      /* Sea Salt */
+    --text-muted: #C3E0FA;     /* Columbia Blue */
+    --accent: #65ABEA;
+    --nav-bg: #121212;
+    --card-border: #333333;
+}
+:root {
+    /* Tema Oscuro por defecto según tu solicitud */
+    --bg-main: #202020;        /* Fondo general */
+    --bg-card: #121212;        /* Fondo de las cards */
+    --text-main: #FFFFFF;      /* Texto general blanco */
+    --text-muted: #C3E0FA;     
+    --accent: #65ABEA;         /* Azul Velox */
+    --nav-bg: #202020;         /* Navbar igual al fondo */
+    --card-border: #333333;    /* Borde sutil para resaltar cards */
+}
+
+/* Aplicación de los colores */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* Navbar: Se elimina la transparencia y se iguala al fondo */
+#nav {
+    background-color: var(--nav-bg) !important;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.nav-link {
+    color: var(--text-main) !important;
+}
+
+/* Sección "Por qué elegirnos" - Cards con contraste */
+.hover-shadow {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--card-border) !important;
+    color: var(--text-main) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar volumen */
+}
+
+.hover-shadow h3 {
+    color: var(--accent) !important;
+}
+
+/* Ajuste de la Calculadora */
+.velox-fin-card {
+    background: var(--bg-card);
+    border-color: var(--accent);
+}
+
+.velox-fin-input-side {
+    background: var(--bg-card); /* Mismo tono que las cards */
+    color: var(--text-main);
+}
+
+/* Inputs del formulario para que no desentonen */
+#formVehiculo input.form-control,
+#formVehiculo textarea.form-control,
+#formVehiculo select.form-select {
+    background-color: #2a2a2a !important; /* Un gris ligeramente distinto para inputs */
+    color: white !important;
+    border: 1px solid var(--card-border);
+}
+
+/* Placeholder de los inputs */
+#formVehiculo input::placeholder {
+    color: #777;
+}
+.bg-velox-card {
+    background-color: var(--bg-card) !important; /* Usa el #121212 que ya definimos */
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
 }
