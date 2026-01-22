@@ -53,3 +53,21 @@
     grid-template-columns: 1fr;
   }
 }
+#btncarrito{
+  background-color: #65ABEA;
+}
+.swal2-popup {
+    background-color: #121212 !important; /* Fondo de tus cards */
+    border: 1px solid #333 !important;    /* Borde sutil */
+    border-radius: 15px !important;
+}
+
+.swal2-title, .swal2-html-container, .swal2-content {
+    color: #ffffff !important; /* Fuerza el texto blanco */
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.swal2-confirm {
+    background-color: #65ABEA !important; /* Tu azul accent */
+    border-radius: 8px !important;
+}

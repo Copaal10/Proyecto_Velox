@@ -201,3 +201,61 @@ body::before {
 header h1 {
   color: #F8F8F8;
 }
+/* =========================================================
+   VARIABLES Y BASE
+   ========================================================= */
+:root {
+  --bg-main: #202020;    /* Fondo solicitado */
+  --bg-card: #121212;    /* Cards solicitadas */
+  --text-main: #FFFFFF;
+  --accent: #65ABEA;
+  --card-border: #333333;
+}
+
+header h4 {
+  color: var(--accent);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+#nav {
+  background-color: var(--bg-main) !important; /* Eliminado el blanco F8F8F8 */
+  border-bottom: 1px solid var(--card-border);
+}
+
+.nav-link {
+  color: var(--text-main) !important;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+}
+
+
+
+/* =========================================================
+   FOOTER (INTEGRADO AL MODO OSCURO)
+   ========================================================= */
+.footer {
+  background-color: #202020; /* Casi negro para contraste */
+  border-top: 1px solid var(--card-border);
+}
+
+#btncarrito{
+  background-color: #65ABEA;
+}
+.swal2-popup {
+    background-color: #121212 !important; /* Fondo de tus cards */
+    border: 1px solid #333 !important;    /* Borde sutil */
+    border-radius: 15px !important;
+}
+
+.swal2-title, .swal2-html-container, .swal2-content {
+    color: #ffffff !important; /* Fuerza el texto blanco */
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.swal2-confirm {
+    background-color: #65ABEA !important; /* Tu azul accent */
+    border-radius: 8px !important;
+}

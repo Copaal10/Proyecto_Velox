@@ -366,8 +366,8 @@ textarea.form-control {
 
 /* ===== Titulo contacto ===== */
 .hero-contacto {
-  min-height: 45vh;
-  background-image: url("https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1920&auto=format&fit=crop");
+  min-height: 500px;
+  background-image: url("/Proyecto_Velox/img/Prueba_fondo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -434,7 +434,7 @@ textarea.form-control {
   }
 }
 :root {
-    --bg-main: #121212;    /* Fondo general solicitado */
+    --bg-main: #202020;    /* Fondo general solicitado */
     --bg-card: #121212;    /* Cards solicitadas */
     --text-main: #FFFFFF;
     --accent: #65ABEA;
@@ -443,18 +443,18 @@ textarea.form-control {
 
 body {
     font-family: 'Orbitron', sans-serif;
-    background-color: var(--bg-main) !important;
+    background-color: var(--bg-card) !important;
     color: var(--text-main);
     margin: 0;
     overflow-x: hidden;
 }
 
 /* Tamaños de títulos fluidos para evitar desbordes */
-h1 { font-size: clamp(2.5rem, 8vw, 6rem); color: #121212 !important; }
+h1 { font-size: clamp(2.5rem, 8vw, 6rem); color: #65ABEA !important; }
 h2 { font-size: clamp(2rem, 6vw, 4rem); color: white !important; }
 h3 { font-size: clamp(1.5rem, 4vw, 3rem); color: white !important; }
 h4 { font-size: clamp(1.2rem, 3vw, 2.25rem); color: white !important; }
-p { font-size: clamp(0.9rem, 2vw, 1.1rem); color: #65ABEA !important; }
+p { font-size: clamp(0.9rem, 2vw, 1.1rem); color: white !important; }
 
 /* =========================================================
    NAVBAR Y HEADER (SIN TRANSPARENCIAS BLANCAS)
@@ -577,5 +577,48 @@ p { font-size: clamp(0.9rem, 2vw, 1.1rem); color: #65ABEA !important; }
   color: #65ABEA !important;
 }
 .Btn_enviar{
-  background-color: var(--bg-main) !important
+    /* Apariencia Base */
+    background-color: #65ABEA;      /* Fondo Negro */
+    color: rgb(0, 0, 0);                    /* Texto Blanco */
+    font-weight: bold;               /* Negrita */
+    text-transform: uppercase;       /* Mayúsculas */
+    border: none;                    /* Sin borde */
+    padding: 12px 0;                 /* Altura del botón */
+    border-radius: 50px;              /* Bordes redondos */
+    transition: all 0.3s ease;       /* Animación suave */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra suave */
+    cursor: pointer;
+}
+#btncarrito{
+  background-color: #65ABEA;
+}
+.swal2-popup {
+    background-color: #121212 !important; /* Fondo de tus cards */
+    border: 1px solid #333 !important;    /* Borde sutil */
+    border-radius: 15px !important;
+}
+
+.swal2-title, .swal2-html-container, .swal2-content {
+    color: #ffffff !important; /* Fuerza el texto blanco */
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.swal2-confirm {
+    background-color: #65ABEA !important; /* Tu azul accent */
+    border-radius: 8px !important;
+}
+.swal2-popup {
+    background-color: #121212 !important; /* Fondo de tus cards */
+    border: 1px solid #333 !important;    /* Borde sutil */
+    border-radius: 15px !important;
+}
+
+.swal2-title, .swal2-html-container, .swal2-content {
+    color: #ffffff !important; /* Fuerza el texto blanco */
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.swal2-confirm {
+    background-color: #65ABEA !important; /* Tu azul accent */
+    border-radius: 8px !important;
 }
