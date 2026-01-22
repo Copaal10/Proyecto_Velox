@@ -23,12 +23,13 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
 
-                // ACTIVAR USANDO EL BEAN DEFINIDO ABAJO (método más robusto)
+                // ACTIVAR CORS USANDO EL BEAN DEFINIDO ABAJO
                 .cors(org.springframework.security.config.Customizer.withDefaults())
 
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/api/auth/**").permitAll()        // Permitir Login
+                        .requestMatchers("/api/admin/**").permitAll()       // Permitir Gestión de Usuarios
+                        .anyRequest().authenticated()                // El resto requiere token
                 );
 
         return http.build();
