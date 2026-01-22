@@ -25,14 +25,20 @@
 
 #overlayText {
     position: sticky;
-    top: 50px;
-    height: calc(115vh);
+    top: 5vh;
+    /* Moved up from 50px/calc based logic to be higher */
+    height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically in the viewpoint */
+    padding-bottom: 22vh;
+    /* Push content up from visual center */
     padding-left: 8vw;
     z-index: 20;
     pointer-events: none;
+    max-width: 50vw;
+    /* Ensure text avoids the car on the right */
 }
 
 #overlayText {
@@ -49,13 +55,39 @@
 }
 
 .imagine {
-    font-size: clamp(24px, 10vw, 80px);
+    font-family: 'Orbitron', sans-serif;
+    /* Reinforce font */
+    font-size: clamp(26px, 5.5vw, 55px);
+    /* Slightly increased size */
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 1px;
     color: #fff;
+    margin-bottom: 3rem;
+    /* Increased spacing before buttons */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Subtle depth */
 }
 
 .by {
-    font-size: clamp(14px, 2.6vw, 28px);
-    color: rgba(255, 255, 255, .9);
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(14px, 1.5vw, 20px);
+    /* Smaller, distinctive */
+    color: #65ABEA;
+    /* Velox Blue */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    /* Premium feel */
+    font-weight: 500;
+    letter-spacing: 3px;
+    /* Premium feel */
+    font-weight: 500;
+    margin-bottom: 1rem;
+    /* Spacing between Brand and Slogan */
+    display: inline-block;
+    border-left: 2px solid #65ABEA;
+    /* Visual accent */
+    padding-left: 12px;
 }
 
 /* BOTÓN GLASS */
@@ -63,6 +95,10 @@
     position: relative;
     padding: 10px 36px;
     border-radius: 999px;
+    margin-right: 1rem;
+    /* Spacing between buttons */
+    margin-bottom: 0.5rem;
+    /* Vertical spacing if wrapped */
 
     color: #ffffff;
     font-size: 1rem;
@@ -90,17 +126,23 @@
 
 
 /* Hover elegante */
+/* Hover elegante con brillo */
 .btn-glass:hover {
     background: linear-gradient(135deg,
-            rgba(0, 160, 255, 0.35),
-            rgba(0, 100, 200, 0.25));
+            rgba(0, 180, 255, 0.45),
+            rgba(0, 120, 220, 0.35));
 
     box-shadow:
-        0 18px 50px rgba(0, 80, 160, 0.6),
-        inset 0 0 24px rgba(180, 220, 255, 0.45);
+        0 0 20px rgba(100, 200, 255, 0.6),
+        /* Outer glow */
+        0 0 10px rgba(100, 200, 255, 0.4),
+        /* Inner glow illusion */
+        inset 0 0 24px rgba(180, 220, 255, 0.55);
 
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
     color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    border-color: rgba(180, 230, 255, 0.8);
 }
 
 

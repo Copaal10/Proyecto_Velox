@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 -- 4. Detalles de Pedido (Un solo auto por pedido para simplificar)
 
 -- Pedido 1: Ferrari
@@ -13,4 +14,21 @@ INSERT INTO detalle_pedido (id_pedido, id_producto, cantidad, precio_unitario) V
 INSERT INTO detalle_pedido (id_pedido, id_producto, cantidad, precio_unitario) VALUES (4, 4, 1, 215000.00);
 
 -- Pedido 5: Rolls Royce
+=======
+-- 4. Detalles de Pedido (Un solo auto por pedido para simplificar)
+
+-- Pedido 1: Ferrari
+INSERT INTO detalle_pedido (id_pedido, id_producto, cantidad, precio_unitario) VALUES (1, 1, 1, 350000.00);
+
+-- Pedido 2: Porsche
+INSERT INTO detalle_pedido (id_pedido, id_producto, cantidad, precio_unitario) VALUES (2, 3, 1, 225000.00);
+
+-- Pedido 3: Lamborghini
+INSERT INTO detalle_pedido (id_pedido, id_producto, cantidad, precio_unitario) VALUES (3, 2, 1, 280000.00);
+
+-- Pedido 4: Aston Martin (Cancelado)
+INSERT INTO detalle_pedido (id_pedido, id_producto, cantidad, precio_unitario) VALUES (4, 4, 1, 215000.00);
+
+-- Pedido 5: Rolls Royce
+>>>>>>> 81d83b0d2813387988261150d67c33869c28e4cb
 INSERT INTO detalle_pedido (id_pedido, id_producto, cantidad, precio_unitario) VALUES (5, 5, 1, 485000.00);

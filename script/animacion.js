@@ -2,7 +2,7 @@
    CONFIGURACIÓN
 ================================ */
 const totalFrames = 43;
-const ultimoFrame = 9;
+const ultimoFrame = 10;
 const smooth = 0.15;
 
 const framePath = i =>
@@ -100,7 +100,7 @@ function updateAnimation() {
    TEXTO OVERLAY
 ================================ */
 function handleOverlay(frame) {
-    const start = totalFrames - ultimoFrame + 1;
+    const start = totalFrames - ultimoFrame - 9;
 
     if (frame < start) {
         hideOverlay();
@@ -114,7 +114,7 @@ function handleOverlay(frame) {
     textWrap.style.transform =
         `translateY(${(1 - eased) * 24}px) scale(${0.92 + eased * 0.08})`;
 
-    // efecto más barato que letter-spacing
+    //ing
     imagineEl.style.transform = `scaleX(${0.9 + eased * 0.1})`;
 
     byEl.style.opacity = Math.max(0, (eased - 0.25) / 0.75);
