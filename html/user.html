@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyecto Velox – Dashboard</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+  
+  <!-- CSS Dashboard -->
+  <link rel="stylesheet" href="../css/dashboard.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR SUPERIOR -->
+  <nav class="navbar navbar-expand-lg sticky-top border-bottom" id="nav">
+    <div class="container-fluid">
+
+      <!-- ENLACE AL INICIO (Icono + Texto) -->
+      <!-- Usamos 'd-flex' y 'gap-2' para alinear la casita con el texto -->
+      <a class="navbar-brand fw-bold  d-flex align-items-center gap-2" href="../index.html"> HOME
+        <i class="bi bi-house-door-fill"></i>| VELOX
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-dark fw-bold" href="./catalog.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-bold" href="./contact.html">Acerca de Nosotros</a>
+          </li>
+          <li class="nav-item"><a class="nav-link text-dark fw-bold" href="./forms.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-bold" href="./login.html"><i
+                class="bi bi-person-circle"></i> Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link p-0" href="#" data-bs-toggle="offcanvas"
+            data-bs-target="#carritoOffcanvas">
+            <button type="button" class="btn position-relative"id="btncarrito">
+              <i class="bi bi-cart-plus"></i>
+              <span id="contador-carrito"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                style="display: none;">
+                 0
+              </span>
+            </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-container">
+
+    <!-- SECCIÓN INICIO -->
+    <section id="inicio" class="section active">
+      <div class="row g-4">
+        <!-- NAVEGACIÓN RÁPIDA -->
+        <div class="col-lg-6 mx-auto">
+          <div class="quick-nav">
+            <h6><i class="bi bi-lightning-charge"></i> Navegacion rapida</h6>
+            <div class="d-grid gap-2">
+              <a href="../index.html" class="btn btn-outline-primary">
+                <i class="bi bi-house-door-fill"></i> Ir al Inicio/ index.html
+              </a>
+              <a href="forms.html" class="btn btn-outline-primary">
+                <i class="bi bi-envelope-fill"></i> Ir a Contacto
+              </a>
+              <a href="contact.html" class="btn btn-outline-primary">
+                <i class="bi bi-people-fill"></i> Ir a Acerca de Nosotros
+              </a>
+              <a href="catalog.html" class="btn btn-outline-primary">
+                <i class="bi bi-grid-3x3-gap-fill"></i> Ir a Catalogo Exclusivo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // NAVEGACIÓN ENTRE SECCIONES
+    document.querySelectorAll('[data-section]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Actualizar links activos
+        document.querySelectorAll('[data-section]').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        
+        // Mostrar sección
+        const sectionId = link.getAttribute('data-section');
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+      });
+    });
+
+    // CERRAR SESIÓN
+    document.getElementById('cerrar-sesion').addEventListener('click', () => {
+      if (confirm('¿Deseas cerrar sesión?')) {
+        window.location.href = 'login.html';
+      }
+    });
+   
+  </script>
+
+  <!-- Script principal del dashboard -->
+  <script src="../script/dashboard.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

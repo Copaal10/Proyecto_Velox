@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+-- 2. Productos de Lujo
+INSERT INTO producto (nombre, descripcion, marca, modelo, anio, precio, stock, imagen) 
+VALUES 
+('Ferrari 812 Superfast', 'V12 Bi-Turbo, 800cv', 'Ferrari', '812 Superfast', 2021, 350000.00, 2, 'ferrari_812.jpg'),
+('Lamborghini Huracán EVO', 'V10 640cv, AWD', 'Lamborghini', 'Huracán EVO', 2022, 280000.00, 3, 'lambo_huracan.jpg'),
+('Porsche 911 GT3', 'Motor atmosférico 4.0L', 'Porsche', '911 GT3 RS', 2023, 225000.00, 1, 'porsche_911.jpg'),
+('Aston Martin DB11', 'V12 Biturbo, British Luxury', 'Aston Martin', 'DB11 V12', 2020, 215000.00, 4, 'aston_db11.jpg'),
+=======
+-- 2. Productos de Lujo
+INSERT INTO producto (nombre, descripcion, marca, modelo, anio, precio, stock, imagen) 
+VALUES 
+('Ferrari 812 Superfast', 'V12 Bi-Turbo, 800cv', 'Ferrari', '812 Superfast', 2021, 350000.00, 2, 'ferrari_812.jpg'),
+('Lamborghini Huracán EVO', 'V10 640cv, AWD', 'Lamborghini', 'Huracán EVO', 2022, 280000.00, 3, 'lambo_huracan.jpg'),
+('Porsche 911 GT3', 'Motor atmosférico 4.0L', 'Porsche', '911 GT3 RS', 2023, 225000.00, 1, 'porsche_911.jpg'),
+('Aston Martin DB11', 'V12 Biturbo, British Luxury', 'Aston Martin', 'DB11 V12', 2020, 215000.00, 4, 'aston_db11.jpg'),
+>>>>>>> 81d83b0d2813387988261150d67c33869c28e4cb
+('Rolls-Royce Phantom', 'Ultimate luxury sedan', 'Rolls-Royce', 'Phantom VIII', 2023, 485000.00, 1, 'rolls_phantom.jpg');
