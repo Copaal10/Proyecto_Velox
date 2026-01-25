@@ -1,0 +1,476 @@
+/* =========================================================
+   TIPOGRAFÍA Y COLORES BASE
+   ========================================================= */
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: url('../img/PruebaFondo.png') no-repeat center center fixed;
+    color: #212121;
+    background-size: cover;
+}
+
+/* Tamaños de títulos */
+h1 {
+  font-size: 96px;
+  color: white !important;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+}
+
+h2 {
+  font-size: 70px;
+  color: white !important;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h3 {
+  font-size: 48px;
+  color: white !important;
+   font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h4 {
+  font-size: 36px;
+  color: white !important;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+h5 {
+  font-size: 21px;
+  color: white !important;
+}
+p{
+    font-size: 20px;
+    color: white !important;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    background-color: #999999;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    color: #212121;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+#nav {
+    background-color: #F8F8F8 !important;
+    /* Rudy Blue */
+    width: 100%;
+}
+
+.nav nav-tabs,
+.nav-link {
+    color: #212121 !important;
+    /* Eerie Black */
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #C3E0FA !important;
+    /* Columbia Blue */
+}
+
+
+/* Texto del enlace formulario */
+.nav .formulario {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    background-color: #212121;
+    color: #F8F8F8;
+    padding: 2rem 0;
+}
+
+.footer h3 {
+    font-size: 48px;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1rem;
+    color: #65ABEA;
+}
+
+.footer p {
+    font-size: 15px;
+    color: #C3E0FA;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #F8F8F8;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+    color: #65ABEA;
+}
+
+.social-icons {
+    margin: 1rem 0;
+}
+
+.social-link {
+    color: #F8F8F8;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #65ABEA;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+#about {
+    background-color: #F8F8F8;
+    color: #212121;
+    padding: 3rem 0;
+}
+
+#about h2 {
+    font-size: 64px;
+    font-family: 'Orbitron', sans-serif;
+    color: #65ABEA;
+}
+
+#about p.lead {
+    font-size: 18px;
+    color: #999999;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 15px;
+    font-family: 'Orbitron', sans-serif;
+    color: #212121;
+}
+
+#about img {
+    border: 4px solid #C3E0FA;
+}
+
+/* =========================================================
+   FORMULARIO VEHÍCULOS
+   ========================================================= */
+
+#formVehiculo {
+    width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#formVehiculo input.form-control,
+#formVehiculo textarea.form-control {
+    border: 2px solid #000;
+    box-shadow: none;
+}
+
+.is-valid {
+    border-color: #198754 !important;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.error-mensaje {
+    font-size: 0.875rem;
+}
+
+
+/* =========================================================
+   LAYOUT LATERAL (FORM + CARDS)
+   ========================================================= */
+
+.contenedor_lateral {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.contenedor_lateral .container {
+    flex: 1;
+    max-width: 400px;
+}
+
+.contenedor_lateral #resultado {
+    flex: 2;
+}
+
+
+/* =========================================================
+   CARDS DE VEHÍCULOS (NUEVAS Y CORREGIDAS)
+   ========================================================= */
+
+.producto-lista,
+.contenedor-vehiculos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+
+/* --- CARD COMPLETAMENTE NUEVA Y MEJORADA --- */
+.producto-card,
+.vehiculo-card {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.producto-card:hover,
+.vehiculo-card:hover {
+    transform: scale(1.02);
+}
+
+/* IMAGEN */
+.producto-card img,
+.vehiculo-card img {
+    width: 100%;
+    height: 200px;
+    /* más alta y estética */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* TÍTULO */
+.producto-card h4,
+.vehiculo-card h4 {
+    font-size: 18px !important;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* DESCRIPCIONES */
+.producto-card p,
+.vehiculo-card p {
+    font-size: 14px !important;
+    margin: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .producto-lista,
+    .contenedor-vehiculos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor_lateral {
+        flex-direction: column;
+    }
+
+    .producto-lista,
+    .contenedor-vehiculos {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-card,
+    .vehiculo-card {
+        width: 100%;
+    }
+}
+
+/* Boton de agregar al carrito*/
+#btn-agregar-carrito {
+    background-color: #65ABEA;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+#btn-agregar-carrito:hover {
+    background-color: black;
+}
+
+/* ================== HERO SECTION (Imagen de Fondo) ================== */
+.hero-section {
+  /* Una imagen oscura de fondo para que se vea elegante */
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503376766979-739b4742a643?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Alto del banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Títulos dentro del Hero */
+.hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.6);
+}
+
+/* ================== CARD HOVER (Efecto al pasar mouse) ================== */
+.card-product {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-product:hover {
+  transform: translateY(-10px); /* La tarjeta sube 10px */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Sombra suave */
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* ================== FILTROS (Botones) ================== */
+.btn-filter {
+  border: 2px solid #65ABEA;
+  color: #65ABEA;
+  background-color: transparent;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-filter:hover, .btn-filter.active {
+  background-color: #65ABEA;
+  color: white;
+}
+
+.btn-success.agregar-carrito 
+{
+    background-color: #212121;
+    border-color: #212121;
+}
+
+.btn-success.agregar-carrito:hover {
+    background-color: #2C2C2C;
+    border-color: #2C2C2C;
+}
+
+
+.navbar .btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.btn-carrito-personalizado {
+    /* Apariencia Base */
+    background-color: #65ABEA;      /* Fondo Negro */
+    color: rgb(0, 0, 0);                    /* Texto Blanco */
+    font-weight: bold;               /* Negrita */
+    text-transform: uppercase;       /* Mayúsculas */
+    border: none;                    /* Sin borde */
+    padding: 12px 0;                 /* Altura del botón */
+    border-radius: 50px;              /* Bordes redondos */
+    transition: all 0.3s ease;       /* Animación suave */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra suave */
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse (Hover) - Igual para ambos */
+.btn-carrito-personalizado:hover{
+    background-color: white;         /* Fondo cambia a blanco */
+    color: #65ABEA;                   /* Texto cambia a Azul Velox */
+    transform: translateY(-2px);      /* Se levanta un poco */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Efecto al hacer click (Active) - Opcional para dar sensación táctil */
+.btn-carrito-personalizado:active {
+    transform: translateY(0);
+}
+
+:root {
+    --bg-main: #202020;    /* Fondo solicitado */
+    --bg-card: #121212;    /* Cards solicitadas */
+    --text-main: #FFFFFF;
+    --accent: #65ABEA;
+    --card-border: #333333;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--bg-main) !important; /* Prioridad al color sólido */
+    color: var(--text-main);
+    margin: 0;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Navbar ajustada (Mismo color que fondo) */
+#nav {
+    background-color: var(--bg-main) !important;
+    border-bottom: 1px solid var(--card-border);
+    padding: 1rem 0;
+}
+
+.nav-link {
+    color: var(--text-main) !important;
+    font-weight: bold;
+}
+/* Localiza estas clases en tu CSS y reemplázalas por esto */
+.card-body{
+    background-color: var(--bg-card) !important; /* Forza el #121212 */
+    border: 1px solid var(--card-border) !important;
+    color: var(--text-main) !important; /* Forza el texto blanco */
+    
+}
+#btncarrito{
+  background-color: #65ABEA;
+}
+
+/* Personalización de SweetAlert para VELOX */
+.swal2-popup {
+    background-color: #121212 !important; /* Fondo de tus cards */
+    border: 1px solid #333 !important;    /* Borde sutil */
+    border-radius: 15px !important;
+}
+
+.swal2-title, .swal2-html-container, .swal2-content {
+    color: #ffffff !important; /* Fuerza el texto blanco */
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.swal2-confirm {
+    background-color: #65ABEA !important; /* Tu azul accent */
+    border-radius: 8px !important;
+}
