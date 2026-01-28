@@ -1,0 +1,21 @@
+package com.example.velox.service;
+
+import com.example.velox.model.Usuario;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface IusuarioService {
+    List<Usuario> obtenerTodos();
+    Optional<Usuario> obtenerPorId(Integer id);
+    Usuario guardarUsuario(Usuario usuario);
+    Usuario registrarUsuario(Usuario usuario);
+    void eliminarUsuario(Integer id);
+    Usuario editarUsuario(Integer id, Usuario usuarioActualizado);
+    Optional<Usuario> obtenerPorEmail(String email);
+
+    // Método para Spring Security
+    UserDetails loadUserByUsername(String email) throws UsernameNotFoundException;
+}
